@@ -1,0 +1,34 @@
+PRODUCTS
+│
+├── Roofing Sheets
+│   ├── V-Board Sheets
+│   ├── AC Sheets
+│   ├── Galvalume Sheets
+│   ├── Aluminium Roofing Sheets
+│   ├── GC Sheets
+│   ├── FRP Sheets
+│   ├── Polycarbonate Sheets
+│   ├── Decking Sheets
+│   ├── Cooling Sheets
+│   └── Geo Roof
+│
+├── Polycarbonate Products
+│   ├── Solid Polycarbonate
+│   ├── Multiwall Polycarbonate
+│   ├── Corrugated Polycarbonate
+│   ├── Embossed Polycarbonate
+│   └── Fan Base Polycarbonate
+│
+├── FRP Products
+│   ├── FRP Roofing Sheets
+│   ├── FRP Corrugated Sheets
+│   └── FRP Transparent Sheets
+│
+├── Roofing Accessories
+│   ├── Bolts
+│   ├── Clamps
+│   ├── Aluminium Pedding / Beading
+│   └── Fasteners
+│
+└── Rainwater Management
+    └── PVC Rain Gutters
