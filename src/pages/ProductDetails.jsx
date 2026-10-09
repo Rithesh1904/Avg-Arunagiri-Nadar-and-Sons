@@ -36,7 +36,7 @@ export function ProductDetails() {
     );
   }
 
-  const whatsappMessage = encodeURIComponent(`Hello A.V.G. Arunagiri Nadar Sons, I am interested in:\nProduct: ${product.name}\nCategory: ${product.category}\n\nPlease provide the best price and availability. Thank you.`);
+  const whatsappMessage = encodeURIComponent(`Hello A.V.G. Arunagiri Nadar Sons, I am interested in:\nProduct: ${product.name}\nCategory: ${product.category}\n\nPlease provide availability and details. Thank you.`);
 
   return (
     <div className="bg-white min-h-screen pt-[90px] pb-20 relative z-0">
@@ -87,11 +87,10 @@ export function ProductDetails() {
             
             <h1 className="text-3xl md:text-4xl font-bold text-industrial-900 mb-2">{product.name}</h1>
             
-            {product.price && (
-              <div className="text-2xl font-bold text-black mb-6">
-                {product.price}
-              </div>
-            )}
+            {/* Price removed as per request */}
+            <div className="text-sm text-industrial-500 font-medium italic mb-6 mt-1">
+              * Enquire for price and details
+            </div>
             
             <p className="text-industrial-600 text-lg mb-8 leading-relaxed">
               {product.description}
@@ -172,7 +171,7 @@ export function ProductDetails() {
                 className="flex-1 flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white py-4 px-6 rounded-md font-bold text-lg transition-all shadow-md hover:shadow-lg"
               >
                 <MessageCircle size={22} />
-                Get Best Price on WhatsApp
+                Enquire on WhatsApp
               </a>
               <a 
                 href="tel:+919842874256"

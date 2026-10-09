@@ -14,7 +14,6 @@ export const products = [
       colors: ["Transparent"]
     },
     applications: ["Residential", "Commercial"],
-    price: "₹ 75/sq ft",
     featured: true
   },
   {
@@ -29,7 +28,6 @@ export const products = [
       coatingType: ["UV Coated", "Non Drip", "Anti Glare", "Hard Coated"]
     },
     applications: ["Skylight", "Canopy", "Greenhouse", "Walkway Cover", "Parking Shed", "Dome"],
-    price: "Ask Price",
     featured: false
   },
   {
@@ -45,7 +43,6 @@ export const products = [
       colors: ["Brown"]
     },
     applications: ["Parking Shed", "Greenhouse", "Skylight", "Canopy", "Walkway Cover", "Dome"],
-    price: "Ask Price",
     featured: false
   },
   {
@@ -62,7 +59,6 @@ export const products = [
       colors: ["Bronze"]
     },
     applications: ["Residential", "Commercial"],
-    price: "₹ 75/sq ft",
     featured: true
   },
   {
@@ -79,7 +75,6 @@ export const products = [
       colors: ["Brown"]
     },
     applications: ["Exterior", "Elevation", "Front Gates"],
-    price: "₹ 160/sq ft",
     featured: false
   },
   {
@@ -95,7 +90,6 @@ export const products = [
       lightTransmission: ["92%"]
     },
     applications: ["Canopy", "Facade Glazing", "Roofing", "Greenhouse", "Walkway Cover", "Skylight"],
-    price: "Ask Price",
     featured: false
   },
   
@@ -114,7 +108,6 @@ export const products = [
       colors: ["Green"]
     },
     applications: ["Roofing"],
-    price: "₹ 130/Running Feet",
     featured: true
   },
   {
@@ -131,7 +124,6 @@ export const products = [
       colors: ["Sky Blue"]
     },
     applications: ["Roofing"],
-    price: "₹ 38/sq ft",
     featured: false
   },
   {
@@ -148,7 +140,6 @@ export const products = [
       colors: ["Blue"]
     },
     applications: ["Roofing"],
-    price: "₹ 1,800/Kg",
     featured: false
   },
   {
@@ -165,7 +156,6 @@ export const products = [
       colors: ["Blue"]
     },
     applications: ["Roofing"],
-    price: "₹ 44/sq ft",
     featured: true
   },
   {
@@ -182,7 +172,6 @@ export const products = [
       colors: ["Grey"]
     },
     applications: ["Commercial"],
-    price: "₹ 210/Meter",
     featured: false
   },
   {
@@ -199,7 +188,6 @@ export const products = [
       colors: ["Orange", "White", "Grey", "Brown"]
     },
     applications: ["Dairy Farm", "Factory Roofing", "Cold Storage", "Residential", "Farmhouse", "Warehouse", "Industrial Shed", "Parking Shed"],
-    price: "₹ 45/sq ft",
     featured: false
   },
   {
@@ -216,7 +204,6 @@ export const products = [
       colors: ["Black"]
     },
     applications: ["Pipe Insulation", "Automotive", "HVAC Duct", "Roof Insulation", "Packaging", "Floor Underlay"],
-    price: "₹ 175/Square Meter",
     featured: false
   },
 
@@ -235,7 +222,6 @@ export const products = [
       colors: ["Red"]
     },
     applications: ["Roofing"],
-    price: "₹ 53/sq ft",
     featured: true
   },
   {
@@ -251,7 +237,6 @@ export const products = [
       effectiveCoverWidth: ["1000 mm"]
     },
     applications: ["Residential", "Commercial", "Industrial", "Institutional"],
-    price: "₹ 2,450/sq ft",
     featured: true
   },
 
@@ -270,7 +255,6 @@ export const products = [
       colors: ["White"]
     },
     applications: ["Home"],
-    price: "₹ 705/Piece",
     featured: true
   },
   {
@@ -288,7 +272,6 @@ export const products = [
       colors: ["White"]
     },
     applications: ["Commercial Roof", "Residential Roof", "Industrial Roof", "Warehouse Roof"],
-    price: "₹ 705/Piece",
     featured: false
   },
 
@@ -307,7 +290,6 @@ export const products = [
       wallThickness: ["1.5 mm"]
     },
     applications: ["Construction", "Fabrication", "Industrial"],
-    price: "₹ 1,040/Kg",
     featured: true
   },
   {
@@ -324,7 +306,6 @@ export const products = [
       colors: ["Silver"]
     },
     applications: ["Construction Projects", "Building Frames", "Supports", "Columns"],
-    price: "₹ 70/Kg",
     featured: false
   },
 
@@ -343,7 +324,6 @@ export const products = [
       colors: ["Greyish White"]
     },
     applications: ["Walls", "Partition"],
-    price: "₹ 1,750/sq ft",
     featured: true
   },
 
@@ -362,7 +342,6 @@ export const products = [
       colors: ["Silver"]
     },
     applications: ["Food Use", "Packaging", "Decorative"],
-    price: "₹ 7,000/Piece",
     featured: false
   },
   {
@@ -379,7 +358,6 @@ export const products = [
       colors: ["Brown"]
     },
     applications: ["Road Work", "Packaging"],
-    price: "₹ 900/Kg",
     featured: false
   },
 
@@ -398,7 +376,6 @@ export const products = [
       holeSize: ["25 x 25 mm"]
     },
     applications: ["Privacy Screening", "Wall Decor", "Balcony Enclosures", "Garden Partitions", "Pergola Coverings"],
-    price: "Ask Price",
     featured: true
   },
 
@@ -415,7 +392,6 @@ export const products = [
       material: ["Polycarbonate"]
     },
     applications: ["Generator Room", "Fresh Air", "Exhaust Air", "Cross Ventilation", "Plant Room"],
-    price: "₹ 1,600/Piece",
     featured: false
   },
   {
@@ -431,7 +407,6 @@ export const products = [
       material: ["Aluminum"]
     },
     applications: ["Rooftop"],
-    price: "₹ 4,300/Piece",
     featured: true
   },
   {
@@ -449,7 +424,6 @@ export const products = [
       colors: ["White"]
     },
     applications: ["Floor Protection", "Industrial", "Signage", "Cladding"],
-    price: "₹ 46.50/Piece",
     featured: false
   }
 ];

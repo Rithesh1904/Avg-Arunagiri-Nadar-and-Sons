@@ -94,11 +94,9 @@ export const ProductCard = React.forwardRef(({ product, className, ...props }, r
                 <Tag className="h-4 w-4 shrink-0" />
                 <span className="truncate">{product.category} {product.subcategory ? ` > ${product.subcategory}` : ''}</span>
               </div>
-              {product.price && (
-                <div className="font-bold text-black text-lg mt-1">
-                  {product.price}
-                </div>
-              )}
+              <div className="text-xs text-industrial-500 mt-1 font-medium italic">
+                * Enquire for price
+              </div>
             </motion.div>
           </div>
           
@@ -110,7 +108,7 @@ export const ProductCard = React.forwardRef(({ product, className, ...props }, r
               View Details
             </Link>
             <a 
-              href={`https://wa.me/919842874256?text=${encodeURIComponent(`Hello A.V.G. Arunagiri Nadar Sons, I am interested in:\nProduct: ${product.name}\nCategory: ${product.category}\n\nPlease provide the best price and availability. Thank you.`)}`}
+              href={`https://wa.me/919842874256?text=${encodeURIComponent(`Hello A.V.G. Arunagiri Nadar Sons, I am interested in:\nProduct: ${product.name}\nCategory: ${product.category}\n\nPlease provide availability and details. Thank you.`)}`}
               target="_blank"
               rel="noopener noreferrer"
               className="flex-1 text-center py-2.5 bg-[#0f172a] hover:bg-industrial-900 text-white rounded-md font-bold transition-colors text-sm"
