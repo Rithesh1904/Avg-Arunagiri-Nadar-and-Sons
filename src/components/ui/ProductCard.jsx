@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Tag, Building } from "lucide-react";
+import { Tag, Building, Ruler } from "lucide-react";
 import { cn } from "../../lib/utils";
 import { Link } from "react-router-dom";
 
@@ -94,8 +94,22 @@ export const ProductCard = React.forwardRef(({ product, className, ...props }, r
                 <Tag className="h-4 w-4 shrink-0" />
                 <span className="truncate">{product.category} {product.subcategory ? ` > ${product.subcategory}` : ''}</span>
               </div>
+              
+              {/* Available Sizes Badge - Viewable at Main */}
+              {product.availableSizes && product.availableSizes.length > 0 && (
+                <div className="mt-1 flex items-center gap-1.5 text-xs text-industrial-700 bg-industrial-50 rounded-md px-2 py-1 border border-industrial-200/80">
+                  <Ruler className="h-3.5 w-3.5 text-accent-600 shrink-0" />
+                  <span className="truncate font-medium">
+                    Sizes: <strong className="font-semibold text-industrial-900">{product.availableSizes.slice(0, 3).join(', ')}</strong>
+                    {product.availableSizes.length > 3 && (
+                      <span className="text-accent-700 font-semibold ml-1">+{product.availableSizes.length - 3} more</span>
+                    )}
+                  </span>
+                </div>
+              )}
+
               <div className="text-xs text-industrial-500 mt-1 font-medium italic">
-                * Enquire for price
+                * Enquire for price & sizes
               </div>
             </motion.div>
           </div>

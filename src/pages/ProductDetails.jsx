@@ -1,19 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { ArrowLeft, MessageCircle, Phone, CheckCircle2 } from 'lucide-react';
+import { ArrowLeft, MessageCircle, Phone, CheckCircle2, Ruler } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { products } from '../data/products';
 import { EmptyState } from '../components/ui/EmptyState';
+import { Product3DViewer } from '../components/ui/Product3DViewer';
 import { cn } from '../lib/utils';
 
 export function ProductDetails() {
   const { productId } = useParams();
   const navigate = useNavigate();
   const [product, setProduct] = useState(null);
+  const [selectedSize, setSelectedSize] = useState(null);
 
   useEffect(() => {
     const found = products.find(p => p.id === productId);
     setProduct(found);
+    if (found?.availableSizes && found.availableSizes.length > 0) {
+      setSelectedSize(found.availableSizes[0]);
+    } else {
+      setSelectedSize(null);
+    }
     window.scrollTo(0, 0);
   }, [productId]);
 
@@ -36,7 +43,14 @@ export function ProductDetails() {
     );
   }
 
-  const whatsappMessage = encodeURIComponent(`Hello A.V.G. Arunagiri Nadar Sons, I am interested in:\nProduct: ${product.name}\nCategory: ${product.category}\n\nPlease provide availability and details. Thank you.`);
+  const whatsappMessage = encodeURIComponent(
+    `Hello A.V.G. Arunagiri Nadar Sons, I am interested in:\n` +
+    `Product: ${product.name}\n` +
+    `Category: ${product.category}\n` +
+    (selectedSize ? `Required Size: ${selectedSize}\n` : '') +
+    (product.tallyName ? `Tally Ref: ${product.tallyName}\n` : '') +
+    `\nPlease provide price quotation and stock availability. Thank you.`
+  );
 
   return (
     <div className="bg-white min-h-screen pt-[90px] pb-20 relative z-0">
@@ -62,14 +76,14 @@ export function ProductDetails() {
       <div className="container mx-auto px-4 md:px-6 pt-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
           
-          {/* Product Image */}
+          {/* Interactive 3D Product Sheet Viewer with Free Drag & Spin */}
           <motion.div 
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            className="bg-industrial-50 border border-industrial-200 rounded-xl aspect-[4/3] relative flex items-center justify-center text-industrial-400 overflow-hidden"
+            className="w-full"
           >
-            <span className="font-semibold text-lg">Product Image Placeholder</span>
+            <Product3DViewer product={product} />
           </motion.div>
 
           {/* Product Info */}
@@ -95,6 +109,56 @@ export function ProductDetails() {
             <p className="text-industrial-600 text-lg mb-8 leading-relaxed">
               {product.description}
             </p>
+
+            {/* Available Feet Sizes / Dimensions Section */}
+            {product.availableSizes && product.availableSizes.length > 0 && (
+              <div className="mb-8 p-5 bg-industrial-50 rounded-xl border border-industrial-200">
+                <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
+                  <div className="flex items-center gap-2">
+                    <Ruler className="text-accent-600" size={18} />
+                    <h3 className="text-base font-bold text-industrial-900 uppercase tracking-wide">
+                      Available Feet Sizes & Dimensions
+                    </h3>
+                  </div>
+                  <span className="text-xs font-bold text-industrial-700 bg-white px-2.5 py-1 rounded-full border border-industrial-200 shadow-sm">
+                    {product.availableSizes.length} {product.availableSizes.length === 1 ? 'Size' : 'Sizes'} Available
+                  </span>
+                </div>
+                
+                <p className="text-xs text-industrial-500 mb-3">
+                  Choose your required size to check instant availability & pricing:
+                </p>
+
+                <div className="flex flex-wrap gap-2.5">
+                  {product.availableSizes.map((size) => {
+                    const isSelected = selectedSize === size;
+                    return (
+                      <button
+                        key={size}
+                        type="button"
+                        onClick={() => setSelectedSize(size)}
+                        className={cn(
+                          "px-3.5 py-2 rounded-lg text-sm font-semibold transition-all flex items-center gap-2 cursor-pointer",
+                          isSelected
+                            ? "bg-industrial-900 text-white ring-2 ring-accent-500 shadow-md scale-[1.02]"
+                            : "bg-white text-industrial-800 border border-industrial-200 hover:border-accent-500 hover:bg-industrial-100/70"
+                        )}
+                      >
+                        <span className={isSelected ? "text-accent-400 font-bold" : "text-industrial-400"}>📏</span>
+                        <span>{size}</span>
+                      </button>
+                    );
+                  })}
+                </div>
+
+                {selectedSize && (
+                  <div className="mt-3.5 text-xs text-industrial-700 bg-white p-2.5 rounded-lg border border-industrial-200 flex items-center gap-2">
+                    <CheckCircle2 size={15} className="text-emerald-600 shrink-0" />
+                    <span>Selected Size: <strong className="text-industrial-900 font-bold text-sm">{selectedSize}</strong> (will be automatically included in your enquiry)</span>
+                  </div>
+                )}
+              </div>
+            )}
 
             {/* Specifications */}
             {product.specifications && (
