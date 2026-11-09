@@ -154,9 +154,6 @@ export function Home() {
                   
                   <div className="space-y-3 p-5 flex flex-col flex-grow">
                     <div className="flex flex-col items-start justify-between gap-1 flex-grow">
-                      <div className="text-xs font-bold tracking-wider text-accent-600 uppercase mb-1">
-                        AVG CATEGORY
-                      </div>
                       <h3 className="text-lg font-semibold tracking-tight text-industrial-900 leading-tight w-full">
                         {category.name}
                       </h3>
