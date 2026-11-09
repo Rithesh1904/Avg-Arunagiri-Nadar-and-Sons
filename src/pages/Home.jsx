@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, CheckCircle2, Tag, Truck, Sparkles, ShieldCheck } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Tag, Truck, Sparkles, ShieldCheck, Award } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { SectionHeading } from '../components/ui/SectionHeading';
 import { categories } from '../data/categories';
@@ -69,36 +69,97 @@ export function Home() {
           <div className="absolute top-0 left-0 right-0 h-32 sm:h-36 bg-gradient-to-b from-black/95 via-black/60 to-transparent pointer-events-none z-10" />
         </div>
         
-        {/* Scroll indicator */}
+        {/* Scroll indicator - desktop only with ample clearance */}
         <motion.div 
-          animate={{ y: [0, 10, 0] }}
+          animate={{ y: [0, 8, 0] }}
           transition={{ repeat: Infinity, duration: 2 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 text-white/80 mix-blend-difference"
+          className="hidden md:flex absolute bottom-8 left-1/2 -translate-x-1/2 z-20 text-white/70 pointer-events-none"
         >
-          <div className="w-[30px] h-[50px] border-2 border-white/80 rounded-full flex justify-center p-2">
-            <div className="w-1.5 h-3 bg-white/80 rounded-full" />
+          <div className="w-[26px] h-[44px] border-2 border-white/60 rounded-full flex justify-center p-1.5 backdrop-blur-[2px]">
+            <div className="w-1 h-2.5 bg-accent-400 rounded-full" />
           </div>
         </motion.div>
       </section>
 
       {/* 1.5 Trust & Logistics Highlights Bar */}
-      <section className="bg-industrial-900 text-white border-y border-industrial-800 py-3 sm:py-3.5 relative z-10 shadow-inner">
+      <section className="relative z-20 bg-gradient-to-r from-industrial-950 via-[#0b1222] to-industrial-950 text-white border-y border-industrial-800/80 py-4 sm:py-5 shadow-xl">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="flex flex-wrap items-center justify-around gap-4 sm:gap-8 text-xs sm:text-sm font-semibold">
-            <div className="flex items-center gap-2 text-accent-400">
-              <Sparkles size={16} className="text-accent-500 shrink-0" />
-              <span>Trusted Building Partner <strong className="text-white">Since 1970</strong> (54+ Years of Trust)</span>
-            </div>
-            <div className="hidden md:block w-px h-4 bg-white/20" />
-            <div className="flex items-center gap-2 text-emerald-400">
-              <Truck size={17} className="text-emerald-400 shrink-0" />
-              <span><strong className="text-white">Lorry Transportation Service Available</strong> for Direct Site Delivery</span>
-            </div>
-            <div className="hidden lg:block w-px h-4 bg-white/20" />
-            <div className="hidden sm:flex items-center gap-2 text-blue-300">
-              <ShieldCheck size={16} className="text-blue-400 shrink-0" />
-              <span>Direct Statewide Supply Across Tamil Nadu</span>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4 lg:gap-6">
+            
+            {/* Feature 1: Heritage & Trust */}
+            <Link 
+              to="/about"
+              className="group flex items-center gap-3.5 p-3 sm:p-3.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.07] border border-white/5 hover:border-accent-500/40 transition-all duration-300"
+            >
+              <div className="w-11 h-11 rounded-xl bg-accent-500/10 border border-accent-500/20 flex items-center justify-center text-accent-400 shrink-0 group-hover:scale-105 group-hover:bg-accent-500/20 transition-all">
+                <Award size={22} className="text-accent-400" />
+              </div>
+              <div className="min-w-0 flex-1">
+                <div className="text-[11px] font-bold uppercase tracking-wider text-accent-400 flex items-center gap-1.5">
+                  <span>Since 1970</span>
+                  <span className="w-1 h-1 rounded-full bg-accent-400/60" />
+                  <span>54+ Years Trust</span>
+                </div>
+                <div className="text-sm font-bold text-white tracking-tight truncate group-hover:text-accent-300 transition-colors">
+                  Trusted Building Partner
+                </div>
+                <div className="text-xs text-industrial-400 truncate">
+                  Half a century of genuine customer goodwill
+                </div>
+              </div>
+              <ArrowRight size={14} className="text-industrial-500 group-hover:text-accent-400 group-hover:translate-x-1 transition-all ml-1 shrink-0 hidden lg:block" />
+            </Link>
+
+            {/* Feature 2: Lorry Transport & Site Delivery */}
+            <a 
+              href="https://wa.me/919842874256?text=Hello%20A.V.G.%20Arunagiri%20Nadar%20Sons%2C%20I%20would%20like%20to%20enquire%20about%20direct%20site%20lorry%20transportation%20and%20delivery."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center gap-3.5 p-3 sm:p-3.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.07] border border-white/5 hover:border-emerald-500/40 transition-all duration-300"
+            >
+              <div className="w-11 h-11 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0 group-hover:scale-105 group-hover:bg-emerald-500/20 transition-all">
+                <Truck size={22} className="text-emerald-400" />
+              </div>
+              <div className="min-w-0 flex-1">
+                <div className="text-[11px] font-bold uppercase tracking-wider text-emerald-400 flex items-center gap-1.5">
+                  <span>Lorry Logistics</span>
+                  <span className="w-1 h-1 rounded-full bg-emerald-400/60" />
+                  <span>Direct Site Delivery</span>
+                </div>
+                <div className="text-sm font-bold text-white tracking-tight truncate group-hover:text-emerald-300 transition-colors">
+                  Dedicated Transport Fleet
+                </div>
+                <div className="text-xs text-industrial-400 truncate">
+                  Safe on-time dispatch directly to your job site
+                </div>
+              </div>
+              <ArrowRight size={14} className="text-industrial-500 group-hover:text-emerald-400 group-hover:translate-x-1 transition-all ml-1 shrink-0 hidden lg:block" />
+            </a>
+
+            {/* Feature 3: Statewide Network & Certified Mill Stock */}
+            <Link 
+              to="/quote"
+              className="group flex items-center gap-3.5 p-3 sm:p-3.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.07] border border-white/5 hover:border-blue-500/40 transition-all duration-300"
+            >
+              <div className="w-11 h-11 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 shrink-0 group-hover:scale-105 group-hover:bg-blue-500/20 transition-all">
+                <ShieldCheck size={22} className="text-blue-400" />
+              </div>
+              <div className="min-w-0 flex-1">
+                <div className="text-[11px] font-bold uppercase tracking-wider text-blue-400 flex items-center gap-1.5">
+                  <span>Statewide Supply</span>
+                  <span className="w-1 h-1 rounded-full bg-blue-400/60" />
+                  <span>Tamil Nadu Wide</span>
+                </div>
+                <div className="text-sm font-bold text-white tracking-tight truncate group-hover:text-blue-300 transition-colors">
+                  100% Genuine Mill Stock
+                </div>
+                <div className="text-xs text-industrial-400 truncate">
+                  Retail, commercial & industrial fulfillment
+                </div>
+              </div>
+              <ArrowRight size={14} className="text-industrial-500 group-hover:text-blue-400 group-hover:translate-x-1 transition-all ml-1 shrink-0 hidden lg:block" />
+            </Link>
+
           </div>
         </div>
       </section>
