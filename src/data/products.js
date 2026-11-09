@@ -181,7 +181,7 @@ export const products = [
     "subcategory": "Solid Polycarbonate",
     "brand": "Lotus",
     "description": "Embossed texture polycarbonate sheet designed for pleasant light diffusion and glare reduction in roofing and skylights.",
-    "image": "/images/Industrial Polycarbonate Sheet.jpg",
+    "image": "/images/polycarbonate-embossed-clear.jpg",
     "availableSizes": [
       "8 × 3.5 ft",
       "10 × 3.5 ft",
@@ -214,6 +214,134 @@ export const products = [
     "backDetails": "Diffused Glare-Reduction Embossed Reverse Surface"
   },
   {
+    "id": "polycarbonate-diamond-sheet",
+    "name": "Polycarbonate Diamond Sheet",
+    "tallyName": "POLYCARBONATED SOLID SHEETS (DIAMOND)",
+    "category": "Polycarbonate Products",
+    "subcategory": "Solid Polycarbonate",
+    "brand": "Lotus",
+    "description": "Lotus high-impact solid polycarbonate sheet embossed with a faceted diamond pattern, providing sparkling light refraction, privacy, and superior weather resistance.",
+    "image": "/images/polycarbonate-diamond-sheet.jpg",
+    "availableSizes": [
+      "4 ft × 2mm",
+      "7 ft × 2mm",
+      "4 ft × 3mm",
+      "7 ft × 3mm"
+    ],
+    "specifications": {
+      "thickness": [
+        "2 mm",
+        "3 mm"
+      ],
+      "width": [
+        "4 ft",
+        "7 ft"
+      ],
+      "length": [
+        "Continuous Roll / Custom Cut"
+      ],
+      "texture": [
+        "Diamond Embossed"
+      ],
+      "colors": [
+        "Clear",
+        "Bronze"
+      ]
+    },
+    "applications": [
+      "Pergolas & Gazebos",
+      "Skylights & Domes",
+      "Balcony Partitions",
+      "Decorative Glazing"
+    ],
+    "featured": false,
+    "backImage": "/images/backside/polycarbonate-solid-back.jpg",
+    "backDetails": "Diamond Prism Embossed Reverse Light Diffusion Face"
+  },
+  {
+    "id": "polycarbonate-raindrop-sheet",
+    "name": "Polycarbonate Raindrop Sheet",
+    "tallyName": "POLYCARBONATED SOLID SHEETS (RAINDROP)",
+    "category": "Polycarbonate Products",
+    "subcategory": "Solid Polycarbonate",
+    "brand": "Lotus",
+    "description": "Lotus premium solid polycarbonate sheet featuring organic water-droplet raindrop texture, offering soothing daylight diffusion, aesthetic privacy, and UV protection.",
+    "image": "/images/polycarbonate-raindrop-sheet.jpg",
+    "availableSizes": [
+      "4 ft × 2mm",
+      "7 ft × 2mm"
+    ],
+    "specifications": {
+      "thickness": [
+        "2 mm"
+      ],
+      "width": [
+        "4 ft",
+        "7 ft"
+      ],
+      "length": [
+        "Continuous Roll / Custom Cut"
+      ],
+      "texture": [
+        "Raindrop Embossed"
+      ],
+      "colors": [
+        "Clear",
+        "Translucent"
+      ]
+    },
+    "applications": [
+      "Decorative Pergolas",
+      "Walkway Canopies",
+      "Shower Enclosures",
+      "Privacy Partitions"
+    ],
+    "featured": false,
+    "backImage": "/images/backside/polycarbonate-solid-back.jpg",
+    "backDetails": "Raindrop Water-Droplet Pattern Reverse Translucent Face"
+  },
+  {
+    "id": "polycarbonate-frosted-sheet",
+    "name": "Polycarbonate Frosted Sheet",
+    "tallyName": "POLYCARBONATED SOLID SHEETS (FROSTED)",
+    "category": "Polycarbonate Products",
+    "subcategory": "Solid Polycarbonate",
+    "brand": "Lotus",
+    "description": "Lotus frosted matte finish solid polycarbonate sheet delivering smooth, anti-glare milk light diffusion, architectural partitions, skylights, and pergola roofs.",
+    "image": "/images/polycarbonate-frosted-sheet.jpg",
+    "availableSizes": [
+      "4 ft × 2mm",
+      "7 ft × 2mm"
+    ],
+    "specifications": {
+      "thickness": [
+        "2 mm"
+      ],
+      "width": [
+        "4 ft",
+        "7 ft"
+      ],
+      "length": [
+        "Continuous Roll / Custom Cut"
+      ],
+      "texture": [
+        "Frosted / Satin Matte"
+      ],
+      "colors": [
+        "Frosted Clear / Opal"
+      ]
+    },
+    "applications": [
+      "Architectural Glazing",
+      "Anti-Glare Skylights",
+      "Office Partitions",
+      "Patio Covers"
+    ],
+    "featured": false,
+    "backImage": "/images/backside/polycarbonate-solid-back.jpg",
+    "backDetails": "Silky Frosted Satin Matte Glare-Free Reverse Face"
+  },
+  {
     "id": "polycarbonate-roll-textured",
     "name": "Polycarbonate Textured Roll (Diamond / Raindrop / Frosted)",
     "tallyName": "POLYCARBONATED SOLID SHEETS (TEXTURED)",
@@ -221,7 +349,7 @@ export const products = [
     "subcategory": "Solid Polycarbonate",
     "brand": "Lotus",
     "description": "Polycarbonate textured rolls in Raindrop, Diamond, Frosted, and Square patterns for decorative and privacy roofing applications.",
-    "image": "/images/Industrial Polycarbonate Sheet.jpg",
+    "image": "/images/polycarbonate-diamond-sheet.jpg",
     "availableSizes": [
       "4 ft × 2mm (Raindrop)",
       "7 ft × 2mm (Raindrop)",
