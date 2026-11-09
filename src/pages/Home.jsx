@@ -38,29 +38,35 @@ export function Home() {
     <div className="flex flex-col w-full">
       {/* 1. Hero Section */}
       <section className="relative w-full h-[55vh] min-h-[400px] md:h-[95vh] md:min-h-[700px] flex items-center bg-black overflow-hidden">
-        <div className="absolute inset-0 z-0 flex items-center justify-center">
-          <video
-            ref={videoRef}
-            autoPlay
-            muted
-            playsInline
-            onEnded={() => setShowSlide(true)}
-            className={cn(
-              "absolute inset-0 w-full h-full object-cover object-[15%_center] md:object-center transition-all duration-1000 ease-in-out",
-              showSlide ? "opacity-0 scale-95" : "opacity-100 scale-100"
-            )}
-          >
-            <source src="/assets/shop1.mp4" type="video/mp4" />
-          </video>
-          
-          <img
-            src="/assets/bk1.png"
-            alt="AVG Banner Slide"
-            className={cn(
-              "absolute inset-0 w-full h-full object-cover object-[15%_center] md:object-center transition-all duration-1000 ease-in-out",
-              showSlide ? "opacity-100 scale-100" : "opacity-0 scale-110 pointer-events-none"
-            )}
-          />
+        <div className="absolute inset-0 z-0 flex items-center justify-center overflow-hidden">
+          {/* Shift video up to crop out the baked-in faux menu bar at the top of the video */}
+          <div className="absolute -top-[75px] sm:-top-[90px] md:-top-[115px] left-0 right-0 w-full h-[calc(100%+75px)] sm:h-[calc(100%+90px)] md:h-[calc(100%+115px)]">
+            <video
+              ref={videoRef}
+              autoPlay
+              muted
+              playsInline
+              onEnded={() => setShowSlide(true)}
+              className={cn(
+                "absolute inset-0 w-full h-full object-cover object-[15%_center] md:object-center transition-all duration-1000 ease-in-out",
+                showSlide ? "opacity-0 scale-95" : "opacity-100 scale-100"
+              )}
+            >
+              <source src="/assets/shop1.mp4" type="video/mp4" />
+            </video>
+            
+            <img
+              src="/assets/bk1.png"
+              alt="AVG Banner Slide"
+              className={cn(
+                "absolute inset-0 w-full h-full object-cover object-[15%_center] md:object-center transition-all duration-1000 ease-in-out",
+                showSlide ? "opacity-100 scale-100" : "opacity-0 scale-110 pointer-events-none"
+              )}
+            />
+          </div>
+
+          {/* Top dark gradient overlay under navbar for seamless navbar contrast and zero background bleed */}
+          <div className="absolute top-0 left-0 right-0 h-32 sm:h-36 bg-gradient-to-b from-black/95 via-black/60 to-transparent pointer-events-none z-10" />
         </div>
         
         {/* Scroll indicator */}
