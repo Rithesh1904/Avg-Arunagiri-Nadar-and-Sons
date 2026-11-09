@@ -10,9 +10,14 @@ import {
   Image,
   Phone,
   ChevronDown,
-  FolderPlus,
-  FileText,
-  Settings,
+  Layers,
+  Sun,
+  ShieldCheck,
+  Droplets,
+  Wind,
+  Sparkles,
+  ArrowRight,
+  Hammer
 } from "lucide-react";
 import { cn } from "../../lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
@@ -88,55 +93,74 @@ export default function AppMenuBar({ isScrolled = true }) {
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: 10, scale: 0.95 }}
                     transition={{ duration: 0.2 }}
-                    className="absolute top-full left-1/2 -translate-x-1/2 pt-4 w-64 z-50"
+                    className="absolute top-full left-1/2 -translate-x-1/2 pt-3 w-[560px] z-50 pointer-events-auto"
                   >
                     <div className={cn(
-                      "rounded-2xl p-2 flex flex-col gap-1",
+                      "rounded-2xl p-3 shadow-2xl border backdrop-blur-xl",
                       !isScrolled 
-                        ? "bg-[#0B1220] border border-white/10 shadow-2xl"
-                        : "bg-white shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] border border-industrial-100"
+                        ? "bg-[#0B1220]/95 border-white/10 text-white shadow-black/50" 
+                        : "bg-white/95 border-industrial-100 text-industrial-900 shadow-[0_15px_50px_-10px_rgba(0,0,0,0.15)]"
                     )}>
-                      <Link to="/products" className={cn("flex items-center gap-3 p-3 rounded-xl transition-colors group", !isScrolled ? "hover:bg-white/5" : "hover:bg-industrial-50")}>
-                        <div className={cn("w-10 h-10 rounded-lg flex items-center justify-center transition-transform group-hover:scale-110", !isScrolled ? "bg-white/10 text-white" : "bg-accent-50 text-accent-600")}>
-                          <Package className="w-5 h-5" />
+                      {/* Header: All Products */}
+                      <Link 
+                        to="/products" 
+                        onClick={() => setHoveredProduct(false)}
+                        className={cn(
+                          "flex items-center justify-between p-3 rounded-xl transition-all mb-2 border",
+                          !isScrolled 
+                            ? "bg-white/5 hover:bg-white/10 border-white/10 text-white" 
+                            : "bg-industrial-50 hover:bg-industrial-100/80 border-industrial-200/60 text-industrial-900"
+                        )}
+                      >
+                        <div className="flex items-center gap-3">
+                          <div className="w-9 h-9 rounded-lg bg-accent-500 text-white flex items-center justify-center font-bold shadow-sm">
+                            <Package className="w-5 h-5" />
+                          </div>
+                          <div>
+                            <div className="text-sm font-bold leading-tight">All Products Catalogue</div>
+                            <div className={cn("text-xs", !isScrolled ? "text-[#9CA6B5]" : "text-industrial-500")}>Browse complete collection of roofing & building solutions</div>
+                          </div>
                         </div>
-                        <div>
-                          <div className={cn("text-sm font-bold", !isScrolled ? "text-white" : "text-industrial-900")}>All Products</div>
-                          <div className={cn("text-xs", !isScrolled ? "text-[#9CA6B5]" : "text-industrial-500")}>View complete catalog</div>
-                        </div>
-                      </Link>
-                      
-                      <div className={cn("h-px my-1 mx-2", !isScrolled ? "bg-white/10" : "bg-industrial-100")} />
-                      
-                      <Link to="/products/roofing" className={cn("flex items-center gap-3 p-3 rounded-xl transition-colors group", !isScrolled ? "hover:bg-white/5" : "hover:bg-industrial-50")}>
-                        <div className={cn("w-10 h-10 rounded-lg flex items-center justify-center transition-transform group-hover:scale-110", !isScrolled ? "bg-white/10 text-white" : "bg-blue-50 text-blue-600")}>
-                          <FolderPlus className="w-5 h-5" />
-                        </div>
-                        <div>
-                          <div className={cn("text-sm font-bold", !isScrolled ? "text-white" : "text-industrial-900")}>Roofing Sheets</div>
-                          <div className={cn("text-xs", !isScrolled ? "text-[#9CA6B5]" : "text-industrial-500")}>Metal & Polycarbonate</div>
-                        </div>
+                        <ArrowRight className="w-4 h-4 text-accent-500" />
                       </Link>
 
-                      <Link to="/products/structural" className={cn("flex items-center gap-3 p-3 rounded-xl transition-colors group", !isScrolled ? "hover:bg-white/5" : "hover:bg-industrial-50")}>
-                        <div className={cn("w-10 h-10 rounded-lg flex items-center justify-center transition-transform group-hover:scale-110", !isScrolled ? "bg-white/10 text-white" : "bg-orange-50 text-orange-600")}>
-                          <FileText className="w-5 h-5" />
-                        </div>
-                        <div>
-                          <div className={cn("text-sm font-bold", !isScrolled ? "text-white" : "text-industrial-900")}>Structural Steel</div>
-                          <div className={cn("text-xs", !isScrolled ? "text-[#9CA6B5]" : "text-industrial-500")}>Pipes, Tubes & TMT</div>
-                        </div>
-                      </Link>
-                      
-                      <Link to="/products/accessories" className={cn("flex items-center gap-3 p-3 rounded-xl transition-colors group", !isScrolled ? "hover:bg-white/5" : "hover:bg-industrial-50")}>
-                        <div className={cn("w-10 h-10 rounded-lg flex items-center justify-center transition-transform group-hover:scale-110", !isScrolled ? "bg-white/10 text-white" : "bg-green-50 text-green-600")}>
-                          <Settings className="w-5 h-5" />
-                        </div>
-                        <div>
-                          <div className={cn("text-sm font-bold", !isScrolled ? "text-white" : "text-industrial-900")}>Accessories</div>
-                          <div className={cn("text-xs", !isScrolled ? "text-[#9CA6B5]" : "text-industrial-500")}>Fasteners & Fittings</div>
-                        </div>
-                      </Link>
+                      {/* 2-Column Category Grid */}
+                      <div className="grid grid-cols-2 gap-1.5">
+                        {[
+                          { name: "Roofing Sheets", desc: "JSW, Tata, PUFF Panels", path: "/products/roofing-sheets", icon: Layers, color: "text-blue-500 bg-blue-500/10" },
+                          { name: "Steel Pipes", desc: "GI, MS & Apollo (Square & Round)", path: "/products/steel-pipes", icon: Hammer, color: "text-amber-500 bg-amber-500/10" },
+                          { name: "Polycarbonate", desc: "Multiwall, Compact & Embossed", path: "/products/polycarbonate-sheets", icon: Sun, color: "text-orange-500 bg-orange-500/10" },
+                          { name: "Thoranam Designs", desc: "Heritage PVC Eaves Borders", path: "/products/thoranam-designs", icon: Sparkles, color: "text-purple-500 bg-purple-500/10" },
+                          { name: "Thermal Insulation", desc: "XLPE Foam & Tar Felt Rolls", path: "/products/thermal-insulation", icon: ShieldCheck, color: "text-emerald-500 bg-emerald-500/10" },
+                          { name: "UPVC Rain Gutters", desc: "Aquastar 10ft Rainwater Systems", path: "/products/upvc-rain-gutters", icon: Droplets, color: "text-cyan-500 bg-cyan-500/10" },
+                          { name: "Accessories", desc: "Turbo Ventilators & Louvers", path: "/products/accessories", icon: Wind, color: "text-teal-500 bg-teal-500/10" }
+                        ].map((item) => {
+                          const Icon = item.icon;
+                          return (
+                            <Link
+                              key={item.path}
+                              to={item.path}
+                              onClick={() => setHoveredProduct(false)}
+                              className={cn(
+                                "flex items-start gap-2.5 p-2.5 rounded-xl transition-all group",
+                                !isScrolled ? "hover:bg-white/5" : "hover:bg-industrial-50"
+                              )}
+                            >
+                              <div className={cn("w-8 h-8 rounded-lg flex items-center justify-center shrink-0 mt-0.5 transition-transform group-hover:scale-110", item.color)}>
+                                <Icon className="w-4 h-4" />
+                              </div>
+                              <div className="min-w-0">
+                                <div className={cn("text-xs font-bold leading-tight group-hover:text-accent-500 transition-colors truncate", !isScrolled ? "text-white" : "text-industrial-900")}>
+                                  {item.name}
+                                </div>
+                                <div className={cn("text-[11px] truncate mt-0.5", !isScrolled ? "text-[#9CA6B5]" : "text-industrial-500")}>
+                                  {item.desc}
+                                </div>
+                              </div>
+                            </Link>
+                          );
+                        })}
+                      </div>
                     </div>
                   </motion.div>
                 )}

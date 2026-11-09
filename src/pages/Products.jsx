@@ -19,10 +19,26 @@ export function Products() {
   const [selectedBrand, setSelectedBrand] = useState('all');
   const [isFilterOpen, setIsFilterOpen] = useState(typeof window !== 'undefined' ? window.innerWidth >= 1024 : false);
 
+  // Normalize category aliases across the application
+  const normalizeCategory = (param) => {
+    if (!param || param === 'all') return 'all';
+    const p = param.toLowerCase();
+    if (p === 'roofing' || p === 'roofing-sheets') return 'roofing-sheets';
+    if (p === 'structural' || p === 'structural-steel' || p === 'mild-steel-pipes' || p === 'steel-pipes' || p === 'pipes') return 'steel-pipes';
+    if (p === 'polycarbonate' || p === 'polycarbonate-sheets' || p === 'polycarbonate-products') return 'polycarbonate-sheets';
+    if (p === 'frp' || p === 'frp-sheets' || p === 'frp-products') return 'frp-sheets';
+    if (p === 'gutters' || p === 'rainwater' || p === 'rainwater-management' || p === 'upvc-rain-gutters') return 'upvc-rain-gutters';
+    if (p === 'boards' || p === 'v-board' || p === 'fiber-cement-boards') return 'fiber-cement-boards';
+    if (p === 'insulation' || p === 'thermal-insulation' || p === 'tar-felt-roll' || p === 'paper-rolls') return 'thermal-insulation';
+    if (p === 'accessories' || p === 'roofing-accessories' || p === 'ventilation') return 'accessories';
+    if (p === 'thoranam' || p === 'thoranam-designs') return 'thoranam-designs';
+    return p;
+  };
+
   // Sync state with URL if it changes
   useEffect(() => {
     if (categoryParam) {
-      setSelectedCategory(categoryParam);
+      setSelectedCategory(normalizeCategory(categoryParam));
     } else {
       setSelectedCategory('all');
     }
@@ -39,7 +55,7 @@ export function Products() {
   const handleBrandChange = (brandId) => {
     setSelectedBrand(brandId);
     if (brandId !== 'all' && selectedCategory !== 'all') {
-      const activeCategoryName = categories.find(c => c.id === selectedCategory || ((selectedCategory === 'paper-rolls' || selectedCategory === 'tar-felt-roll') && c.id === 'thermal-insulation') || (selectedCategory === 'mild-steel-pipes' && c.id === 'steel-pipes'))?.name;
+      const activeCategoryName = categories.find(c => c.id === normalizeCategory(selectedCategory))?.name;
       const brandObj = brands.find(b => b.id === brandId);
       const targetBrandName = brandObj?.name?.toLowerCase();
       
@@ -68,7 +84,7 @@ export function Products() {
     return products.filter(product => {
       // Category filter
       if (selectedCategory !== 'all') {
-        const activeCategoryName = categories.find(c => c.id === selectedCategory || ((selectedCategory === 'paper-rolls' || selectedCategory === 'tar-felt-roll') && c.id === 'thermal-insulation') || (selectedCategory === 'mild-steel-pipes' && c.id === 'steel-pipes'))?.name;
+        const activeCategoryName = categories.find(c => c.id === normalizeCategory(selectedCategory))?.name;
         if (product.category !== activeCategoryName) {
           return false;
         }
