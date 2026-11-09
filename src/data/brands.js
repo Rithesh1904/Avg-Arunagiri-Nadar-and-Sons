@@ -1,7 +1,7 @@
 export const brands = [
   {
-    id: "tata-durashine",
-    name: "Tata Durashine",
+    id: "tata",
+    name: "TATA (Durashine)",
     logo: "/assets/brands/tata-durashine.svg"
   },
   {
@@ -10,38 +10,38 @@ export const brands = [
     logo: "/assets/brands/jsw.png"
   },
   {
+    id: "georoof",
+    name: "GEO Roof",
+    logo: "/assets/brands/georoof.png"
+  },
+  {
     id: "lotus",
     name: "Lotus",
     logo: "/assets/brands/lotus.png"
   },
   {
-    id: "aquastar",
-    name: "Aquastar",
-    logo: "/assets/brands/aquastar.png"
-  },
-  {
-    id: "vnext",
-    name: "Vnext",
-    logo: "/assets/brands/vnext.png"
-  },
-  {
-    id: "georoof",
-    name: "Georoof",
-    logo: "/assets/brands/georoof.png"
-  },
-  {
-    id: "gi-steel-pipe",
-    name: "GI Steel Pipe",
-    logo: "/assets/brands/gi-pipe.svg"
-  },
-  {
     id: "ms-steel-pipe",
-    name: "MS Steel Pipe",
+    name: "MS Pipe",
     logo: "/assets/brands/ms-pipe.svg"
   },
   {
+    id: "gi-steel-pipe",
+    name: "GI Pipe",
+    logo: "/assets/brands/gi-pipe.svg"
+  },
+  {
     id: "apollo-steel-pipe",
-    name: "Apollo Steel Pipe",
+    name: "Apollo Pipe",
     logo: "/assets/brands/apollo.svg"
+  },
+  {
+    id: "vnext",
+    name: "Visaka (Vnext)",
+    logo: "/assets/brands/vnext.png"
+  },
+  {
+    id: "aquastar",
+    name: "AquaStar",
+    logo: "/assets/brands/aquastar.png"
   }
 ];
