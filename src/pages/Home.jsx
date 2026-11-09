@@ -192,6 +192,8 @@ export function Home() {
                   <img 
                     src={brand.logo} 
                     alt={brand.name} 
+                    loading="lazy"
+                    decoding="async"
                     className="max-w-full max-h-full object-contain scale-110 md:scale-125 transition-transform duration-300 drop-shadow-sm group-hover/brand:drop-shadow-md group-hover/brand:scale-[1.35]"
                     onError={(e) => { 
                       e.target.style.display = 'none'; 
@@ -222,20 +224,22 @@ export function Home() {
           />
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {categories.map((category, idx) => (
+            {categories.map((category) => (
               <motion.div
                 key={category.id}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.35, delay: Math.min(idx * 0.05, 0.25) }}
-                className="group w-full overflow-hidden rounded-xl border border-industrial-200 bg-white shadow-sm transition-all duration-300 ease-in-out hover:shadow-lg hover:border-accent-500"
+                viewport={{ once: true, margin: "200px" }}
+                transition={{ duration: 0.3 }}
+                className="group w-full overflow-hidden rounded-xl border border-industrial-200 bg-white shadow-sm transition-all duration-300 ease-in-out hover:shadow-lg hover:border-accent-500 hover:-translate-y-1"
               >
                 <div className="flex flex-col h-full">
                   <div className="overflow-hidden aspect-[4/3] bg-industrial-50 relative flex items-center justify-center">
                     <img 
                       src={category.image} 
                       alt={category.name} 
+                      loading="lazy"
+                      decoding="async"
                       className="h-full w-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
                     />
                   </div>
@@ -382,10 +386,10 @@ export function Home() {
             {/* Left side text */}
             <div className="w-full lg:w-1/3">
               <motion.div
-                initial={{ opacity: 0, x: -30 }}
+                initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
+                viewport={{ once: true, margin: "150px" }}
+                transition={{ duration: 0.4 }}
               >
                 <div className="flex items-center gap-4 mb-6">
                   <div className="w-12 h-1 bg-accent-500 rounded-sm" />
@@ -414,10 +418,10 @@ export function Home() {
               ].map((feature, idx) => (
                 <motion.div
                   key={idx}
-                  initial={{ opacity: 0, y: 30 }}
+                  initial={{ opacity: 0, y: 15 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: idx * 0.15 }}
+                  viewport={{ once: true, margin: "150px" }}
+                  transition={{ duration: 0.35, delay: idx * 0.04 }}
                   className="group relative p-6 sm:p-8 rounded-2xl sm:rounded-3xl bg-industrial-900 border border-white/5 hover:border-accent-500/30 transition-all duration-500 hover:shadow-2xl hover:shadow-accent-500/10 overflow-hidden"
                 >
                   {/* Hover gradient background */}
@@ -464,6 +468,8 @@ export function Home() {
                     <img 
                       src={app.image} 
                       alt={app.title}
+                      loading="lazy"
+                      decoding="async"
                       className={cn(
                         "absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                       )}

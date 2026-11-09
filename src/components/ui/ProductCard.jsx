@@ -1,47 +1,16 @@
 import React from "react";
-import { motion } from "framer-motion";
 import { Tag, Building, Ruler } from "lucide-react";
 import { cn } from "../../lib/utils";
 import { Link } from "react-router-dom";
 
-// Animation variants for Framer Motion
-const cardVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.4,
-      ease: "easeInOut",
-    },
-  },
-};
-
-const textVariants = {
-  hidden: { opacity: 0, y: 10 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.3,
-      ease: "easeOut",
-    },
-  },
-};
-
 export const ProductCard = React.forwardRef(({ product, className, ...props }, ref) => {
   return (
-    <motion.div
+    <div
       ref={ref}
       className={cn(
-        "group w-full overflow-hidden rounded-xl border border-industrial-200 bg-white shadow-sm transition-all duration-300 ease-in-out hover:shadow-lg hover:border-accent-500",
+        "group w-full overflow-hidden rounded-xl border border-industrial-200 bg-white shadow-sm transition-all duration-300 ease-in-out hover:shadow-lg hover:border-accent-500 hover:-translate-y-1.5",
         className
       )}
-      variants={cardVariants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-50px" }}
-      whileHover={{ scale: 1.03, y: -5 }}
       {...props}
     >
       <div className="flex flex-col h-full">
@@ -50,6 +19,8 @@ export const ProductCard = React.forwardRef(({ product, className, ...props }, r
           <img
             src={product.image || `https://picsum.photos/seed/${product.id}/600/600`}
             alt={product.name}
+            loading="lazy"
+            decoding="async"
             className="h-full w-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
           />
         </div>
@@ -58,38 +29,20 @@ export const ProductCard = React.forwardRef(({ product, className, ...props }, r
         <div className="p-4 sm:p-5 flex flex-col flex-grow">
           <div className="min-h-0 sm:min-h-[50px] flex flex-col items-start gap-0.5 mb-1.5 sm:mb-2">
             {product.brand && (
-              <motion.div
-                variants={textVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                className="text-[11px] sm:text-xs font-bold tracking-wider text-accent-600 uppercase"
-              >
+              <div className="text-[11px] sm:text-xs font-bold tracking-wider text-accent-600 uppercase">
                 {product.brand}
-              </motion.div>
+              </div>
             )}
-            <motion.h3
-              variants={textVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              style={{ transitionDelay: '0.1s' }}
+            <h3
               className="text-base sm:text-lg font-semibold tracking-tight text-industrial-900 leading-snug w-full"
               title={product.name}
             >
               {product.name}
-            </motion.h3>
+            </h3>
           </div>
 
           <div className="flex flex-col gap-1.5 text-sm text-industrial-500 mb-2.5">
-            <motion.div
-              variants={textVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              style={{ transitionDelay: '0.2s' }}
-              className="flex flex-col gap-1.5 w-full"
-            >
+            <div className="flex flex-col gap-1.5 w-full">
               <div className="flex items-center gap-1.5 truncate">
                 <Tag className="h-4 w-4 shrink-0 text-accent-500" />
                 <span className="truncate text-xs font-medium">{product.category} {product.subcategory ? ` > ${product.subcategory}` : ''}</span>
@@ -111,7 +64,7 @@ export const ProductCard = React.forwardRef(({ product, className, ...props }, r
               <div className="text-xs text-industrial-500 mt-1 font-medium italic">
                 * Enquire for price & sizes
               </div>
-            </motion.div>
+            </div>
           </div>
           
           <div className="flex gap-2 w-full mt-auto pt-2">
@@ -132,7 +85,7 @@ export const ProductCard = React.forwardRef(({ product, className, ...props }, r
           </div>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 });
 

@@ -12,7 +12,7 @@ export function SmoothScroll() {
 
     // Professional, silky, highly-calibrated scroll configuration
     const lenis = new Lenis({
-      duration: 1.0, // Snappy & controlled: avoids endless floating while staying silky smooth
+      duration: 0.85, // Snappy & controlled: avoids endless floating while staying silky smooth
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Apple-like smooth exponential curve
       orientation: 'vertical',
       gestureOrientation: 'vertical',

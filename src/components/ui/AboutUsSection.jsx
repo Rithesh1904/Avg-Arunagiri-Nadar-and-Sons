@@ -23,8 +23,8 @@ export function AboutUsSection({ transparentBg = false, hideStats = false }) {
   const [isVisible, setIsVisible] = useState(false)
   const sectionRef = useRef(null)
   const statsRef = useRef(null)
-  const isInView = useInView(sectionRef, { once: false, amount: 0.1 })
-  const isStatsInView = useInView(statsRef, { once: false, amount: 0.3 })
+  const isInView = useInView(sectionRef, { once: true, margin: "100px" })
+  const isStatsInView = useInView(statsRef, { once: true, margin: "50px" })
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -45,18 +45,18 @@ export function AboutUsSection({ transparentBg = false, hideStats = false }) {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.3,
+        staggerChildren: 0.08,
+        delayChildren: 0.05,
       },
     },
   }
 
   const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
+    hidden: { y: 15, opacity: 0 },
     visible: {
       y: 0,
       opacity: 1,
-      transition: { duration: 0.6, ease: "easeOut" },
+      transition: { duration: 0.35, ease: "easeOut" },
     },
   }
 
