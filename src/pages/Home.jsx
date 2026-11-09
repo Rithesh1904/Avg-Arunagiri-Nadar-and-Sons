@@ -111,15 +111,15 @@ export function Home() {
               </div>
               <div className="min-w-0 flex-1">
                 <div className="text-[9px] sm:text-[11px] font-black uppercase tracking-wider text-emerald-600 flex items-center gap-1.5 mb-0.5">
-                  <span>DIRECT LOGISTICS</span>
+                  <span>SITE LOGISTICS</span>
                   <span className="w-1 h-1 rounded-full bg-emerald-500" />
-                  <span>FAST DISPATCH</span>
+                  <span>DIRECT DISPATCH</span>
                 </div>
                 <div className="text-xs sm:text-lg font-black text-industrial-900 tracking-tight leading-snug group-hover:text-emerald-600 transition-colors">
-                  Site Delivery by Lorry
+                  Lorry Service Available
                 </div>
                 <div className="text-[10px] sm:text-xs text-industrial-500 mt-0.5 sm:mt-1 leading-tight line-clamp-1 sm:line-clamp-none">
-                  Dedicated truck service straight to your construction site
+                  Dedicated truck delivery straight to your construction site
                 </div>
               </div>
               <ArrowRight size={16} className="text-industrial-300 group-hover:text-emerald-600 group-hover:translate-x-1 transition-all shrink-0 mt-2 hidden xl:block" />
@@ -137,13 +137,13 @@ export function Home() {
                 <div className="text-[9px] sm:text-[11px] font-black uppercase tracking-wider text-blue-600 flex items-center gap-1.5 mb-0.5">
                   <span>100% GENUINE</span>
                   <span className="w-1 h-1 rounded-full bg-blue-500" />
-                  <span>MILL TESTED</span>
+                  <span>CERTIFIED STOCK</span>
                 </div>
                 <div className="text-xs sm:text-lg font-black text-industrial-900 tracking-tight leading-snug group-hover:text-blue-600 transition-colors">
-                  Authorized Mill Stockist
+                  Authorized Stockist of Tata, JSW & Georoof
                 </div>
                 <div className="text-[10px] sm:text-xs text-industrial-500 mt-0.5 sm:mt-1 leading-tight line-clamp-1 sm:line-clamp-none">
-                  Direct mill supply: JSW, Tata, Apollo, Lotus & Aquastar
+                  Factory-certified roofing sheets, steel pipes & structural products
                 </div>
               </div>
               <ArrowRight size={16} className="text-industrial-300 group-hover:text-blue-600 group-hover:translate-x-1 transition-all shrink-0 mt-2 hidden xl:block" />
