@@ -39,7 +39,7 @@ export function Products() {
   const handleBrandChange = (brandId) => {
     setSelectedBrand(brandId);
     if (brandId !== 'all' && selectedCategory !== 'all') {
-      const activeCategoryName = categories.find(c => c.id === selectedCategory || (selectedCategory === 'paper-rolls' && c.id === 'tar-felt-roll') || (selectedCategory === 'mild-steel-pipes' && c.id === 'steel-pipes'))?.name;
+      const activeCategoryName = categories.find(c => c.id === selectedCategory || ((selectedCategory === 'paper-rolls' || selectedCategory === 'tar-felt-roll') && c.id === 'thermal-insulation') || (selectedCategory === 'mild-steel-pipes' && c.id === 'steel-pipes'))?.name;
       const brandObj = brands.find(b => b.id === brandId);
       const targetBrandName = brandObj?.name?.toLowerCase();
       
@@ -68,7 +68,7 @@ export function Products() {
     return products.filter(product => {
       // Category filter
       if (selectedCategory !== 'all') {
-        const activeCategoryName = categories.find(c => c.id === selectedCategory || (selectedCategory === 'paper-rolls' && c.id === 'tar-felt-roll') || (selectedCategory === 'mild-steel-pipes' && c.id === 'steel-pipes'))?.name;
+        const activeCategoryName = categories.find(c => c.id === selectedCategory || ((selectedCategory === 'paper-rolls' || selectedCategory === 'tar-felt-roll') && c.id === 'thermal-insulation') || (selectedCategory === 'mild-steel-pipes' && c.id === 'steel-pipes'))?.name;
         if (product.category !== activeCategoryName) {
           return false;
         }

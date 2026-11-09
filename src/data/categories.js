@@ -69,22 +69,14 @@ export const categories = [
     ]
   },
   {
-    id: "tar-felt-roll",
-    name: "Tar Felt Roll",
-    description: "Heavy-duty bituminous tar felt rolls for waterproofing, roofing underlayment, and damp-proofing.",
+    id: "thermal-insulation",
+    name: "Thermal Insulation & Tar Felt Roll",
+    description: "High-performance XLPE foam insulation rolls, reflective foil heat barriers, and heavy-duty bituminous tar felt rolls for under-roof heat protection, damp-proofing, and thermal comfort.",
     image: "/images/paperrolls.jpg",
     subcategories: [
-      "Tar Felt Roll"
-    ]
-  },
-  {
-    id: "thermal-insulation",
-    name: "Thermal Insulation",
-    description: "High-performance XLPE foam insulation rolls and reflective foil barriers for heat protection and under-roof thermal comfort.",
-    image: "/images/Silver Xlpe Foam Insulation.jpg",
-    subcategories: [
       "Silver XLPE Foam Insulation",
-      "Silver Foil Roll"
+      "Silver Foil Roll",
+      "Tar Felt Roll"
     ]
   },
 
