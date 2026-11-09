@@ -342,52 +342,6 @@ export const products = [
     "backDetails": "Silky Frosted Satin Matte Glare-Free Reverse Face"
   },
   {
-    "id": "polycarbonate-roll-textured",
-    "name": "Polycarbonate Textured Roll (Diamond / Raindrop / Frosted)",
-    "tallyName": "POLYCARBONATED SOLID SHEETS (TEXTURED)",
-    "category": "Polycarbonate Products",
-    "subcategory": "Solid Polycarbonate",
-    "brand": "Lotus",
-    "description": "Polycarbonate textured rolls in Raindrop, Diamond, Frosted, and Square patterns for decorative and privacy roofing applications.",
-    "image": "/images/polycarbonate-diamond-sheet.jpg",
-    "availableSizes": [
-      "4 ft × 2mm (Raindrop)",
-      "7 ft × 2mm (Raindrop)",
-      "4 ft × 2mm (Diamond)",
-      "7 ft × 2mm (Diamond)",
-      "4 ft × 3mm (Diamond)",
-      "7 ft × 3mm (Diamond)",
-      "4 ft × 2mm (Frosted)",
-      "7 ft × 2mm (Frosted)",
-      "4 ft × 2mm (Square)"
-    ],
-    "specifications": {
-      "thickness": [
-        "2 mm",
-        "3 mm"
-      ],
-      "width": [
-        "4 ft",
-        "7 ft"
-      ],
-      "textures": [
-        "Raindrop",
-        "Diamond",
-        "Frosted",
-        "Square"
-      ]
-    },
-    "applications": [
-      "Decorative Pergolas",
-      "Shower Enclosures",
-      "Partitions",
-      "Balcony Cladding"
-    ],
-    "featured": false,
-    "backImage": "/images/backside/polycarbonate-solid-back.jpg",
-    "backDetails": "Textured Pattern Reverse Translucent Face"
-  },
-  {
     "id": "uv-polycarbonate-sheet",
     "name": "UV Polycarbonate Sheet",
     "tallyName": "UV Polycarbonate Sheet",
