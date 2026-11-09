@@ -166,30 +166,30 @@ export function Home() {
           className="absolute inset-0 bg-[url('/images/contact-bg.jpg')] bg-cover bg-center opacity-60 pointer-events-none mix-blend-multiply"
         />
 
-        <div className="container mx-auto px-4 md:px-6 text-center mb-1.5 sm:mb-2 relative z-20">
-          <h3 className="inline-block px-3 sm:px-5 py-0.5 sm:py-1 bg-white/90 backdrop-blur-sm border border-industrial-200 rounded-full text-[9px] sm:text-xs font-bold text-industrial-800 tracking-[0.16em] sm:tracking-[0.2em] uppercase shadow-sm">
+        <div className="container mx-auto px-4 md:px-6 text-center mb-1.5 sm:mb-2.5 relative z-20">
+          <h3 className="inline-block px-3.5 sm:px-6 py-0.5 sm:py-1 bg-white/95 backdrop-blur-sm border border-industrial-200 rounded-full text-[9.5px] sm:text-xs font-black text-industrial-800 tracking-[0.18em] sm:tracking-[0.2em] uppercase shadow-sm">
             Authorized Stockist Of
           </h3>
         </div>
 
         <div className="relative flex overflow-x-hidden group mt-0.5 sm:mt-1 z-10">
           <motion.div
-            className="flex items-center gap-8 sm:gap-12 md:gap-16 whitespace-nowrap px-6 sm:px-8"
+            className="flex items-center gap-10 sm:gap-14 md:gap-18 whitespace-nowrap px-6 sm:px-8"
             animate={{ x: ["0%", "-50%"] }}
-            transition={{ ease: "linear", duration: 28, repeat: Infinity }}
+            transition={{ ease: "linear", duration: 30, repeat: Infinity }}
           >
             {[...brands, ...brands, ...brands, ...brands, ...brands].map((brand, idx) => (
               <div 
                 key={`${brand.id}-${idx}`} 
-                className="flex items-center justify-center px-2.5 sm:px-4 md:px-5 group/brand cursor-default"
+                className="flex items-center justify-center px-3 sm:px-4 md:px-5 group/brand cursor-default"
               >
-                <div className="w-20 h-9 sm:w-28 sm:h-12 md:w-36 md:h-14 flex items-center justify-center mix-blend-multiply hover:mix-blend-normal transition-all duration-300">
+                <div className="w-24 h-11 sm:w-32 sm:h-13 md:w-40 md:h-16 flex items-center justify-center mix-blend-multiply hover:mix-blend-normal transition-all duration-300">
                   <img 
                     src={brand.logo} 
                     alt={brand.name} 
                     loading="lazy"
                     decoding="async"
-                    className="max-w-full max-h-full object-contain scale-105 md:scale-115 transition-transform duration-300 drop-shadow-sm group-hover/brand:drop-shadow-md group-hover/brand:scale-[1.25]"
+                    className="max-w-full max-h-full object-contain scale-110 md:scale-120 transition-transform duration-300 drop-shadow-sm group-hover/brand:drop-shadow-md group-hover/brand:scale-[1.28]"
                     onError={(e) => { 
                       e.target.style.display = 'none'; 
                       e.target.nextSibling.style.display = 'block';
@@ -201,8 +201,8 @@ export function Home() {
             ))}
           </motion.div>
           {/* Gradient masks for smooth edges */}
-          <div className="absolute inset-y-0 left-0 w-10 sm:w-24 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
-          <div className="absolute inset-y-0 right-0 w-10 sm:w-24 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute inset-y-0 left-0 w-12 sm:w-28 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute inset-y-0 right-0 w-12 sm:w-28 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
         </div>
       </section>
 
