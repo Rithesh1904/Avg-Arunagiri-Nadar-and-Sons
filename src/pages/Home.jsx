@@ -179,19 +179,25 @@ export function Home() {
                     />
                   </div>
                   
-                  <div className="p-5 flex flex-col flex-grow">
-                    <div className="min-h-[50px] flex items-start mb-2">
+                  <div className="p-4 sm:p-5 flex flex-col flex-grow">
+                    <div className="min-h-0 md:min-h-[44px] flex flex-col justify-start mb-1">
                       <h3 className="text-lg font-semibold tracking-tight text-industrial-900 leading-snug w-full">
                         {category.name}
                       </h3>
                     </div>
 
-                    <div className="flex items-center gap-1.5 truncate text-industrial-500 mb-2.5">
-                      <Tag className="h-4 w-4 shrink-0 text-accent-500" />
+                    {category.description && (
+                      <p className="text-xs text-industrial-500 leading-relaxed line-clamp-2 mb-2">
+                        {category.description}
+                      </p>
+                    )}
+
+                    <div className="flex items-center gap-1.5 truncate text-industrial-500 mb-2">
+                      <Tag className="h-3.5 w-3.5 shrink-0 text-accent-500" />
                       <span className="truncate font-medium text-xs">Product Range &gt; {category.name}</span>
                     </div>
 
-                    <div className="min-h-[50px] flex flex-wrap content-start gap-1.5 mb-4">
+                    <div className="min-h-0 md:min-h-[42px] flex flex-wrap content-start gap-1.5 mb-3">
                       {category.subcategories && category.subcategories.length > 0 && (
                         <>
                           {category.subcategories.slice(0, 3).map((sub, sIdx) => (

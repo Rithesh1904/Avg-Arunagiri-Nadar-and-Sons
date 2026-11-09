@@ -55,15 +55,15 @@ export const ProductCard = React.forwardRef(({ product, className, ...props }, r
         </div>
 
         {/* Content Section */}
-        <div className="p-5 flex flex-col flex-grow">
-          <div className="min-h-[54px] flex flex-col items-start gap-1 mb-2">
+        <div className="p-4 sm:p-5 flex flex-col flex-grow">
+          <div className="min-h-0 sm:min-h-[50px] flex flex-col items-start gap-0.5 mb-1.5 sm:mb-2">
             {product.brand && (
               <motion.div
                 variants={textVariants}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                className="text-xs font-bold tracking-wider text-accent-600 uppercase"
+                className="text-[11px] sm:text-xs font-bold tracking-wider text-accent-600 uppercase"
               >
                 {product.brand}
               </motion.div>
@@ -81,7 +81,7 @@ export const ProductCard = React.forwardRef(({ product, className, ...props }, r
             </motion.h3>
           </div>
 
-          <div className="flex flex-col gap-1.5 text-sm text-industrial-500 mb-3">
+          <div className="flex flex-col gap-1.5 text-sm text-industrial-500 mb-2.5">
             <motion.div
               variants={textVariants}
               initial="hidden"
