@@ -1,8 +1,8 @@
 export const brands = [
   {
-    id: "durashine",
-    name: "Durashine",
-    logo: "/assets/brands/durashine.png"
+    id: "tata-durashine",
+    name: "Tata Durashine",
+    logo: "/assets/brands/tata-durashine.svg"
   },
   {
     id: "jsw",
@@ -30,8 +30,18 @@ export const brands = [
     logo: "/assets/brands/georoof.png"
   },
   {
-    id: "tata",
-    name: "Tata",
-    logo: "/assets/brands/tata.png"
+    id: "gi-steel-pipe",
+    name: "GI Steel Pipe",
+    logo: "/assets/brands/gi-pipe.svg"
+  },
+  {
+    id: "ms-steel-pipe",
+    name: "MS Steel Pipe",
+    logo: "/assets/brands/ms-pipe.svg"
+  },
+  {
+    id: "apollo-steel-pipe",
+    name: "Apollo Steel Pipe",
+    logo: "/assets/brands/apollo.svg"
   }
 ];

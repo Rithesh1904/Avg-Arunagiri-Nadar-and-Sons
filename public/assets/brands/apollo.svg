@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 80" width="100%" height="100%">
+  <rect width="240" height="80" fill="none"/>
+  <path d="M 20 56 L 40 24 L 50 24 L 30 56 Z" fill="#DC2626"/>
+  <path d="M 38 56 L 58 24 L 68 24 L 48 56 Z" fill="#0284C7"/>
+  <text x="76" y="44" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="900" fill="#0F172A" letter-spacing="1">APOLLO</text>
+  <text x="78" y="58" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="700" fill="#64748B" letter-spacing="3">STEEL PIPES</text>
+</svg>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 80" width="100%" height="100%">
+  <rect width="280" height="80" fill="none"/>
+  <text x="10" y="52" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="900" fill="#005696" letter-spacing="2">TATA</text>
+  <!-- Red roof icon -->
+  <path d="M 135 50 L 152 26 L 169 50 Z" fill="#DC2626"/>
+  <path d="M 142 50 L 152 35 L 162 50 Z" fill="#FFFFFF"/>
+  <!-- DURASHINE text -->
+  <text x="175" y="50" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="900" fill="#DC2626" letter-spacing="1">DURASHINE</text>
+</svg>

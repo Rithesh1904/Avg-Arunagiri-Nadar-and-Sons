@@ -65,11 +65,13 @@ export function Products() {
           prodBrand === targetBrandName ||
           (brandId === 'vnext' && (prodBrand === 'vnext' || prodBrand === 'visaka')) ||
           (brandId === 'georoof' && (prodBrand === 'georoof' || prodBrand === 'geo roof')) ||
-          (brandId === 'tata' && prodBrand.includes('tata')) ||
-          (brandId === 'durashine' && (prodBrand === 'durashine' || prodBrand.includes('durashine'))) ||
+          ((brandId === 'tata' || brandId === 'durashine' || brandId === 'tata-durashine') && (prodBrand.includes('tata') || prodBrand.includes('durashine'))) ||
           (brandId === 'jsw' && prodBrand.includes('jsw')) ||
           (brandId === 'lotus' && prodBrand.includes('lotus')) ||
-          (brandId === 'aquastar' && prodBrand.includes('aquastar'))
+          (brandId === 'aquastar' && prodBrand.includes('aquastar')) ||
+          (brandId === 'gi-steel-pipe' && (prodBrand.includes('gi steel') || prodBrand.includes('gi-steel'))) ||
+          (brandId === 'ms-steel-pipe' && (prodBrand.includes('ms steel') || prodBrand.includes('ms-steel'))) ||
+          ((brandId === 'apollo-steel-pipe' || brandId === 'appalo-steel-pipe') && (prodBrand.includes('apollo') || prodBrand.includes('appalo')))
         );
       });
       
@@ -102,11 +104,13 @@ export function Products() {
           pBrand === bId ||
           (bId === 'georoof' && (pBrand === 'georoof' || pBrand === 'geo roof')) ||
           (bId === 'vnext' && (pBrand === 'vnext' || pBrand === 'visaka')) ||
-          (bId === 'tata' && pBrand.includes('tata')) ||
-          (bId === 'durashine' && (pBrand === 'durashine' || pBrand.includes('durashine'))) ||
+          ((bId === 'tata' || bId === 'durashine' || bId === 'tata-durashine') && (pBrand.includes('tata') || pBrand.includes('durashine'))) ||
           (bId === 'jsw' && pBrand.includes('jsw')) ||
           (bId === 'lotus' && pBrand.includes('lotus')) ||
-          (bId === 'aquastar' && pBrand.includes('aquastar'));
+          (bId === 'aquastar' && pBrand.includes('aquastar')) ||
+          (bId === 'gi-steel-pipe' && (pBrand.includes('gi steel') || pBrand.includes('gi-steel') || pBrand === 'gi steel pipe')) ||
+          (bId === 'ms-steel-pipe' && (pBrand.includes('ms steel') || pBrand.includes('ms-steel') || pBrand === 'ms steel pipe')) ||
+          ((bId === 'apollo-steel-pipe' || bId === 'appalo-steel-pipe') && (pBrand.includes('apollo') || pBrand.includes('appalo')));
 
         if (!matchesBrand) {
           return false;

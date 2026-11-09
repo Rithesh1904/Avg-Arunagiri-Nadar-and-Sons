@@ -420,7 +420,7 @@ export const products = [
     "tallyName": "TATA 6 FT .47 MM 1830 MM",
     "category": "Roofing Sheets",
     "subcategory": "GI Color Coated Sheets",
-    "brand": "Tata",
+    "brand": "Tata Durashine",
     "description": "Authentic TATA 0.47 mm Color Coated Steel Roofing Sheets engineered for superior weather resistance and longevity.",
     "image": "/images/Sky Blue GI Color Coated Roofing Sheet.jpg",
     "availableSizes": [
@@ -468,7 +468,7 @@ export const products = [
     "tallyName": "TATA CRIMP 5+1",
     "category": "Roofing Sheets",
     "subcategory": "GI Color Coated Sheets",
-    "brand": "Tata",
+    "brand": "Tata Durashine",
     "description": "TATA pre-crimped curved bend sheet for corners, canopies, and arched roof profiles.",
     "image": "/images/Sky Blue GI Color Coated Roofing Sheet.jpg",
     "availableSizes": [
@@ -642,7 +642,7 @@ export const products = [
     "tallyName": "Tata 10ft Ridge",
     "category": "Roofing Sheets",
     "subcategory": "GI Color Coated Sheets",
-    "brand": "Tata",
+    "brand": "Tata Durashine",
     "description": "Heavy duty 10-foot TATA color coated ridge capping for pitched roofs and warehouse ridgelines.",
     "image": "/images/Sky Blue GI Color Coated Roofing Sheet.jpg",
     "availableSizes": [
@@ -920,7 +920,7 @@ export const products = [
     "tallyName": "GI Color Coated Sheets - Green",
     "category": "Roofing Sheets",
     "subcategory": "GI Color Coated Sheets",
-    "brand": "Durashine",
+    "brand": "Tata Durashine",
     "description": "Green GI Color Coated Trapezoidal Roofing Sheet, 0.45 mm thickness.",
     "image": "/images/Green GI Color Coated Roofing Sheet.jpg",
     "availableSizes": [
@@ -957,7 +957,7 @@ export const products = [
     "tallyName": "GI Color Coated Sheets - Sky Blue",
     "category": "Roofing Sheets",
     "subcategory": "GI Color Coated Sheets",
-    "brand": "Durashine",
+    "brand": "Tata Durashine",
     "description": "Sky Blue Corrugated Galvalume Steel Roofing Sheet.",
     "image": "/images/Sky Blue GI Color Coated Roofing Sheet.jpg",
     "availableSizes": [
@@ -1023,7 +1023,7 @@ export const products = [
     "tallyName": "GALVALUME TILE SHEET",
     "category": "Roof Tiles",
     "subcategory": "Bamboo Roof Tile",
-    "brand": "Tata",
+    "brand": "Generic",
     "description": "Kerala Bamboo style pressed galvalume steel roof tiles combining traditional Kerala aesthetics with contemporary weatherproofing.",
     "image": "/images/Bamboo Roof Tile.jpg",
     "availableSizes": [
@@ -1257,7 +1257,7 @@ export const products = [
     "tallyName": "GI Steel Pipe",
     "category": "Steel Pipes",
     "subcategory": "GI Steel Pipe (Square & Round)",
-    "brand": "Tata",
+    "brand": "GI Steel Pipe",
     "description": "Hot-Dip Galvanized Iron (GI) steel pipes engineered for maximum corrosion resistance and long structural lifespan. Available in both Square Hollow Section (SHS) and Circular Round Pipe profiles for roofing trusses, purlins, sheds, gates, and outdoor fabrication.",
     "image": "/images/Gp Square Pipe.jpg",
     "availableSizes": [
@@ -1301,7 +1301,7 @@ export const products = [
     "tallyName": "MS Steel Pipe",
     "category": "Steel Pipes",
     "subcategory": "MS Steel Pipe (Square & Round)",
-    "brand": "Tata",
+    "brand": "MS Steel Pipe",
     "description": "High-tensile Mild Steel (MS) hollow structural pipes manufactured from premium grade hot-rolled carbon steel coils. Available in both Square and Round cross-sections for industrial sheds, columns, heavy truss fabrication, and commercial building frames.",
     "image": "/images/Mild Steel Rectangular Pipe.jpg",
     "availableSizes": [
@@ -1346,7 +1346,7 @@ export const products = [
     "tallyName": "Apollo Steel Pipe",
     "category": "Steel Pipes",
     "subcategory": "Apollo Steel Pipe (Square & Round)",
-    "brand": "Tata",
+    "brand": "Apollo Steel Pipe",
     "description": "Certified APL Apollo structural hollow steel sections engineered with superior load-bearing capacity and precise wall gauge. Available in both Square Hollow Section and Round circular profiles for modern architectural and heavy-duty roofing projects.",
     "image": "/images/mildsteelpipes.jpg",
     "availableSizes": [
