@@ -17,7 +17,7 @@ export function Products() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState(categoryParam || 'all');
   const [selectedBrand, setSelectedBrand] = useState('all');
-  const [isFilterOpen, setIsFilterOpen] = useState(typeof window !== 'undefined' ? window.innerWidth >= 1024 : false);
+  const [isFilterOpen, setIsFilterOpen] = useState(true);
 
   // Normalize category aliases across the application
   const normalizeCategory = (param) => {
@@ -194,14 +194,14 @@ export function Products() {
 
           {/* Sidebar Filters */}
           <AnimatePresence>
-            {(isFilterOpen || window.innerWidth >= 1024) && (
+            {(isFilterOpen || (typeof window !== 'undefined' && window.innerWidth >= 1024)) && (
               <motion.aside
                 initial={{ height: 0, opacity: 0 }}
                 animate={{ height: 'auto', opacity: 1 }}
                 exit={{ height: 0, opacity: 0 }}
                 className={cn(
                   "lg:w-1/4 flex-shrink-0 lg:block overflow-hidden lg:overflow-visible",
-                  !isFilterOpen && "hidden"
+                  !isFilterOpen && "hidden lg:block"
                 )}
               >
                 <div className="bg-white/80 backdrop-blur-md p-6 rounded-lg shadow-sm border border-white/50 sticky top-24 space-y-8">
