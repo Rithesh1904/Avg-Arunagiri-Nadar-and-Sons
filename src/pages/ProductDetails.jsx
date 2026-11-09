@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { ArrowLeft, MessageCircle, Phone, CheckCircle2, Ruler, Layers, Sparkles } from 'lucide-react';
+import { ArrowLeft, MessageCircle, Phone, CheckCircle2, Ruler, Layers, Sparkles, Palette } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { products } from '../data/products';
 import { EmptyState } from '../components/ui/EmptyState';
@@ -157,12 +157,12 @@ export function ProductDetails() {
               </div>
             </div>
 
-            {/* 1. Thickness & Available Feet Sizes (Positioned directly under the product image on mobile) */}
-            {(thicknessList.length > 0 || (product.availableSizes && product.availableSizes.length > 0)) && (
-              <div className="mb-6 p-4 sm:p-5 bg-gradient-to-br from-industrial-50 to-white rounded-2xl border border-industrial-200/90 shadow-xs">
+            {/* 1. Unified Product Specifications Card */}
+            {(thicknessList.length > 0 || (product.availableSizes && product.availableSizes.length > 0) || product.specifications) && (
+              <div className="mb-6 p-4 sm:p-5 bg-gradient-to-br from-industrial-50 to-white rounded-2xl border border-industrial-200/90 shadow-xs space-y-4">
                 {/* Available Thickness Row */}
                 {thicknessList.length > 0 && (
-                  <div className={cn("pb-3.5", product.availableSizes?.length > 0 && "mb-4 border-b border-industrial-200/80")}>
+                  <div>
                     <div className="flex items-center justify-between gap-2 mb-2">
                       <div className="flex items-center gap-1.5 text-xs font-bold text-industrial-800 uppercase tracking-wide">
                         <Layers size={15} className="text-amber-600" />
@@ -187,7 +187,7 @@ export function ProductDetails() {
 
                 {/* Available Feet Sizes Selector */}
                 {product.availableSizes && product.availableSizes.length > 0 && (
-                  <div>
+                  <div className={thicknessList.length > 0 ? "pt-3.5 border-t border-industrial-200/80" : ""}>
                     <div className="flex items-center justify-between gap-2 mb-2">
                       <div className="flex items-center gap-1.5 text-xs font-bold text-industrial-800 uppercase tracking-wide">
                         <Ruler size={16} className="text-accent-600" />
@@ -230,6 +230,57 @@ export function ProductDetails() {
                         <span>Selected Size: <strong className="text-industrial-900 font-bold">{selectedSize}</strong> (included in your WhatsApp quote)</span>
                       </div>
                     )}
+                  </div>
+                )}
+
+                {/* Standard Width (if available) */}
+                {product.specifications?.width && (
+                  <div className="pt-3.5 border-t border-industrial-200/80 flex items-center justify-between text-xs">
+                    <span className="font-bold text-industrial-800 uppercase tracking-wide">Standard Width:</span>
+                    <span className="font-semibold text-industrial-900 bg-white px-3 py-1 rounded-md border border-industrial-200">
+                      {product.specifications.width.join(', ')}
+                    </span>
+                  </div>
+                )}
+
+                {/* Available Colors Row */}
+                {product.specifications?.colors && product.specifications.colors.length > 0 && (
+                  <div className="pt-3.5 border-t border-industrial-200/80">
+                    <div className="flex items-center justify-between gap-2 mb-2">
+                      <div className="flex items-center gap-1.5 text-xs font-bold text-industrial-800 uppercase tracking-wide">
+                        <Palette size={15} className="text-blue-600" />
+                        <span>Available Colors:</span>
+                      </div>
+                      <span className="text-[11px] font-semibold text-industrial-500">
+                        {product.specifications.colors.length} Shades
+                      </span>
+                    </div>
+                    
+                    <div className="container-items pt-1 pb-2 px-1">
+                      {product.specifications.colors.map(color => {
+                        const colorMap = {
+                          "Blue": "#3b82f6",
+                          "Red": "#e11d48",
+                          "Green": "#10b981",
+                          "White": "#f8fafc",
+                          "Clear": "#e2e8f0", 
+                          "Bronze": "#b45309",
+                          "Grey": "#64748b",
+                          "Brown": "#78350f"
+                        };
+                        const hex = colorMap[color] || "#0ea5e9";
+                        
+                        return (
+                          <button
+                            key={color}
+                            className="item-color"
+                            style={{ "--color": hex }}
+                            aria-color={color}
+                            title={color}
+                          ></button>
+                        );
+                      })}
+                    </div>
                   </div>
                 )}
               </div>
@@ -286,56 +337,6 @@ export function ProductDetails() {
                 Call Now
               </a>
             </div>
-
-            {/* 5. Specifications & Available Colors */}
-            {product.specifications && (
-              <div className="mb-8">
-                <h3 className="text-base sm:text-lg font-bold text-industrial-900 mb-3 border-b border-industrial-100 pb-2">Technical Specifications</h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {Object.entries(product.specifications).map(([key, value]) => {
-                    if (key === 'colors' || !value || value.length === 0) return null;
-                    const formattedKey = key.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase());
-                    return (
-                      <div key={key} className="bg-industrial-50 p-3.5 rounded-lg border border-industrial-100">
-                        <span className="block text-[11px] font-semibold text-industrial-500 uppercase tracking-wider mb-0.5">{formattedKey}</span>
-                        <span className="text-industrial-900 font-medium text-xs sm:text-sm">{value.join(', ')}</span>
-                      </div>
-                    );
-                  })}
-                  {product.specifications.colors?.length > 0 && (
-                    <div className="bg-industrial-50 p-3.5 rounded-lg border border-industrial-100 sm:col-span-2">
-                      <span className="block text-[11px] font-semibold text-industrial-500 uppercase tracking-wider mb-3">Available Colors</span>
-                      
-                      <div className="container-items pt-2 pb-4 px-2">
-                        {product.specifications.colors.map(color => {
-                          const colorMap = {
-                            "Blue": "#3b82f6",
-                            "Red": "#e11d48",
-                            "Green": "#10b981",
-                            "White": "#f8fafc",
-                            "Clear": "#e2e8f0", 
-                            "Bronze": "#b45309",
-                            "Grey": "#64748b",
-                            "Brown": "#78350f"
-                          };
-                          const hex = colorMap[color] || "#0ea5e9";
-                          
-                          return (
-                            <button
-                              key={color}
-                              className="item-color"
-                              style={{ "--color": hex }}
-                              aria-color={color}
-                              title={color}
-                            ></button>
-                          );
-                        })}
-                      </div>
-                    </div>
-                  )}
-                </div>
-              </div>
-            )}
 
             {/* Mobile Only: Quick Highlights at bottom */}
             <div className="lg:hidden mt-4">
