@@ -2,7 +2,7 @@ export const brands = [
   {
     id: "tata",
     name: "TATA (Durashine)",
-    logo: "/assets/brands/tata-durashine.svg"
+    logo: "/assets/brands/tata.png"
   },
   {
     id: "jsw",
