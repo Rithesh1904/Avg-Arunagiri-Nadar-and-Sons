@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { motion } from 'framer-motion';
 import { cn } from '../../lib/utils';
 
 const MasonryGrid = React.forwardRef(
@@ -10,31 +9,12 @@ const MasonryGrid = React.forwardRef(
       columnGap: `${gap * 0.25}rem`, // Converts gap unit to rem
     };
 
-    // Animation variants for child elements
-    const cardVariants = {
-      hidden: { opacity: 0, y: 20 },
-      visible: {
-        opacity: 1,
-        y: 0,
-        transition: {
-          duration: 0.5,
-          ease: "easeOut",
-        },
-      },
-    };
-
     return (
       <div ref={ref} style={style} className={cn('w-full', className)} {...props}>
         {React.Children.map(children, (child) => (
-          <motion.div
-            className="mb-4 break-inside-avoid" // Prevents items from breaking across columns
-            variants={cardVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }} // Animate when 20% of the item is visible
-          >
+          <div className="mb-4 break-inside-avoid transition-all duration-300">
             {child}
-          </motion.div>
+          </div>
         ))}
       </div>
     );

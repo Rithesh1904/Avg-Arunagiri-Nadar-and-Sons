@@ -30,6 +30,42 @@ export function Gallery() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  // Prevent Lenis smooth-scroll from capturing wheel events inside modal & lock body scroll
+  React.useEffect(() => {
+    if (selectedProject || activePhoto) {
+      document.body.style.overflow = 'hidden';
+      if (window.lenis) {
+        window.lenis.stop();
+      }
+    } else {
+      document.body.style.overflow = '';
+      if (window.lenis) {
+        window.lenis.start();
+      }
+    }
+    return () => {
+      document.body.style.overflow = '';
+      if (window.lenis) {
+        window.lenis.start();
+      }
+    };
+  }, [selectedProject, activePhoto]);
+
+  // Support Escape key to close modal on laptop/desktop
+  React.useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        if (activePhoto) {
+          setActivePhoto(null);
+        } else if (selectedProject) {
+          setSelectedProject(null);
+        }
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [activePhoto, selectedProject]);
+
   // Extract unique applications
   const categories = ['All', ...new Set(gallery.map(item => item.application))];
   
@@ -154,22 +190,33 @@ export function Gallery() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex flex-col bg-black/95 backdrop-blur-md overflow-y-auto"
+            data-lenis-prevent
+            className="fixed inset-0 z-50 flex flex-col bg-black/95 backdrop-blur-md overflow-y-auto overscroll-contain"
+            style={{ overscrollBehavior: 'contain', WebkitOverflowScrolling: 'touch' }}
           >
             {/* Modal Controls */}
-            <div className="sticky top-0 right-0 p-4 md:p-6 flex justify-between items-center z-[60] bg-gradient-to-b from-black/90 via-black/70 to-transparent">
-              <div className="text-left">
-                <span className="text-xs uppercase font-bold tracking-widest text-accent-400">
-                  {selectedProject.application} Applications
-                </span>
-                <h3 className="text-white font-semibold text-lg line-clamp-1">{selectedProject.title}</h3>
+            <div className="sticky top-0 left-0 right-0 p-4 md:p-6 flex justify-between items-center z-[60] bg-black/85 backdrop-blur-md border-b border-white/10">
+              <div className="text-left flex items-center gap-3">
+                <button
+                  onClick={() => setSelectedProject(null)}
+                  className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-white bg-white/10 hover:bg-white/20 px-3.5 py-2 rounded-full transition-all border border-white/10 shadow-sm"
+                >
+                  ← Back to Gallery
+                </button>
+                <div className="hidden sm:block h-5 w-px bg-white/20" />
+                <div className="hidden sm:block">
+                  <span className="text-[11px] uppercase font-bold tracking-widest text-accent-400 block">
+                    {selectedProject.application} Applications
+                  </span>
+                  <h3 className="text-white font-semibold text-sm line-clamp-1">{selectedProject.title}</h3>
+                </div>
               </div>
               <button 
                 onClick={() => setSelectedProject(null)}
                 aria-label="Close modal"
-                className="text-white hover:text-accent-400 transition-colors bg-white/10 hover:bg-white/20 rounded-full p-2.5 backdrop-blur-sm"
+                className="text-white hover:text-accent-400 transition-colors bg-white/10 hover:bg-white/20 rounded-full p-2.5 backdrop-blur-sm border border-white/10"
               >
-                <X size={26} />
+                <X size={22} />
               </button>
             </div>
             
@@ -260,6 +307,7 @@ export function Gallery() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setActivePhoto(null)}
+            data-lenis-prevent
             className="fixed inset-0 z-[70] flex items-center justify-center bg-black/95 p-4 cursor-zoom-out"
           >
             <button 
