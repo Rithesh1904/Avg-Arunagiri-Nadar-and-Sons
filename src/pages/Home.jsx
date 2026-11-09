@@ -36,10 +36,10 @@ export function Home() {
 
   return (
     <div className="flex flex-col w-full">
-      {/* 1. Hero Section - Calibrated to show video, shop nameboard, 54+ legacy box, and brand marquee on initial load */}
-      <section className="relative w-full h-[46vh] min-h-[320px] sm:h-[50vh] sm:min-h-[360px] md:h-[54vh] md:min-h-[420px] lg:h-[52vh] flex items-center bg-black overflow-hidden">
+      {/* 1. Hero Section - Calibrated for both laptop and mobile views */}
+      <section className="relative w-full h-[44vh] min-h-[300px] sm:h-[48vh] sm:min-h-[360px] md:h-[52vh] md:min-h-[400px] lg:h-[50vh] flex items-center bg-black overflow-hidden">
         <div className="absolute inset-0 z-0 flex items-center justify-center overflow-hidden">
-          {/* Natural video container with no artificial top crop - shop nameboard fully visible */}
+          {/* Centered video container showcasing the shop nameboard cleanly across all viewports */}
           <div className="absolute inset-0 w-full h-full">
             <video
               ref={videoRef}
@@ -53,7 +53,7 @@ export function Home() {
               }}
               onEnded={() => setShowSlide(true)}
               className={cn(
-                "absolute inset-0 w-full h-full object-cover object-[15%_center] md:object-center transition-all duration-1000 ease-in-out",
+                "absolute inset-0 w-full h-full object-cover object-center transition-all duration-1000 ease-in-out",
                 showSlide ? "opacity-0 scale-95" : "opacity-100 scale-100"
               )}
             >
@@ -64,7 +64,7 @@ export function Home() {
               src="/assets/bk1.png"
               alt="AVG Banner Slide"
               className={cn(
-                "absolute inset-0 w-full h-full object-cover object-[15%_center] md:object-center transition-all duration-1000 ease-in-out",
+                "absolute inset-0 w-full h-full object-cover object-center transition-all duration-1000 ease-in-out",
                 showSlide ? "opacity-100 scale-100" : "opacity-0 scale-110 pointer-events-none"
               )}
             />
@@ -72,18 +72,18 @@ export function Home() {
         </div>
       </section>
 
-      {/* 1.5 Floating Luxury Trust & Logistics Highlights Bar - Compact on Mobile, Balanced on Desktop */}
-      <section className="relative z-30 -mt-6 sm:-mt-8 md:-mt-10 container mx-auto px-3 sm:px-4 md:px-6 max-w-6xl">
+      {/* 1.5 Floating Luxury Trust & Logistics Highlights Bar - Ultra-compact on mobile, elegant on laptop */}
+      <section className="relative z-30 -mt-5 sm:-mt-8 md:-mt-10 container mx-auto px-2.5 sm:px-4 md:px-6 max-w-6xl">
         <div className="bg-white/95 backdrop-blur-xl rounded-xl sm:rounded-2xl shadow-[0_16px_40px_-10px_rgba(0,0,0,0.16)] border border-industrial-100 p-2 sm:p-4 md:p-5 transition-all duration-300">
           <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-industrial-100">
             
             {/* Feature 1: Heritage & Trust */}
             <Link 
               to="/about"
-              className="group flex items-center sm:items-start gap-2.5 sm:gap-4 p-2 sm:p-3 md:p-3.5 hover:bg-industrial-50/80 rounded-lg sm:rounded-xl transition-all duration-300"
+              className="group flex items-center sm:items-start gap-2.5 sm:gap-4 p-1.5 sm:p-3 md:p-3.5 hover:bg-industrial-50/80 rounded-lg sm:rounded-xl transition-all duration-300"
             >
-              <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-amber-500/10 border border-amber-500/25 flex items-center justify-center text-amber-600 shadow-sm shrink-0 group-hover:scale-105 group-hover:bg-amber-500/20 transition-all">
-                <Award className="w-4 h-4 sm:w-5 sm:h-5 text-amber-600" />
+              <div className="w-7 h-7 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-amber-500/10 border border-amber-500/25 flex items-center justify-center text-amber-600 shadow-sm shrink-0 group-hover:scale-105 group-hover:bg-amber-500/20 transition-all">
+                <Award className="w-3.5 h-3.5 sm:w-5 sm:h-5 text-amber-600" />
               </div>
               <div className="min-w-0 flex-1">
                 <div className="text-[9px] sm:text-[11px] font-black uppercase tracking-wider text-amber-600 flex items-center gap-1.5 mb-0.5">
@@ -106,10 +106,10 @@ export function Home() {
               href="https://wa.me/919842874256?text=Hello%20A.V.G.%20Arunagiri%20Nadar%20Sons%2C%20I%20would%20like%20to%20enquire%20about%20direct%20site%20lorry%20transportation%20and%20delivery."
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center sm:items-start gap-2.5 sm:gap-4 p-2 sm:p-3 md:p-3.5 hover:bg-industrial-50/80 rounded-lg sm:rounded-xl transition-all duration-300"
+              className="group flex items-center sm:items-start gap-2.5 sm:gap-4 p-1.5 sm:p-3 md:p-3.5 hover:bg-industrial-50/80 rounded-lg sm:rounded-xl transition-all duration-300"
             >
-              <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-emerald-500/10 border border-emerald-500/25 flex items-center justify-center text-emerald-600 shadow-sm shrink-0 group-hover:scale-105 group-hover:bg-emerald-500/20 transition-all">
-                <Truck className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-600" />
+              <div className="w-7 h-7 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-emerald-500/10 border border-emerald-500/25 flex items-center justify-center text-emerald-600 shadow-sm shrink-0 group-hover:scale-105 group-hover:bg-emerald-500/20 transition-all">
+                <Truck className="w-3.5 h-3.5 sm:w-5 sm:h-5 text-emerald-600" />
               </div>
               <div className="min-w-0 flex-1">
                 <div className="text-[9px] sm:text-[11px] font-black uppercase tracking-wider text-emerald-600 flex items-center gap-1.5 mb-0.5">
@@ -130,10 +130,10 @@ export function Home() {
             {/* Feature 3: Statewide Network & Certified Mill Stock */}
             <Link 
               to="/quote"
-              className="group flex items-center sm:items-start gap-2.5 sm:gap-4 p-2 sm:p-3 md:p-3.5 hover:bg-industrial-50/80 rounded-lg sm:rounded-xl transition-all duration-300"
+              className="group flex items-center sm:items-start gap-2.5 sm:gap-4 p-1.5 sm:p-3 md:p-3.5 hover:bg-industrial-50/80 rounded-lg sm:rounded-xl transition-all duration-300"
             >
-              <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-blue-500/10 border border-blue-500/25 flex items-center justify-center text-blue-600 shadow-sm shrink-0 group-hover:scale-105 group-hover:bg-blue-500/20 transition-all">
-                <ShieldCheck className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600" />
+              <div className="w-7 h-7 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-blue-500/10 border border-blue-500/25 flex items-center justify-center text-blue-600 shadow-sm shrink-0 group-hover:scale-105 group-hover:bg-blue-500/20 transition-all">
+                <ShieldCheck className="w-3.5 h-3.5 sm:w-5 sm:h-5 text-blue-600" />
               </div>
               <div className="min-w-0 flex-1">
                 <div className="text-[9px] sm:text-[11px] font-black uppercase tracking-wider text-blue-600 flex items-center gap-1.5 mb-0.5">
@@ -156,13 +156,13 @@ export function Home() {
       </section>
 
       {/* 2. Brands Marquee - Visible on Initial Front Page Load */}
-      <section className="pt-4 sm:pt-6 md:pt-8 pb-3 sm:pb-6 border-b border-industrial-200 overflow-hidden relative bg-industrial-50">
+      <section className="pt-3 sm:pt-6 md:pt-8 pb-3 sm:pb-6 border-b border-industrial-200 overflow-hidden relative bg-industrial-50">
         {/* Premium subtle background image */}
         <div 
           className="absolute inset-0 bg-[url('/images/contact-bg.jpg')] bg-cover bg-center opacity-60 pointer-events-none mix-blend-multiply"
         />
 
-        <div className="container mx-auto px-4 md:px-6 text-center mb-1.5 sm:mb-3 relative z-20">
+        <div className="container mx-auto px-4 md:px-6 text-center mb-1 sm:mb-3 relative z-20">
           <h3 className="inline-block px-4 sm:px-6 py-1 sm:py-1.5 bg-white/90 backdrop-blur-sm border border-industrial-200 rounded-full text-[10px] sm:text-xs font-bold text-industrial-800 tracking-[0.18em] sm:tracking-[0.2em] uppercase shadow-sm">
             Authorized Stockist Of
           </h3>
