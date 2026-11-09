@@ -77,19 +77,19 @@ export function Home() {
 
 
       {/* 2. Brands Marquee */}
-      <section className="py-8 border-y border-industrial-200 overflow-hidden relative bg-industrial-50">
+      <section className="py-4 sm:py-8 border-y border-industrial-200 overflow-hidden relative bg-industrial-50">
         {/* Premium subtle background image */}
         <div 
           className="absolute inset-0 bg-[url('/images/contact-bg.jpg')] bg-cover bg-center opacity-60 pointer-events-none mix-blend-multiply"
         />
 
-        <div className="container mx-auto px-4 md:px-6 text-center mb-6 relative z-20">
-          <h3 className="inline-block px-8 py-2 bg-white/90 backdrop-blur-sm border border-industrial-200 rounded-full text-xs font-bold text-industrial-800 tracking-[0.2em] uppercase shadow-sm">
+        <div className="container mx-auto px-4 md:px-6 text-center mb-3 sm:mb-6 relative z-20">
+          <h3 className="inline-block px-6 sm:px-8 py-1.5 sm:py-2 bg-white/90 backdrop-blur-sm border border-industrial-200 rounded-full text-xs font-bold text-industrial-800 tracking-[0.2em] uppercase shadow-sm">
             Authorized Stockist Of
           </h3>
         </div>
 
-        <div className="relative flex overflow-x-hidden group mt-2 z-10">
+        <div className="relative flex overflow-x-hidden group mt-1 sm:mt-2 z-10">
           <motion.div
             className="flex items-center gap-12 md:gap-20 whitespace-nowrap px-8"
             animate={{ x: ["0%", "-50%"] }}
@@ -122,7 +122,7 @@ export function Home() {
       </section>
 
       {/* 3. Product Categories */}
-      <section className="py-20 border-y border-industrial-100 relative z-0">
+      <section className="pt-4 pb-12 sm:pt-10 sm:pb-16 md:py-20 border-y border-industrial-100 relative z-0">
         <div 
           className="absolute inset-0 -z-10 bg-[url('/images/productbk1.jpg')] bg-cover bg-center bg-fixed opacity-[0.08]"
         />
@@ -133,14 +133,14 @@ export function Home() {
             center
           />
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {categories.map((category, idx) => (
               <motion.div
                 key={category.id}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                transition={{ duration: 0.35, delay: Math.min(idx * 0.05, 0.25) }}
                 className="group w-full overflow-hidden rounded-xl border border-industrial-200 bg-white shadow-sm transition-all duration-300 ease-in-out hover:shadow-lg hover:border-accent-500"
               >
                 <div className="flex flex-col h-full">
