@@ -36,19 +36,24 @@ export function Home() {
 
   return (
     <div className="flex flex-col w-full">
-      {/* 1. Hero Section - Full video fitted on mobile, cinematic cover on laptop */}
-      <section className="relative w-full h-[52vh] min-h-[380px] sm:h-[60vh] sm:min-h-[440px] md:h-[82vh] md:min-h-[600px] flex items-center bg-black overflow-hidden">
+      {/* 1. Hero Section - Calibrated to show video, shop nameboard, 54+ legacy box, and brand marquee on initial load */}
+      <section className="relative w-full h-[46vh] min-h-[320px] sm:h-[50vh] sm:min-h-[360px] md:h-[54vh] md:min-h-[420px] lg:h-[52vh] flex items-center bg-black overflow-hidden">
         <div className="absolute inset-0 z-0 flex items-center justify-center overflow-hidden">
-          {/* On mobile: un-shifted full frame; On laptop: shifted to crop faux top bar */}
-          <div className="absolute top-0 md:-top-[115px] left-0 right-0 w-full h-full md:h-[calc(100%+115px)]">
+          {/* Natural video container with no artificial top crop - shop nameboard fully visible */}
+          <div className="absolute inset-0 w-full h-full">
             <video
               ref={videoRef}
               autoPlay
               muted
               playsInline
+              onTimeUpdate={(e) => {
+                if (e.currentTarget.currentTime >= 7.0) {
+                  setShowSlide(true);
+                }
+              }}
               onEnded={() => setShowSlide(true)}
               className={cn(
-                "absolute inset-0 w-full h-full object-contain md:object-cover object-center md:object-center transition-all duration-1000 ease-in-out",
+                "absolute inset-0 w-full h-full object-cover object-[15%_center] md:object-center transition-all duration-1000 ease-in-out",
                 showSlide ? "opacity-0 scale-95" : "opacity-100 scale-100"
               )}
             >
@@ -59,7 +64,7 @@ export function Home() {
               src="/assets/bk1.png"
               alt="AVG Banner Slide"
               className={cn(
-                "absolute inset-0 w-full h-full object-contain md:object-cover object-center md:object-center transition-all duration-1000 ease-in-out",
+                "absolute inset-0 w-full h-full object-cover object-[15%_center] md:object-center transition-all duration-1000 ease-in-out",
                 showSlide ? "opacity-100 scale-100" : "opacity-0 scale-110 pointer-events-none"
               )}
             />
@@ -67,18 +72,18 @@ export function Home() {
         </div>
       </section>
 
-      {/* 1.5 Floating Luxury Trust & Logistics Highlights Bar - Compact on Mobile, Spacious on Desktop */}
-      <section className="relative z-30 -mt-8 sm:-mt-12 md:-mt-16 container mx-auto px-3 sm:px-4 md:px-6 max-w-6xl">
-        <div className="bg-white/95 backdrop-blur-xl rounded-xl sm:rounded-3xl shadow-[0_16px_40px_-10px_rgba(0,0,0,0.16)] border border-industrial-100 p-2 sm:p-5 md:p-6 transition-all duration-300">
+      {/* 1.5 Floating Luxury Trust & Logistics Highlights Bar - Compact on Mobile, Balanced on Desktop */}
+      <section className="relative z-30 -mt-6 sm:-mt-8 md:-mt-10 container mx-auto px-3 sm:px-4 md:px-6 max-w-6xl">
+        <div className="bg-white/95 backdrop-blur-xl rounded-xl sm:rounded-2xl shadow-[0_16px_40px_-10px_rgba(0,0,0,0.16)] border border-industrial-100 p-2 sm:p-4 md:p-5 transition-all duration-300">
           <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-industrial-100">
             
             {/* Feature 1: Heritage & Trust */}
             <Link 
               to="/about"
-              className="group flex items-center sm:items-start gap-2.5 sm:gap-4 p-2 sm:p-4 hover:bg-industrial-50/80 rounded-lg sm:rounded-xl transition-all duration-300"
+              className="group flex items-center sm:items-start gap-2.5 sm:gap-4 p-2 sm:p-3 md:p-3.5 hover:bg-industrial-50/80 rounded-lg sm:rounded-xl transition-all duration-300"
             >
-              <div className="w-8 h-8 sm:w-12 sm:h-12 rounded-lg sm:rounded-2xl bg-amber-500/10 border border-amber-500/25 flex items-center justify-center text-amber-600 shadow-sm shrink-0 group-hover:scale-105 group-hover:bg-amber-500/20 transition-all">
-                <Award className="w-4 h-4 sm:w-6 sm:h-6 text-amber-600" />
+              <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-amber-500/10 border border-amber-500/25 flex items-center justify-center text-amber-600 shadow-sm shrink-0 group-hover:scale-105 group-hover:bg-amber-500/20 transition-all">
+                <Award className="w-4 h-4 sm:w-5 sm:h-5 text-amber-600" />
               </div>
               <div className="min-w-0 flex-1">
                 <div className="text-[9px] sm:text-[11px] font-black uppercase tracking-wider text-amber-600 flex items-center gap-1.5 mb-0.5">
@@ -86,14 +91,14 @@ export function Home() {
                   <span className="w-1 h-1 rounded-full bg-amber-500" />
                   <span>54+ YEARS</span>
                 </div>
-                <div className="text-xs sm:text-lg font-black text-industrial-900 tracking-tight leading-snug group-hover:text-amber-600 transition-colors">
+                <div className="text-xs sm:text-base md:text-lg font-black text-industrial-900 tracking-tight leading-snug group-hover:text-amber-600 transition-colors">
                   54+ Years of Legacy
                 </div>
-                <div className="text-[10px] sm:text-xs text-industrial-500 mt-0.5 sm:mt-1 leading-tight line-clamp-1 sm:line-clamp-none">
+                <div className="text-[10px] sm:text-xs text-industrial-500 mt-0.5 leading-tight line-clamp-1 sm:line-clamp-none">
                   Tamil Nadu’s most trusted roofing & steel landmark
                 </div>
               </div>
-              <ArrowRight size={16} className="text-industrial-300 group-hover:text-amber-600 group-hover:translate-x-1 transition-all shrink-0 mt-2 hidden xl:block" />
+              <ArrowRight size={16} className="text-industrial-300 group-hover:text-amber-600 group-hover:translate-x-1 transition-all shrink-0 mt-1 hidden xl:block" />
             </Link>
 
             {/* Feature 2: Lorry Transport & Site Delivery */}
@@ -101,10 +106,10 @@ export function Home() {
               href="https://wa.me/919842874256?text=Hello%20A.V.G.%20Arunagiri%20Nadar%20Sons%2C%20I%20would%20like%20to%20enquire%20about%20direct%20site%20lorry%20transportation%20and%20delivery."
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center sm:items-start gap-2.5 sm:gap-4 p-2 sm:p-4 hover:bg-industrial-50/80 rounded-lg sm:rounded-xl transition-all duration-300"
+              className="group flex items-center sm:items-start gap-2.5 sm:gap-4 p-2 sm:p-3 md:p-3.5 hover:bg-industrial-50/80 rounded-lg sm:rounded-xl transition-all duration-300"
             >
-              <div className="w-8 h-8 sm:w-12 sm:h-12 rounded-lg sm:rounded-2xl bg-emerald-500/10 border border-emerald-500/25 flex items-center justify-center text-emerald-600 shadow-sm shrink-0 group-hover:scale-105 group-hover:bg-emerald-500/20 transition-all">
-                <Truck className="w-4 h-4 sm:w-6 sm:h-6 text-emerald-600" />
+              <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-emerald-500/10 border border-emerald-500/25 flex items-center justify-center text-emerald-600 shadow-sm shrink-0 group-hover:scale-105 group-hover:bg-emerald-500/20 transition-all">
+                <Truck className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-600" />
               </div>
               <div className="min-w-0 flex-1">
                 <div className="text-[9px] sm:text-[11px] font-black uppercase tracking-wider text-emerald-600 flex items-center gap-1.5 mb-0.5">
@@ -112,23 +117,23 @@ export function Home() {
                   <span className="w-1 h-1 rounded-full bg-emerald-500" />
                   <span>DIRECT DISPATCH</span>
                 </div>
-                <div className="text-xs sm:text-lg font-black text-industrial-900 tracking-tight leading-snug group-hover:text-emerald-600 transition-colors">
+                <div className="text-xs sm:text-base md:text-lg font-black text-industrial-900 tracking-tight leading-snug group-hover:text-emerald-600 transition-colors">
                   Lorry Service Available
                 </div>
-                <div className="text-[10px] sm:text-xs text-industrial-500 mt-0.5 sm:mt-1 leading-tight line-clamp-1 sm:line-clamp-none">
+                <div className="text-[10px] sm:text-xs text-industrial-500 mt-0.5 leading-tight line-clamp-1 sm:line-clamp-none">
                   Dedicated truck delivery straight to your construction site
                 </div>
               </div>
-              <ArrowRight size={16} className="text-industrial-300 group-hover:text-emerald-600 group-hover:translate-x-1 transition-all shrink-0 mt-2 hidden xl:block" />
+              <ArrowRight size={16} className="text-industrial-300 group-hover:text-emerald-600 group-hover:translate-x-1 transition-all shrink-0 mt-1 hidden xl:block" />
             </a>
 
             {/* Feature 3: Statewide Network & Certified Mill Stock */}
             <Link 
               to="/quote"
-              className="group flex items-center sm:items-start gap-2.5 sm:gap-4 p-2 sm:p-4 hover:bg-industrial-50/80 rounded-lg sm:rounded-xl transition-all duration-300"
+              className="group flex items-center sm:items-start gap-2.5 sm:gap-4 p-2 sm:p-3 md:p-3.5 hover:bg-industrial-50/80 rounded-lg sm:rounded-xl transition-all duration-300"
             >
-              <div className="w-8 h-8 sm:w-12 sm:h-12 rounded-lg sm:rounded-2xl bg-blue-500/10 border border-blue-500/25 flex items-center justify-center text-blue-600 shadow-sm shrink-0 group-hover:scale-105 group-hover:bg-blue-500/20 transition-all">
-                <ShieldCheck className="w-4 h-4 sm:w-6 sm:h-6 text-blue-600" />
+              <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-blue-500/10 border border-blue-500/25 flex items-center justify-center text-blue-600 shadow-sm shrink-0 group-hover:scale-105 group-hover:bg-blue-500/20 transition-all">
+                <ShieldCheck className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600" />
               </div>
               <div className="min-w-0 flex-1">
                 <div className="text-[9px] sm:text-[11px] font-black uppercase tracking-wider text-blue-600 flex items-center gap-1.5 mb-0.5">
@@ -136,29 +141,29 @@ export function Home() {
                   <span className="w-1 h-1 rounded-full bg-blue-500" />
                   <span>CERTIFIED STOCK</span>
                 </div>
-                <div className="text-xs sm:text-lg font-black text-industrial-900 tracking-tight leading-snug group-hover:text-blue-600 transition-colors">
+                <div className="text-xs sm:text-base md:text-lg font-black text-industrial-900 tracking-tight leading-snug group-hover:text-blue-600 transition-colors">
                   Authorized Stockist of Tata, JSW & Georoof
                 </div>
-                <div className="text-[10px] sm:text-xs text-industrial-500 mt-0.5 sm:mt-1 leading-tight line-clamp-1 sm:line-clamp-none">
+                <div className="text-[10px] sm:text-xs text-industrial-500 mt-0.5 leading-tight line-clamp-1 sm:line-clamp-none">
                   Factory-certified roofing sheets, steel pipes & structural products
                 </div>
               </div>
-              <ArrowRight size={16} className="text-industrial-300 group-hover:text-blue-600 group-hover:translate-x-1 transition-all shrink-0 mt-2 hidden xl:block" />
+              <ArrowRight size={16} className="text-industrial-300 group-hover:text-blue-600 group-hover:translate-x-1 transition-all shrink-0 mt-1 hidden xl:block" />
             </Link>
 
           </div>
         </div>
       </section>
 
-      {/* 2. Brands Marquee */}
-      <section className="pt-6 sm:pt-14 pb-5 sm:pb-8 border-b border-industrial-200 overflow-hidden relative bg-industrial-50">
+      {/* 2. Brands Marquee - Visible on Initial Front Page Load */}
+      <section className="pt-4 sm:pt-6 md:pt-8 pb-3 sm:pb-6 border-b border-industrial-200 overflow-hidden relative bg-industrial-50">
         {/* Premium subtle background image */}
         <div 
           className="absolute inset-0 bg-[url('/images/contact-bg.jpg')] bg-cover bg-center opacity-60 pointer-events-none mix-blend-multiply"
         />
 
-        <div className="container mx-auto px-4 md:px-6 text-center mb-2 sm:mb-6 relative z-20">
-          <h3 className="inline-block px-4 sm:px-8 py-1 sm:py-2 bg-white/90 backdrop-blur-sm border border-industrial-200 rounded-full text-[10px] sm:text-xs font-bold text-industrial-800 tracking-[0.18em] sm:tracking-[0.2em] uppercase shadow-sm">
+        <div className="container mx-auto px-4 md:px-6 text-center mb-1.5 sm:mb-3 relative z-20">
+          <h3 className="inline-block px-4 sm:px-6 py-1 sm:py-1.5 bg-white/90 backdrop-blur-sm border border-industrial-200 rounded-full text-[10px] sm:text-xs font-bold text-industrial-800 tracking-[0.18em] sm:tracking-[0.2em] uppercase shadow-sm">
             Authorized Stockist Of
           </h3>
         </div>
@@ -198,7 +203,7 @@ export function Home() {
       </section>
 
       {/* 3. Product Categories */}
-      <section className="pt-10 pb-12 sm:pt-14 sm:pb-16 md:py-20 border-y border-industrial-100 relative z-0">
+      <section className="pt-4 pb-12 sm:pt-10 sm:pb-16 md:py-20 border-y border-industrial-100 relative z-0">
         <div 
           className="absolute inset-0 -z-10 bg-[url('/images/productbk1.jpg')] bg-cover bg-center bg-fixed opacity-[0.08]"
         />

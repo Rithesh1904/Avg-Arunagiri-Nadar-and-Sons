@@ -42,7 +42,7 @@ export function Navbar() {
           isScrolled
             ? 'py-3'
             : (isHomePage 
-                ? 'py-4 bg-transparent' 
+                ? 'py-3.5 sm:py-4 bg-transparent border-b border-white/10' 
                 : 'py-4 border-b border-white/[0.08] shadow-2xl bg-gradient-to-r from-[#030712] via-[#0A101D] to-[#030712]')
         )}
       >
