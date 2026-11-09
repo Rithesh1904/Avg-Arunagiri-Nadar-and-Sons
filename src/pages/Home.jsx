@@ -36,8 +36,8 @@ export function Home() {
 
   return (
     <div className="flex flex-col w-full">
-      {/* 1. Hero Section */}
-      <section className="relative w-full h-[45vh] min-h-[300px] sm:h-[55vh] sm:min-h-[400px] md:h-[95vh] md:min-h-[700px] flex items-center bg-black overflow-hidden">
+      {/* 1. Hero Section - Balanced height across mobile & laptop */}
+      <section className="relative w-full h-[62vh] min-h-[460px] sm:h-[68vh] sm:min-h-[500px] md:h-[82vh] md:min-h-[600px] flex items-center bg-black overflow-hidden">
         <div className="absolute inset-0 z-0 flex items-center justify-center overflow-hidden">
           {/* Shift video up to crop out the baked-in faux menu bar at the top of the video */}
           <div className="absolute -top-[75px] sm:-top-[90px] md:-top-[115px] left-0 right-0 w-full h-[calc(100%+75px)] sm:h-[calc(100%+90px)] md:h-[calc(100%+115px)]">
@@ -71,7 +71,7 @@ export function Home() {
       </section>
 
       {/* 1.5 Floating Luxury Trust & Logistics Highlights Bar - Compact on Mobile, Spacious on Desktop */}
-      <section className="relative z-30 -mt-6 sm:-mt-12 md:-mt-16 container mx-auto px-3 sm:px-4 md:px-6 max-w-6xl">
+      <section className="relative z-30 -mt-8 sm:-mt-12 md:-mt-16 container mx-auto px-3 sm:px-4 md:px-6 max-w-6xl">
         <div className="bg-white/95 backdrop-blur-xl rounded-xl sm:rounded-3xl shadow-[0_16px_40px_-10px_rgba(0,0,0,0.16)] border border-industrial-100 p-2 sm:p-5 md:p-6 transition-all duration-300">
           <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-industrial-100">
             
@@ -154,7 +154,7 @@ export function Home() {
       </section>
 
       {/* 2. Brands Marquee */}
-      <section className="pt-4 sm:pt-14 pb-3 sm:pb-8 border-b border-industrial-200 overflow-hidden relative bg-industrial-50">
+      <section className="pt-6 sm:pt-14 pb-5 sm:pb-8 border-b border-industrial-200 overflow-hidden relative bg-industrial-50">
         {/* Premium subtle background image */}
         <div 
           className="absolute inset-0 bg-[url('/images/contact-bg.jpg')] bg-cover bg-center opacity-60 pointer-events-none mix-blend-multiply"
@@ -201,7 +201,7 @@ export function Home() {
       </section>
 
       {/* 3. Product Categories */}
-      <section className="pt-4 pb-12 sm:pt-10 sm:pb-16 md:py-20 border-y border-industrial-100 relative z-0">
+      <section className="pt-10 pb-12 sm:pt-14 sm:pb-16 md:py-20 border-y border-industrial-100 relative z-0">
         <div 
           className="absolute inset-0 -z-10 bg-[url('/images/productbk1.jpg')] bg-cover bg-center bg-fixed opacity-[0.08]"
         />
