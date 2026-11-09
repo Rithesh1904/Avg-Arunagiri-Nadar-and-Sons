@@ -97,10 +97,10 @@ export function Footer() {
             <ul className="space-y-3">
               <li><Link to="/products/roofing-sheets" className="text-[#9CA6B5] hover:text-[#F4B400] transition-colors duration-200 text-sm font-medium">Roofing Sheets</Link></li>
               <li><Link to="/products/polycarbonate-products" className="text-[#9CA6B5] hover:text-[#F4B400] transition-colors duration-200 text-sm font-medium">Polycarbonate Products</Link></li>
-              <li><Link to="/products/frp-products" className="text-[#9CA6B5] hover:text-[#F4B400] transition-colors duration-200 text-sm font-medium">FRP Products</Link></li>
               <li><Link to="/products/steel-pipes" className="text-[#9CA6B5] hover:text-[#F4B400] transition-colors duration-200 text-sm font-medium">Steel Pipes</Link></li>
-              <li><Link to="/products/roofing-accessories" className="text-[#9CA6B5] hover:text-[#F4B400] transition-colors duration-200 text-sm font-medium">Roofing Accessories</Link></li>
-              <li><Link to="/products/rainwater-management" className="text-[#9CA6B5] hover:text-[#F4B400] transition-colors duration-200 text-sm font-medium">PVC Rain Gutters</Link></li>
+              <li><Link to="/products/roof-tiles" className="text-[#9CA6B5] hover:text-[#F4B400] transition-colors duration-200 text-sm font-medium">Roof Tiles</Link></li>
+              <li><Link to="/products/rainwater-gutters" className="text-[#9CA6B5] hover:text-[#F4B400] transition-colors duration-200 text-sm font-medium">PVC Rain Gutters</Link></li>
+              <li><Link to="/products/accessories" className="text-[#9CA6B5] hover:text-[#F4B400] transition-colors duration-200 text-sm font-medium">Roofing Accessories</Link></li>
             </ul>
           </div>
 

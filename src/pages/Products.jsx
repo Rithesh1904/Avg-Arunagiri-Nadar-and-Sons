@@ -25,9 +25,10 @@ export function Products() {
     const p = param.toLowerCase();
     if (p === 'roofing' || p === 'roofing-sheets') return 'roofing-sheets';
     if (p === 'structural' || p === 'structural-steel' || p === 'mild-steel-pipes' || p === 'steel-pipes' || p === 'pipes') return 'steel-pipes';
-    if (p === 'polycarbonate' || p === 'polycarbonate-sheets' || p === 'polycarbonate-products') return 'polycarbonate-sheets';
-    if (p === 'frp' || p === 'frp-sheets' || p === 'frp-products') return 'frp-sheets';
-    if (p === 'gutters' || p === 'rainwater' || p === 'rainwater-management' || p === 'upvc-rain-gutters') return 'upvc-rain-gutters';
+    if (p === 'polycarbonate' || p === 'polycarbonate-sheets' || p === 'polycarbonate-products') return 'polycarbonate-products';
+    if (p === 'frp' || p === 'frp-sheets' || p === 'frp-products') return 'polycarbonate-products';
+    if (p === 'gutters' || p === 'rainwater' || p === 'rainwater-management' || p === 'upvc-rain-gutters' || p === 'rainwater-gutters' || p === 'upvc-gutters') return 'rainwater-gutters';
+    if (p === 'roof-tiles' || p === 'tiles' || p === 'rooftiles') return 'roof-tiles';
     if (p === 'boards' || p === 'v-board' || p === 'fiber-cement-boards') return 'fiber-cement-boards';
     if (p === 'insulation' || p === 'thermal-insulation' || p === 'tar-felt-roll' || p === 'paper-rolls') return 'thermal-insulation';
     if (p === 'accessories' || p === 'roofing-accessories' || p === 'ventilation') return 'accessories';

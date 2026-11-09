@@ -129,10 +129,11 @@ export default function AppMenuBar({ isScrolled = true }) {
                         {[
                           { name: "Roofing Sheets", desc: "JSW, Tata, PUFF Panels", path: "/products/roofing-sheets", icon: Layers, color: "text-blue-500 bg-blue-500/10" },
                           { name: "Steel Pipes", desc: "GI, MS & Apollo (Square & Round)", path: "/products/steel-pipes", icon: Hammer, color: "text-amber-500 bg-amber-500/10" },
-                          { name: "Polycarbonate", desc: "Multiwall, Compact & Embossed", path: "/products/polycarbonate-sheets", icon: Sun, color: "text-orange-500 bg-orange-500/10" },
+                          { name: "Polycarbonate", desc: "Multiwall, Compact & Embossed", path: "/products/polycarbonate-products", icon: Sun, color: "text-orange-500 bg-orange-500/10" },
+                          { name: "Roof Tiles", desc: "Stone Coated & Bamboo Tiles", path: "/products/roof-tiles", icon: Layers, color: "text-rose-500 bg-rose-500/10" },
                           { name: "Thoranam Designs", desc: "Heritage PVC Eaves Borders", path: "/products/thoranam-designs", icon: Sparkles, color: "text-purple-500 bg-purple-500/10" },
                           { name: "Thermal Insulation", desc: "XLPE Foam & Tar Felt Rolls", path: "/products/thermal-insulation", icon: ShieldCheck, color: "text-emerald-500 bg-emerald-500/10" },
-                          { name: "UPVC Rain Gutters", desc: "Aquastar 10ft Rainwater Systems", path: "/products/upvc-rain-gutters", icon: Droplets, color: "text-cyan-500 bg-cyan-500/10" },
+                          { name: "UPVC Rain Gutters", desc: "Aquastar 10ft Rainwater Systems", path: "/products/rainwater-gutters", icon: Droplets, color: "text-cyan-500 bg-cyan-500/10" },
                           { name: "Accessories", desc: "Turbo Ventilators & Louvers", path: "/products/accessories", icon: Wind, color: "text-teal-500 bg-teal-500/10" }
                         ].map((item) => {
                           const Icon = item.icon;
