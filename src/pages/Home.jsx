@@ -37,7 +37,7 @@ export function Home() {
   return (
     <div className="flex flex-col w-full">
       {/* 1. Hero Section */}
-      <section className="relative w-full h-[55vh] min-h-[400px] md:h-[95vh] md:min-h-[700px] flex items-center bg-black overflow-hidden">
+      <section className="relative w-full h-[45vh] min-h-[300px] sm:h-[55vh] sm:min-h-[400px] md:h-[95vh] md:min-h-[700px] flex items-center bg-black overflow-hidden">
         <div className="absolute inset-0 z-0 flex items-center justify-center overflow-hidden">
           {/* Shift video up to crop out the baked-in faux menu bar at the top of the video */}
           <div className="absolute -top-[75px] sm:-top-[90px] md:-top-[115px] left-0 right-0 w-full h-[calc(100%+75px)] sm:h-[calc(100%+90px)] md:h-[calc(100%+115px)]">
@@ -70,30 +70,30 @@ export function Home() {
         </div>
       </section>
 
-      {/* 1.5 Floating Luxury Trust & Logistics Highlights Bar */}
-      <section className="relative z-30 -mt-8 sm:-mt-12 md:-mt-16 container mx-auto px-4 md:px-6 max-w-6xl">
-        <div className="bg-white/95 backdrop-blur-xl rounded-2xl sm:rounded-3xl shadow-[0_20px_50px_-10px_rgba(0,0,0,0.18)] border border-industrial-100 p-4 sm:p-5 md:p-6 transition-all duration-300">
+      {/* 1.5 Floating Luxury Trust & Logistics Highlights Bar - Compact on Mobile, Spacious on Desktop */}
+      <section className="relative z-30 -mt-6 sm:-mt-12 md:-mt-16 container mx-auto px-3 sm:px-4 md:px-6 max-w-6xl">
+        <div className="bg-white/95 backdrop-blur-xl rounded-xl sm:rounded-3xl shadow-[0_16px_40px_-10px_rgba(0,0,0,0.16)] border border-industrial-100 p-2 sm:p-5 md:p-6 transition-all duration-300">
           <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-industrial-100">
             
             {/* Feature 1: Heritage & Trust */}
             <Link 
               to="/about"
-              className="group flex items-start gap-4 p-3 sm:p-4 hover:bg-industrial-50/80 rounded-xl transition-all duration-300"
+              className="group flex items-center sm:items-start gap-2.5 sm:gap-4 p-2 sm:p-4 hover:bg-industrial-50/80 rounded-lg sm:rounded-xl transition-all duration-300"
             >
-              <div className="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/25 flex items-center justify-center text-amber-600 shadow-sm shrink-0 group-hover:scale-105 group-hover:bg-amber-500/20 transition-all">
-                <Award size={24} className="text-amber-600" />
+              <div className="w-8 h-8 sm:w-12 sm:h-12 rounded-lg sm:rounded-2xl bg-amber-500/10 border border-amber-500/25 flex items-center justify-center text-amber-600 shadow-sm shrink-0 group-hover:scale-105 group-hover:bg-amber-500/20 transition-all">
+                <Award className="w-4 h-4 sm:w-6 sm:h-6 text-amber-600" />
               </div>
               <div className="min-w-0 flex-1">
-                <div className="text-[11px] font-black uppercase tracking-wider text-amber-600 flex items-center gap-1.5 mb-0.5">
-                  <span>Since 1970</span>
+                <div className="text-[9px] sm:text-[11px] font-black uppercase tracking-wider text-amber-600 flex items-center gap-1.5 mb-0.5">
+                  <span>EST. 1970</span>
                   <span className="w-1 h-1 rounded-full bg-amber-500" />
-                  <span>54+ Years Trust</span>
+                  <span>54+ YEARS</span>
                 </div>
-                <div className="text-base sm:text-lg font-black text-industrial-900 tracking-tight leading-snug group-hover:text-amber-600 transition-colors">
-                  Trusted Building Partner
+                <div className="text-xs sm:text-lg font-black text-industrial-900 tracking-tight leading-snug group-hover:text-amber-600 transition-colors">
+                  54+ Years of Legacy
                 </div>
-                <div className="text-xs text-industrial-500 mt-1 leading-relaxed">
-                  Half a century of genuine customer trust & excellence across Tamil Nadu
+                <div className="text-[10px] sm:text-xs text-industrial-500 mt-0.5 sm:mt-1 leading-tight line-clamp-1 sm:line-clamp-none">
+                  Tamil Nadu’s most trusted roofing & steel landmark
                 </div>
               </div>
               <ArrowRight size={16} className="text-industrial-300 group-hover:text-amber-600 group-hover:translate-x-1 transition-all shrink-0 mt-2 hidden xl:block" />
@@ -104,22 +104,22 @@ export function Home() {
               href="https://wa.me/919842874256?text=Hello%20A.V.G.%20Arunagiri%20Nadar%20Sons%2C%20I%20would%20like%20to%20enquire%20about%20direct%20site%20lorry%20transportation%20and%20delivery."
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-start gap-4 p-3 sm:p-4 hover:bg-industrial-50/80 rounded-xl transition-all duration-300"
+              className="group flex items-center sm:items-start gap-2.5 sm:gap-4 p-2 sm:p-4 hover:bg-industrial-50/80 rounded-lg sm:rounded-xl transition-all duration-300"
             >
-              <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/25 flex items-center justify-center text-emerald-600 shadow-sm shrink-0 group-hover:scale-105 group-hover:bg-emerald-500/20 transition-all">
-                <Truck size={24} className="text-emerald-600" />
+              <div className="w-8 h-8 sm:w-12 sm:h-12 rounded-lg sm:rounded-2xl bg-emerald-500/10 border border-emerald-500/25 flex items-center justify-center text-emerald-600 shadow-sm shrink-0 group-hover:scale-105 group-hover:bg-emerald-500/20 transition-all">
+                <Truck className="w-4 h-4 sm:w-6 sm:h-6 text-emerald-600" />
               </div>
               <div className="min-w-0 flex-1">
-                <div className="text-[11px] font-black uppercase tracking-wider text-emerald-600 flex items-center gap-1.5 mb-0.5">
-                  <span>Lorry Logistics</span>
+                <div className="text-[9px] sm:text-[11px] font-black uppercase tracking-wider text-emerald-600 flex items-center gap-1.5 mb-0.5">
+                  <span>DIRECT LOGISTICS</span>
                   <span className="w-1 h-1 rounded-full bg-emerald-500" />
-                  <span>Direct Site Delivery</span>
+                  <span>FAST DISPATCH</span>
                 </div>
-                <div className="text-base sm:text-lg font-black text-industrial-900 tracking-tight leading-snug group-hover:text-emerald-600 transition-colors">
-                  Dedicated Transport Fleet
+                <div className="text-xs sm:text-lg font-black text-industrial-900 tracking-tight leading-snug group-hover:text-emerald-600 transition-colors">
+                  Site Delivery by Lorry
                 </div>
-                <div className="text-xs text-industrial-500 mt-1 leading-relaxed">
-                  Lorry transportation service available for direct on-site delivery
+                <div className="text-[10px] sm:text-xs text-industrial-500 mt-0.5 sm:mt-1 leading-tight line-clamp-1 sm:line-clamp-none">
+                  Dedicated truck service straight to your construction site
                 </div>
               </div>
               <ArrowRight size={16} className="text-industrial-300 group-hover:text-emerald-600 group-hover:translate-x-1 transition-all shrink-0 mt-2 hidden xl:block" />
@@ -128,22 +128,22 @@ export function Home() {
             {/* Feature 3: Statewide Network & Certified Mill Stock */}
             <Link 
               to="/quote"
-              className="group flex items-start gap-4 p-3 sm:p-4 hover:bg-industrial-50/80 rounded-xl transition-all duration-300"
+              className="group flex items-center sm:items-start gap-2.5 sm:gap-4 p-2 sm:p-4 hover:bg-industrial-50/80 rounded-lg sm:rounded-xl transition-all duration-300"
             >
-              <div className="w-12 h-12 rounded-2xl bg-blue-500/10 border border-blue-500/25 flex items-center justify-center text-blue-600 shadow-sm shrink-0 group-hover:scale-105 group-hover:bg-blue-500/20 transition-all">
-                <ShieldCheck size={24} className="text-blue-600" />
+              <div className="w-8 h-8 sm:w-12 sm:h-12 rounded-lg sm:rounded-2xl bg-blue-500/10 border border-blue-500/25 flex items-center justify-center text-blue-600 shadow-sm shrink-0 group-hover:scale-105 group-hover:bg-blue-500/20 transition-all">
+                <ShieldCheck className="w-4 h-4 sm:w-6 sm:h-6 text-blue-600" />
               </div>
               <div className="min-w-0 flex-1">
-                <div className="text-[11px] font-black uppercase tracking-wider text-blue-600 flex items-center gap-1.5 mb-0.5">
-                  <span>Authorized Stockist</span>
+                <div className="text-[9px] sm:text-[11px] font-black uppercase tracking-wider text-blue-600 flex items-center gap-1.5 mb-0.5">
+                  <span>100% GENUINE</span>
                   <span className="w-1 h-1 rounded-full bg-blue-500" />
-                  <span>Tamil Nadu Wide</span>
+                  <span>MILL TESTED</span>
                 </div>
-                <div className="text-base sm:text-lg font-black text-industrial-900 tracking-tight leading-snug group-hover:text-blue-600 transition-colors">
-                  100% Genuine Mill Stock
+                <div className="text-xs sm:text-lg font-black text-industrial-900 tracking-tight leading-snug group-hover:text-blue-600 transition-colors">
+                  Authorized Mill Stockist
                 </div>
-                <div className="text-xs text-industrial-500 mt-1 leading-relaxed">
-                  Direct partner for Tata, JSW, Lotus, Apollo, Vnext & Aquastar
+                <div className="text-[10px] sm:text-xs text-industrial-500 mt-0.5 sm:mt-1 leading-tight line-clamp-1 sm:line-clamp-none">
+                  Direct mill supply: JSW, Tata, Apollo, Lotus & Aquastar
                 </div>
               </div>
               <ArrowRight size={16} className="text-industrial-300 group-hover:text-blue-600 group-hover:translate-x-1 transition-all shrink-0 mt-2 hidden xl:block" />
@@ -154,14 +154,14 @@ export function Home() {
       </section>
 
       {/* 2. Brands Marquee */}
-      <section className="pt-10 sm:pt-14 pb-4 sm:pb-8 border-b border-industrial-200 overflow-hidden relative bg-industrial-50">
+      <section className="pt-4 sm:pt-14 pb-3 sm:pb-8 border-b border-industrial-200 overflow-hidden relative bg-industrial-50">
         {/* Premium subtle background image */}
         <div 
           className="absolute inset-0 bg-[url('/images/contact-bg.jpg')] bg-cover bg-center opacity-60 pointer-events-none mix-blend-multiply"
         />
 
-        <div className="container mx-auto px-4 md:px-6 text-center mb-3 sm:mb-6 relative z-20">
-          <h3 className="inline-block px-6 sm:px-8 py-1.5 sm:py-2 bg-white/90 backdrop-blur-sm border border-industrial-200 rounded-full text-xs font-bold text-industrial-800 tracking-[0.2em] uppercase shadow-sm">
+        <div className="container mx-auto px-4 md:px-6 text-center mb-2 sm:mb-6 relative z-20">
+          <h3 className="inline-block px-4 sm:px-8 py-1 sm:py-2 bg-white/90 backdrop-blur-sm border border-industrial-200 rounded-full text-[10px] sm:text-xs font-bold text-industrial-800 tracking-[0.18em] sm:tracking-[0.2em] uppercase shadow-sm">
             Authorized Stockist Of
           </h3>
         </div>
