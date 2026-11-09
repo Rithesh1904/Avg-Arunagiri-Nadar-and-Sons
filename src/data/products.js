@@ -1624,40 +1624,6 @@ export const products = [
     "backDetails": "Spun Aluminum Internal Turbine Vanes & Throat"
   },
   {
-    "id": "pvc-sheet-thoomanom",
-    "name": "PVC Sheet Thoomanom",
-    "tallyName": "PVC Sheet Thoomanom",
-    "category": "Thoranam Designs",
-    "subcategory": "Classic Temple Bell Thoranam",
-    "brand": "Branded",
-    "description": "Decorative traditional PVC Thoomanom border edging sheet for roof eaves and verandas.",
-    "image": "/images/pvc-thoranam-category.jpg",
-    "availableSizes": [
-      "8 Feet (8 mm thickness)",
-      "10 Feet (8 mm thickness)"
-    ],
-    "specifications": {
-      "thickness": [
-        "8 mm"
-      ],
-      "length": [
-        "8 Feet",
-        "10 Feet"
-      ],
-      "colors": [
-        "White"
-      ]
-    },
-    "applications": [
-      "Roof Eaves Border",
-      "Decorative Trim",
-      "Residential"
-    ],
-    "featured": false,
-    "backImage": "/images/backside/upvc-back.jpg",
-    "backDetails": "Traditional Eaves Border Mounting Reverse Face"
-  },
-  {
     "id": "pvc-thoranam-gopuram-spear",
     "name": "PVC Thoranam - Gopuram Arrow Spear (Design 1)",
     "tallyName": "PVC THORANAM DESIGN 1",
