@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { ArrowLeft, MessageCircle, Phone, CheckCircle2, Ruler } from 'lucide-react';
+import { ArrowLeft, MessageCircle, Phone, CheckCircle2, Ruler, Layers, Sparkles } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { products } from '../data/products';
 import { EmptyState } from '../components/ui/EmptyState';
@@ -53,6 +53,28 @@ export function ProductDetails() {
     );
   }
 
+  // Helper to extract thickness values across any product specification format
+  const thicknessList = (() => {
+    if (!product) return [];
+    const specs = product.specifications || {};
+    if (specs.thickness && Array.isArray(specs.thickness) && specs.thickness.length > 0) return specs.thickness;
+    if (specs.wallThickness && Array.isArray(specs.wallThickness) && specs.wallThickness.length > 0) return specs.wallThickness;
+    if (specs.panelThickness && Array.isArray(specs.panelThickness) && specs.panelThickness.length > 0) return specs.panelThickness;
+    if (specs.gauge && Array.isArray(specs.gauge) && specs.gauge.length > 0) return specs.gauge;
+    const match = product.name.match(/\b\d+(\.\d+)?\s*(mm|gauge|G)\b/i);
+    return match ? [match[0]] : [];
+  })();
+
+  // Short and sweet description helper
+  const shortDescription = (() => {
+    if (!product?.description) return '';
+    const sentences = product.description.split(/(?<=[.!?])\s+/);
+    if (sentences.length > 2) {
+      return sentences.slice(0, 2).join(' ');
+    }
+    return product.description;
+  })();
+
   const whatsappMessage = encodeURIComponent(
     `Hello A.V.G. Arunagiri Nadar Sons, I am interested in:\n` +
     `Product: ${product.name}\n` +
@@ -83,116 +105,209 @@ export function ProductDetails() {
         </div>
       </div>
 
-      <div className="container mx-auto px-4 md:px-6 pt-8 sm:pt-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
+      <div className="container mx-auto px-4 md:px-6 pt-6 sm:pt-10">
+        
+        {/* Mobile Header: Brand, Title, Price Note (Visible on mobile only, above the product image) */}
+        <div className="lg:hidden mb-5">
+          {product.brand && (
+            <div className="inline-block bg-industrial-100 text-industrial-800 font-bold px-3 py-1 rounded text-xs uppercase tracking-wider w-max mb-2">
+              {product.brand}
+            </div>
+          )}
+          <h1 className="text-2xl sm:text-3xl font-extrabold text-industrial-900 mb-1 leading-tight">{product.name}</h1>
+          <div className="text-xs text-industrial-500 font-medium italic">
+            * Enquire for price and details
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14">
           
-          {/* Interactive 3D Product Sheet Viewer with Free Drag & Spin & Quick Highlights */}
+          {/* Left Column: Interactive 3D Product Sheet Viewer */}
           <motion.div 
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.4 }}
             className="w-full flex flex-col gap-6"
           >
             <Product3DViewer product={product} />
-            <ProductQuickHighlights product={product} />
+
+            {/* Desktop Only: Quick Highlights in left column */}
+            <div className="hidden lg:block">
+              <ProductQuickHighlights product={product} />
+            </div>
           </motion.div>
 
-          {/* Product Info */}
+          {/* Right Column: Key Details, Sizes, Suitable For, Description, CTAs, Specifications */}
           <motion.div 
-            initial={{ opacity: 0, x: 30 }}
+            initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.4 }}
             className="flex flex-col"
           >
-            {product.brand && (
-              <div className="inline-block bg-industrial-100 text-industrial-800 font-bold px-3 py-1 rounded text-xs uppercase tracking-wider w-max mb-4">
-                {product.brand}
+            {/* Desktop Header */}
+            <div className="hidden lg:block mb-6">
+              {product.brand && (
+                <div className="inline-block bg-industrial-100 text-industrial-800 font-bold px-3 py-1 rounded text-xs uppercase tracking-wider w-max mb-3">
+                  {product.brand}
+                </div>
+              )}
+              <h1 className="text-3xl md:text-4xl font-extrabold text-industrial-900 mb-2 leading-tight">{product.name}</h1>
+              <div className="text-sm text-industrial-500 font-medium italic">
+                * Enquire for price and details
               </div>
-            )}
-            
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-industrial-900 mb-2">{product.name}</h1>
-            
-            {/* Price removed as per request */}
-            <div className="text-sm text-industrial-500 font-medium italic mb-4 sm:mb-6 mt-1">
-              * Enquire for price and details
             </div>
-            
-            <p className="text-industrial-600 text-base sm:text-lg mb-6 sm:mb-8 leading-relaxed">
-              {product.description}
-            </p>
 
-            {/* Available Feet Sizes / Dimensions Section */}
-            {product.availableSizes && product.availableSizes.length > 0 && (
-              <div className="mb-8 p-5 bg-industrial-50 rounded-xl border border-industrial-200">
-                <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
-                  <div className="flex items-center gap-2">
-                    <Ruler className="text-accent-600" size={18} />
-                    <h3 className="text-base font-bold text-industrial-900 uppercase tracking-wide">
-                      Available Feet Sizes & Dimensions
-                    </h3>
+            {/* 1. Thickness & Available Feet Sizes (Positioned directly under the product image on mobile) */}
+            {(thicknessList.length > 0 || (product.availableSizes && product.availableSizes.length > 0)) && (
+              <div className="mb-6 p-4 sm:p-5 bg-gradient-to-br from-industrial-50 to-white rounded-2xl border border-industrial-200/90 shadow-xs">
+                {/* Available Thickness Row */}
+                {thicknessList.length > 0 && (
+                  <div className={cn("pb-3.5", product.availableSizes?.length > 0 && "mb-4 border-b border-industrial-200/80")}>
+                    <div className="flex items-center justify-between gap-2 mb-2">
+                      <div className="flex items-center gap-1.5 text-xs font-bold text-industrial-800 uppercase tracking-wide">
+                        <Layers size={15} className="text-amber-600" />
+                        <span>Available Thickness:</span>
+                      </div>
+                      <span className="text-[11px] font-semibold text-industrial-500">
+                        Certified Gauge
+                      </span>
+                    </div>
+                    <div className="flex flex-wrap gap-2">
+                      {thicknessList.map((th, idx) => (
+                        <span
+                          key={idx}
+                          className="inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-bold bg-amber-500/10 text-amber-900 border border-amber-300/80 shadow-xs"
+                        >
+                          ⚡ {th}
+                        </span>
+                      ))}
+                    </div>
                   </div>
-                  <span className="text-xs font-bold text-industrial-700 bg-white px-2.5 py-1 rounded-full border border-industrial-200 shadow-sm">
-                    {product.availableSizes.length} {product.availableSizes.length === 1 ? 'Size' : 'Sizes'} Available
-                  </span>
-                </div>
-                
-                <p className="text-xs text-industrial-500 mb-3">
-                  Choose your required size to check instant availability & pricing:
-                </p>
+                )}
 
-                <div className="flex flex-wrap gap-2.5">
-                  {product.availableSizes.map((size) => {
-                    const isSelected = selectedSize === size;
-                    return (
-                      <button
-                        key={size}
-                        type="button"
-                        onClick={() => setSelectedSize(size)}
-                        className={cn(
-                          "px-3.5 py-2 rounded-lg text-sm font-semibold transition-all flex items-center gap-2 cursor-pointer",
-                          isSelected
-                            ? "bg-industrial-900 text-white ring-2 ring-accent-500 shadow-md scale-[1.02]"
-                            : "bg-white text-industrial-800 border border-industrial-200 hover:border-accent-500 hover:bg-industrial-100/70"
-                        )}
-                      >
-                        <span className={isSelected ? "text-accent-400 font-bold" : "text-industrial-400"}>📏</span>
-                        <span>{size}</span>
-                      </button>
-                    );
-                  })}
-                </div>
+                {/* Available Feet Sizes Selector */}
+                {product.availableSizes && product.availableSizes.length > 0 && (
+                  <div>
+                    <div className="flex items-center justify-between gap-2 mb-2">
+                      <div className="flex items-center gap-1.5 text-xs font-bold text-industrial-800 uppercase tracking-wide">
+                        <Ruler size={16} className="text-accent-600" />
+                        <span>Available Feet Sizes & Lengths:</span>
+                      </div>
+                      <span className="text-[11px] font-bold text-industrial-700 bg-white px-2.5 py-0.5 rounded-full border border-industrial-200 shadow-xs">
+                        {product.availableSizes.length} {product.availableSizes.length === 1 ? 'Size' : 'Sizes'}
+                      </span>
+                    </div>
 
-                {selectedSize && (
-                  <div className="mt-3.5 text-xs text-industrial-700 bg-white p-2.5 rounded-lg border border-industrial-200 flex items-center gap-2">
-                    <CheckCircle2 size={15} className="text-emerald-600 shrink-0" />
-                    <span>Selected Size: <strong className="text-industrial-900 font-bold text-sm">{selectedSize}</strong> (will be automatically included in your enquiry)</span>
+                    <p className="text-[11px] sm:text-xs text-industrial-500 mb-2.5 font-medium">
+                      Tap your required feet size to check availability & instant quotation:
+                    </p>
+
+                    <div className="flex flex-wrap gap-2">
+                      {product.availableSizes.map((size) => {
+                        const isSelected = selectedSize === size;
+                        return (
+                          <button
+                            key={size}
+                            type="button"
+                            onClick={() => setSelectedSize(size)}
+                            className={cn(
+                              "px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition-all flex items-center gap-1.5 cursor-pointer",
+                              isSelected
+                                ? "bg-industrial-900 text-white ring-2 ring-accent-500 shadow-sm scale-[1.02]"
+                                : "bg-white text-industrial-800 border border-industrial-200 hover:border-accent-500 hover:bg-industrial-100/70"
+                            )}
+                          >
+                            <span className={isSelected ? "text-accent-400 font-bold" : "text-industrial-400"}>📏</span>
+                            <span>{size}</span>
+                          </button>
+                        );
+                      })}
+                    </div>
+
+                    {selectedSize && (
+                      <div className="mt-3 text-xs text-industrial-700 bg-white p-2.5 rounded-lg border border-industrial-200 flex items-center gap-2">
+                        <CheckCircle2 size={15} className="text-emerald-600 shrink-0" />
+                        <span>Selected Size: <strong className="text-industrial-900 font-bold">{selectedSize}</strong> (included in your WhatsApp quote)</span>
+                      </div>
+                    )}
                   </div>
                 )}
               </div>
             )}
 
-            {/* Specifications */}
+            {/* 2. Suitable For (Placed below Thickness & Feet Sizes) */}
+            {product.applications && product.applications.length > 0 && (
+              <div className="mb-6">
+                <h3 className="text-base sm:text-lg font-bold text-industrial-900 mb-3 flex items-center gap-2">
+                  <span>Suitable For</span>
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {product.applications.map((app) => (
+                    <span 
+                      key={app} 
+                      className="inline-flex items-center gap-1.5 bg-emerald-50 text-emerald-800 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold border border-emerald-200/80 shadow-xs"
+                    >
+                      <CheckCircle2 size={14} className="text-emerald-600 shrink-0" />
+                      {app}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* 3. Short & Sweet Description (Reduced contents, crisp and attractive) */}
+            {shortDescription && (
+              <div className="mb-6 p-4 rounded-xl bg-industrial-50/70 border border-industrial-200/70">
+                <span className="block text-[11px] font-bold text-industrial-500 uppercase tracking-wider mb-1">
+                  Product Overview
+                </span>
+                <p className="text-industrial-700 text-sm sm:text-base leading-relaxed font-medium">
+                  {shortDescription}
+                </p>
+              </div>
+            )}
+
+            {/* 4. Action CTAs (Enquire on WhatsApp & Call Now) */}
+            <div className="pt-2 pb-6 border-b border-industrial-100 flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6">
+              <a 
+                href={`https://wa.me/919842874256?text=${whatsappMessage}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white py-3.5 sm:py-4 px-4 sm:px-6 rounded-md font-bold text-base sm:text-lg transition-all shadow-md hover:shadow-lg text-center"
+              >
+                <MessageCircle size={20} />
+                Enquire on WhatsApp
+              </a>
+              <a 
+                href="tel:+919842874256"
+                className="flex items-center justify-center gap-2 bg-industrial-900 hover:bg-industrial-800 text-white py-3.5 sm:py-4 px-4 sm:px-6 rounded-md font-bold text-base sm:text-lg transition-colors sm:w-auto text-center"
+              >
+                <Phone size={20} />
+                Call Now
+              </a>
+            </div>
+
+            {/* 5. Specifications & Available Colors */}
             {product.specifications && (
               <div className="mb-8">
-                <h3 className="text-lg font-bold text-industrial-900 mb-4 border-b border-industrial-100 pb-2">Specifications</h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <h3 className="text-base sm:text-lg font-bold text-industrial-900 mb-3 border-b border-industrial-100 pb-2">Technical Specifications</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {Object.entries(product.specifications).map(([key, value]) => {
                     if (key === 'colors' || !value || value.length === 0) return null;
                     const formattedKey = key.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase());
                     return (
-                      <div key={key} className="bg-industrial-50 p-4 rounded-lg border border-industrial-100">
-                        <span className="block text-xs font-semibold text-industrial-500 uppercase tracking-wider mb-1">{formattedKey}</span>
-                        <span className="text-industrial-900 font-medium">{value.join(', ')}</span>
+                      <div key={key} className="bg-industrial-50 p-3.5 rounded-lg border border-industrial-100">
+                        <span className="block text-[11px] font-semibold text-industrial-500 uppercase tracking-wider mb-0.5">{formattedKey}</span>
+                        <span className="text-industrial-900 font-medium text-xs sm:text-sm">{value.join(', ')}</span>
                       </div>
                     );
                   })}
                   {product.specifications.colors?.length > 0 && (
-                    <div className="bg-industrial-50 p-4 rounded-lg border border-industrial-100 sm:col-span-2">
-                      <span className="block text-xs font-semibold text-industrial-500 uppercase tracking-wider mb-3">Available Colors</span>
+                    <div className="bg-industrial-50 p-3.5 rounded-lg border border-industrial-100 sm:col-span-2">
+                      <span className="block text-[11px] font-semibold text-industrial-500 uppercase tracking-wider mb-3">Available Colors</span>
                       
                       <div className="container-items pt-2 pb-4 px-2">
                         {product.specifications.colors.map(color => {
-                          // Simple mapping to get a reasonable hex for common colors
                           const colorMap = {
                             "Blue": "#3b82f6",
                             "Red": "#e11d48",
@@ -203,7 +318,7 @@ export function ProductDetails() {
                             "Grey": "#64748b",
                             "Brown": "#78350f"
                           };
-                          const hex = colorMap[color] || "#0ea5e9"; // fallback
+                          const hex = colorMap[color] || "#0ea5e9";
                           
                           return (
                             <button
@@ -222,39 +337,9 @@ export function ProductDetails() {
               </div>
             )}
 
-            {/* Applications */}
-            {product.applications?.length > 0 && (
-              <div className="mb-10">
-                <h3 className="text-lg font-bold text-industrial-900 mb-4 border-b border-industrial-100 pb-2">Suitable For</h3>
-                <div className="flex flex-wrap gap-2">
-                  {product.applications.map(app => (
-                    <span key={app} className="inline-flex items-center gap-1.5 bg-green-50 text-green-700 px-3 py-1.5 rounded-full text-sm font-semibold border border-green-100">
-                      <CheckCircle2 size={14} />
-                      {app}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {/* CTAs */}
-            <div className="mt-auto pt-6 sm:pt-8 border-t border-industrial-100 flex flex-col sm:flex-row gap-3 sm:gap-4">
-              <a 
-                href={`https://wa.me/919842874256?text=${whatsappMessage}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1 flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white py-3.5 sm:py-4 px-4 sm:px-6 rounded-md font-bold text-base sm:text-lg transition-all shadow-md hover:shadow-lg text-center"
-              >
-                <MessageCircle size={20} />
-                Enquire on WhatsApp
-              </a>
-              <a 
-                href="tel:+919842874256"
-                className="flex items-center justify-center gap-2 bg-industrial-900 hover:bg-industrial-800 text-white py-3.5 sm:py-4 px-4 sm:px-6 rounded-md font-bold text-base sm:text-lg transition-colors sm:w-auto text-center"
-              >
-                <Phone size={20} />
-                Call Now
-              </a>
+            {/* Mobile Only: Quick Highlights at bottom */}
+            <div className="lg:hidden mt-4">
+              <ProductQuickHighlights product={product} />
             </div>
           </motion.div>
         </div>
