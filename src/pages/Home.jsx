@@ -64,9 +64,6 @@ export function Home() {
               )}
             />
           </div>
-
-          {/* Top dark gradient overlay under navbar for seamless navbar contrast and zero background bleed */}
-          <div className="absolute top-0 left-0 right-0 h-36 sm:h-44 bg-gradient-to-b from-black via-black/80 to-transparent pointer-events-none z-10" />
         </div>
       </section>
 
