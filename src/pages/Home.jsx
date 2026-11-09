@@ -358,30 +358,39 @@ export function Home() {
           />
         </div>
         
-        <div className="w-full relative max-w-6xl mx-auto px-4">
-          <ScrollStack 
-            useWindowScroll={true}
-            itemScale={0.04}
-            baseScale={0.9}
-            itemDistance={70}
-          >
+        <div className="w-full relative max-w-6xl mx-auto px-4 pb-12 sm:pb-16 md:pb-24">
+          <ScrollStack>
             {applications.map((app, idx) => (
               <ScrollStackItem key={app.id}>
-                <div className="h-[320px] sm:h-[400px] md:h-[500px] w-full rounded-[24px] sm:rounded-[40px] overflow-hidden relative group shadow-2xl">
-                  <div className="absolute inset-0 bg-industrial-800 flex items-center justify-center text-industrial-500">
+                <div className="h-[320px] sm:h-[400px] md:h-[500px] w-full rounded-[24px] sm:rounded-[36px] md:rounded-[40px] overflow-hidden relative group">
+                  <div className="absolute inset-0 bg-industrial-900 flex items-center justify-center text-industrial-500">
                     <img 
                       src={app.image} 
                       alt={app.title}
                       className={cn(
-                        "absolute inset-0 w-full h-full",
-                        app.id === 'industrial' ? "object-contain" : "object-cover"
+                        "absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                       )}
                     />
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/10 z-10" />
+                  {/* Subtle top-down and bottom-up gradients for readability */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-black/20 z-10" />
+                  
+                  {/* Top Badge: Number and Category */}
+                  <div className="absolute top-4 sm:top-6 left-4 sm:left-8 right-4 sm:right-8 flex items-center justify-between z-20">
+                    <div className="px-3 sm:px-4 py-1 sm:py-1.5 rounded-full bg-black/50 backdrop-blur-md border border-white/20 text-[11px] sm:text-xs font-bold text-accent-400 tracking-widest uppercase shadow-sm">
+                      Application 0{idx + 1}
+                    </div>
+                    <div className="hidden sm:flex px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-xs text-white/80 font-medium">
+                      AVG Solutions
+                    </div>
+                  </div>
+
+                  {/* Bottom Content */}
                   <div className="absolute inset-0 p-6 sm:p-8 md:p-12 flex flex-col justify-end z-20">
-                    <h3 className="text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-2 sm:mb-3">{app.title}</h3>
-                    <p className="text-white/80 text-sm sm:text-base md:text-xl max-w-2xl">
+                    <h3 className="text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-2 sm:mb-3 tracking-tight">
+                      {app.title}
+                    </h3>
+                    <p className="text-white/85 text-sm sm:text-base md:text-xl max-w-2xl leading-relaxed">
                       {app.description}
                     </p>
                   </div>
