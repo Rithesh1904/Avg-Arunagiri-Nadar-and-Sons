@@ -36,169 +36,173 @@ export function Home() {
 
   return (
     <div className="flex flex-col w-full">
-      {/* 1. Hero Section - Calibrated for both laptop and mobile views */}
-      <section className="relative w-full h-[44vh] min-h-[300px] sm:h-[48vh] sm:min-h-[360px] md:h-[52vh] md:min-h-[400px] lg:h-[50vh] flex items-center bg-black overflow-hidden">
+      {/* 1. Hero Section - Full cinematic visibility on laptop, beautifully framed on mobile */}
+      <section className="relative w-full h-[38vh] min-h-[250px] max-h-[310px] sm:h-[48vh] sm:min-h-[340px] md:h-[58vh] md:min-h-[420px] md:max-h-[520px] lg:h-[60vh] flex items-center bg-black overflow-hidden">
         <div className="absolute inset-0 z-0 flex items-center justify-center overflow-hidden">
-          {/* Centered video container showcasing the shop nameboard cleanly across all viewports */}
-          <div className="absolute inset-0 w-full h-full">
-            <video
-              ref={videoRef}
-              autoPlay
-              muted
-              playsInline
-              onTimeUpdate={(e) => {
-                if (e.currentTarget.currentTime >= 7.0) {
-                  setShowSlide(true);
-                }
-              }}
-              onEnded={() => setShowSlide(true)}
-              className={cn(
-                "absolute inset-0 w-full h-full object-cover object-center transition-all duration-1000 ease-in-out",
-                showSlide ? "opacity-0 scale-95" : "opacity-100 scale-100"
-              )}
-            >
-              <source src="/assets/shop1.mp4" type="video/mp4" />
-            </video>
-            
-            <img
-              src="/assets/bk1.png"
-              alt="AVG Banner Slide"
-              className={cn(
-                "absolute inset-0 w-full h-full object-cover object-center transition-all duration-1000 ease-in-out",
-                showSlide ? "opacity-100 scale-100" : "opacity-0 scale-110 pointer-events-none"
-              )}
-            />
-          </div>
+          <video
+            ref={videoRef}
+            autoPlay
+            muted
+            playsInline
+            loop
+            className="absolute inset-0 w-full h-full object-cover object-[center_top]"
+          >
+            <source src="/assets/shop1.mp4" type="video/mp4" />
+          </video>
         </div>
       </section>
 
-      {/* 1.5 Floating Luxury Trust & Logistics Highlights Bar - Ultra-compact on mobile, elegant on laptop */}
-      <section className="relative z-30 -mt-5 sm:-mt-8 md:-mt-10 container mx-auto px-2.5 sm:px-4 md:px-6 max-w-6xl">
-        <div className="bg-white/95 backdrop-blur-xl rounded-xl sm:rounded-2xl shadow-[0_16px_40px_-10px_rgba(0,0,0,0.16)] border border-industrial-100 p-2 sm:p-4 md:p-5 transition-all duration-300">
-          <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-industrial-100">
-            
-            {/* Feature 1: Heritage & Trust */}
+      {/* 1.5 Sleek Low-Profile Trust & Logistics Bar - Slim, Elegant & Perfectly Aligned */}
+      <section className="relative z-20 -mt-5 sm:-mt-6 md:-mt-7 container mx-auto px-3 sm:px-4 md:px-6 max-w-5xl">
+        <div className="bg-white/95 backdrop-blur-xl rounded-xl sm:rounded-2xl shadow-[0_12px_32px_-8px_rgba(0,0,0,0.12)] border border-industrial-200/80 p-1.5 sm:p-2.5 md:p-3 transition-all duration-300">
+          
+          {/* Desktop & Laptop View: 3 Clean Horizontal Cells */}
+          <div className="hidden sm:grid grid-cols-3 divide-x divide-industrial-100">
+            {/* Feature 1: Heritage */}
             <Link 
               to="/about"
-              className="group flex items-center sm:items-start gap-2.5 sm:gap-4 p-1.5 sm:p-3 md:p-3.5 hover:bg-industrial-50/80 rounded-lg sm:rounded-xl transition-all duration-300"
+              className="group flex items-center gap-3 px-3.5 py-1.5 hover:bg-industrial-50/70 rounded-xl transition-all"
             >
-              <div className="w-7 h-7 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-amber-500/10 border border-amber-500/25 flex items-center justify-center text-amber-600 shadow-sm shrink-0 group-hover:scale-105 group-hover:bg-amber-500/20 transition-all">
-                <Award className="w-3.5 h-3.5 sm:w-5 sm:h-5 text-amber-600" />
+              <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-600 shrink-0 group-hover:scale-105 transition-transform">
+                <Award size={18} className="text-amber-600" />
               </div>
-              <div className="min-w-0 flex-1">
-                <div className="text-[9px] sm:text-[11px] font-black uppercase tracking-wider text-amber-600 flex items-center gap-1.5 mb-0.5">
-                  <span>EST. 1970</span>
-                  <span className="w-1 h-1 rounded-full bg-amber-500" />
-                  <span>54+ YEARS</span>
+              <div className="min-w-0">
+                <div className="text-[10px] font-black uppercase tracking-wider text-amber-600 leading-none mb-1">
+                  EST. 1970 • 54+ YEARS
                 </div>
-                <div className="text-xs sm:text-base md:text-lg font-black text-industrial-900 tracking-tight leading-snug group-hover:text-amber-600 transition-colors">
+                <div className="text-xs md:text-sm font-black text-industrial-900 tracking-tight leading-tight group-hover:text-amber-600 transition-colors truncate">
                   54+ Years of Legacy
                 </div>
-                <div className="text-[10px] sm:text-xs text-industrial-500 mt-0.5 leading-tight line-clamp-1 sm:line-clamp-none">
-                  Tamil Nadu’s most trusted roofing & steel landmark
+                <div className="text-[10.5px] text-industrial-500 leading-none mt-0.5 truncate hidden lg:block">
+                  Tamil Nadu's most trusted roofing & steel landmark
                 </div>
               </div>
-              <ArrowRight size={16} className="text-industrial-300 group-hover:text-amber-600 group-hover:translate-x-1 transition-all shrink-0 mt-1 hidden xl:block" />
             </Link>
 
-            {/* Feature 2: Lorry Transport & Site Delivery */}
+            {/* Feature 2: Lorry Service */}
             <a 
               href="https://wa.me/919842874256?text=Hello%20A.V.G.%20Arunagiri%20Nadar%20Sons%2C%20I%20would%20like%20to%20enquire%20about%20direct%20site%20lorry%20transportation%20and%20delivery."
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center sm:items-start gap-2.5 sm:gap-4 p-1.5 sm:p-3 md:p-3.5 hover:bg-industrial-50/80 rounded-lg sm:rounded-xl transition-all duration-300"
+              className="group flex items-center gap-3 px-3.5 py-1.5 hover:bg-industrial-50/70 rounded-xl transition-all"
             >
-              <div className="w-7 h-7 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-emerald-500/10 border border-emerald-500/25 flex items-center justify-center text-emerald-600 shadow-sm shrink-0 group-hover:scale-105 group-hover:bg-emerald-500/20 transition-all">
-                <Truck className="w-3.5 h-3.5 sm:w-5 sm:h-5 text-emerald-600" />
+              <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-600 shrink-0 group-hover:scale-105 transition-transform">
+                <Truck size={18} className="text-emerald-600" />
               </div>
-              <div className="min-w-0 flex-1">
-                <div className="text-[9px] sm:text-[11px] font-black uppercase tracking-wider text-emerald-600 flex items-center gap-1.5 mb-0.5">
-                  <span>SITE LOGISTICS</span>
-                  <span className="w-1 h-1 rounded-full bg-emerald-500" />
-                  <span>DIRECT DISPATCH</span>
+              <div className="min-w-0">
+                <div className="text-[10px] font-black uppercase tracking-wider text-emerald-600 leading-none mb-1">
+                  SITE LOGISTICS • DIRECT FLEET
                 </div>
-                <div className="text-xs sm:text-base md:text-lg font-black text-industrial-900 tracking-tight leading-snug group-hover:text-emerald-600 transition-colors">
+                <div className="text-xs md:text-sm font-black text-industrial-900 tracking-tight leading-tight group-hover:text-emerald-600 transition-colors truncate">
                   Lorry Service Available
                 </div>
-                <div className="text-[10px] sm:text-xs text-industrial-500 mt-0.5 leading-tight line-clamp-1 sm:line-clamp-none">
-                  Dedicated truck delivery straight to your construction site
+                <div className="text-[10.5px] text-industrial-500 leading-none mt-0.5 truncate hidden lg:block">
+                  Dedicated truck delivery to your site
                 </div>
               </div>
-              <ArrowRight size={16} className="text-industrial-300 group-hover:text-emerald-600 group-hover:translate-x-1 transition-all shrink-0 mt-1 hidden xl:block" />
             </a>
 
-            {/* Feature 3: Statewide Network & Certified Mill Stock */}
+            {/* Feature 3: Authorized Stockist */}
             <Link 
               to="/quote"
-              className="group flex items-center sm:items-start gap-2.5 sm:gap-4 p-1.5 sm:p-3 md:p-3.5 hover:bg-industrial-50/80 rounded-lg sm:rounded-xl transition-all duration-300"
+              className="group flex items-center gap-3 px-3.5 py-1.5 hover:bg-industrial-50/70 rounded-xl transition-all"
             >
-              <div className="w-7 h-7 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-blue-500/10 border border-blue-500/25 flex items-center justify-center text-blue-600 shadow-sm shrink-0 group-hover:scale-105 group-hover:bg-blue-500/20 transition-all">
-                <ShieldCheck className="w-3.5 h-3.5 sm:w-5 sm:h-5 text-blue-600" />
+              <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-600 shrink-0 group-hover:scale-105 transition-transform">
+                <ShieldCheck size={18} className="text-blue-600" />
               </div>
-              <div className="min-w-0 flex-1">
-                <div className="text-[9px] sm:text-[11px] font-black uppercase tracking-wider text-blue-600 flex items-center gap-1.5 mb-0.5">
-                  <span>100% GENUINE</span>
-                  <span className="w-1 h-1 rounded-full bg-blue-500" />
-                  <span>CERTIFIED STOCK</span>
+              <div className="min-w-0">
+                <div className="text-[10px] font-black uppercase tracking-wider text-blue-600 leading-none mb-1">
+                  100% GENUINE • CERTIFIED
                 </div>
-                <div className="text-xs sm:text-base md:text-lg font-black text-industrial-900 tracking-tight leading-snug group-hover:text-blue-600 transition-colors">
+                <div className="text-xs md:text-sm font-black text-industrial-900 tracking-tight leading-tight group-hover:text-blue-600 transition-colors truncate">
                   Authorized Stockist of Tata, JSW & Georoof
                 </div>
-                <div className="text-[10px] sm:text-xs text-industrial-500 mt-0.5 leading-tight line-clamp-1 sm:line-clamp-none">
-                  Factory-certified roofing sheets, steel pipes & structural products
+                <div className="text-[10.5px] text-industrial-500 leading-none mt-0.5 truncate hidden lg:block">
+                  Factory-certified sheets, pipes & structures
                 </div>
               </div>
-              <ArrowRight size={16} className="text-industrial-300 group-hover:text-blue-600 group-hover:translate-x-1 transition-all shrink-0 mt-1 hidden xl:block" />
+            </Link>
+          </div>
+
+          {/* Mobile View: 3-Column Micro-Dashboard Widget */}
+          <div className="grid sm:hidden grid-cols-3 divide-x divide-industrial-100 py-1">
+            <Link to="/about" className="flex flex-col items-center text-center px-1 py-0.5">
+              <div className="w-7 h-7 rounded-lg bg-amber-500/10 flex items-center justify-center text-amber-600 mb-1">
+                <Award size={15} />
+              </div>
+              <span className="text-[11px] font-black text-industrial-900 leading-tight">54+ Yrs Legacy</span>
+              <span className="text-[8.5px] font-bold text-amber-600 uppercase tracking-wide mt-0.5">Since 1970</span>
             </Link>
 
+            <a 
+              href="https://wa.me/919842874256?text=Hello%20A.V.G.%20Arunagiri%20Nadar%20Sons%2C%20I%20would%20like%20to%20enquire%20about%20direct%20site%20lorry%20transportation%20and%20delivery."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-col items-center text-center px-1 py-0.5"
+            >
+              <div className="w-7 h-7 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-600 mb-1">
+                <Truck size={15} />
+              </div>
+              <span className="text-[11px] font-black text-industrial-900 leading-tight">Lorry Service</span>
+              <span className="text-[8.5px] font-bold text-emerald-600 uppercase tracking-wide mt-0.5">Site Delivery</span>
+            </a>
+
+            <Link to="/quote" className="flex flex-col items-center text-center px-1 py-0.5">
+              <div className="w-7 h-7 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-600 mb-1">
+                <ShieldCheck size={15} />
+              </div>
+              <span className="text-[11px] font-black text-industrial-900 leading-tight">Auth. Stockist</span>
+              <span className="text-[8px] font-bold text-blue-600 uppercase tracking-wide mt-0.5 truncate max-w-full px-0.5">Tata, JSW & Georoof</span>
+            </Link>
           </div>
+
         </div>
       </section>
 
-      {/* 2. Brands Marquee - Visible on Initial Front Page Load */}
-      <section className="pt-3 sm:pt-6 md:pt-8 pb-3 sm:pb-6 border-b border-industrial-200 overflow-hidden relative bg-industrial-50">
+      {/* 2. Brands Marquee - Sleek & Prominent */}
+      <section className="pt-3.5 sm:pt-5 pb-3 sm:pb-4 border-b border-industrial-200 overflow-hidden relative bg-industrial-50">
         {/* Premium subtle background image */}
         <div 
           className="absolute inset-0 bg-[url('/images/contact-bg.jpg')] bg-cover bg-center opacity-60 pointer-events-none mix-blend-multiply"
         />
 
-        <div className="container mx-auto px-4 md:px-6 text-center mb-1 sm:mb-3 relative z-20">
-          <h3 className="inline-block px-4 sm:px-6 py-1 sm:py-1.5 bg-white/90 backdrop-blur-sm border border-industrial-200 rounded-full text-[10px] sm:text-xs font-bold text-industrial-800 tracking-[0.18em] sm:tracking-[0.2em] uppercase shadow-sm">
+        <div className="container mx-auto px-4 md:px-6 text-center mb-1.5 sm:mb-2 relative z-20">
+          <h3 className="inline-block px-3 sm:px-5 py-0.5 sm:py-1 bg-white/90 backdrop-blur-sm border border-industrial-200 rounded-full text-[9px] sm:text-xs font-bold text-industrial-800 tracking-[0.16em] sm:tracking-[0.2em] uppercase shadow-sm">
             Authorized Stockist Of
           </h3>
         </div>
 
-        <div className="relative flex overflow-x-hidden group mt-1 sm:mt-2 z-10">
+        <div className="relative flex overflow-x-hidden group mt-0.5 sm:mt-1 z-10">
           <motion.div
-            className="flex items-center gap-12 md:gap-20 whitespace-nowrap px-8"
+            className="flex items-center gap-8 sm:gap-12 md:gap-16 whitespace-nowrap px-6 sm:px-8"
             animate={{ x: ["0%", "-50%"] }}
-            transition={{ ease: "linear", duration: 30, repeat: Infinity }}
+            transition={{ ease: "linear", duration: 28, repeat: Infinity }}
           >
             {[...brands, ...brands, ...brands, ...brands, ...brands].map((brand, idx) => (
               <div 
                 key={`${brand.id}-${idx}`} 
-                className="flex items-center justify-center px-4 md:px-6 group/brand cursor-default"
+                className="flex items-center justify-center px-2.5 sm:px-4 md:px-5 group/brand cursor-default"
               >
-                <div className="w-32 h-16 md:w-48 md:h-20 flex items-center justify-center mix-blend-multiply hover:mix-blend-normal transition-all duration-300">
+                <div className="w-20 h-9 sm:w-28 sm:h-12 md:w-36 md:h-14 flex items-center justify-center mix-blend-multiply hover:mix-blend-normal transition-all duration-300">
                   <img 
                     src={brand.logo} 
                     alt={brand.name} 
                     loading="lazy"
                     decoding="async"
-                    className="max-w-full max-h-full object-contain scale-110 md:scale-125 transition-transform duration-300 drop-shadow-sm group-hover/brand:drop-shadow-md group-hover/brand:scale-[1.35]"
+                    className="max-w-full max-h-full object-contain scale-105 md:scale-115 transition-transform duration-300 drop-shadow-sm group-hover/brand:drop-shadow-md group-hover/brand:scale-[1.25]"
                     onError={(e) => { 
                       e.target.style.display = 'none'; 
                       e.target.nextSibling.style.display = 'block';
                     }}
                   />
-                  <div className="hidden text-industrial-500 hover:text-accent-500 font-black text-2xl md:text-3xl tracking-widest uppercase transition-colors">{brand.name}</div>
+                  <div className="hidden text-industrial-500 hover:text-accent-500 font-black text-xl md:text-2xl tracking-widest uppercase transition-colors">{brand.name}</div>
                 </div>
               </div>
             ))}
           </motion.div>
           {/* Gradient masks for smooth edges */}
-          <div className="absolute inset-y-0 left-0 w-12 sm:w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
-          <div className="absolute inset-y-0 right-0 w-12 sm:w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute inset-y-0 left-0 w-10 sm:w-24 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute inset-y-0 right-0 w-10 sm:w-24 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
         </div>
       </section>
 
