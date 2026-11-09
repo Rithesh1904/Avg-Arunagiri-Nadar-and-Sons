@@ -11,6 +11,9 @@ export function ScrollToTop() {
     }
 
     const resetScroll = () => {
+      if (window.lenis) {
+        window.lenis.scrollTo(0, { immediate: true });
+      }
       window.scrollTo({
         top: 0,
         left: 0,
