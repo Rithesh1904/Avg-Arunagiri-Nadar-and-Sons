@@ -10,7 +10,7 @@ export function SectionHeading({ title, subtitle, className, center = false }) {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.5 }}
-        className="text-4xl md:text-5xl font-extrabold text-industrial-950 mb-4 tracking-tight"
+        className="text-2xl sm:text-3xl md:text-5xl font-extrabold text-industrial-950 mb-3 sm:mb-4 tracking-tight"
       >
         {title}
       </motion.h2>
@@ -20,7 +20,7 @@ export function SectionHeading({ title, subtitle, className, center = false }) {
         whileInView={{ opacity: 1, width: "80px" }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.6, delay: 0.2 }}
-        className={cn("h-1.5 bg-accent-500 mb-6 rounded-full", center && "mx-auto")}
+        className={cn("h-1 sm:h-1.5 bg-accent-500 mb-4 sm:mb-6 rounded-full", center && "mx-auto")}
       />
 
       {subtitle && (
@@ -30,7 +30,7 @@ export function SectionHeading({ title, subtitle, className, center = false }) {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.5, delay: 0.1 }}
           className={cn(
-            "text-industrial-600 max-w-3xl text-lg md:text-xl font-medium leading-relaxed",
+            "text-industrial-600 max-w-3xl text-sm sm:text-base md:text-xl font-medium leading-relaxed",
             center && "mx-auto"
           )}
         >

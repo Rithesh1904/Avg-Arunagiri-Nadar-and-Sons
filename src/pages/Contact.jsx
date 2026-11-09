@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { SectionHeading } from '../components/ui/SectionHeading';
-import { MapPin, Phone, Mail, Clock, MessageCircle, Send } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, MessageCircle, Send, CheckCircle2 } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export function Contact() {
@@ -35,7 +35,7 @@ export function Contact() {
         className="absolute inset-0 -z-10 bg-[url('/images/contact-bg.jpg')] bg-cover bg-center bg-fixed opacity-[0.25]"
       />
       {/* Premium Contact Header */}
-      <div className="relative bg-industrial-950 pt-28 pb-12 md:pt-36 md:pb-16 overflow-hidden border-b border-industrial-800">
+      <div className="relative bg-industrial-950 pt-16 pb-10 sm:pt-24 sm:pb-12 md:pt-32 md:pb-16 overflow-hidden border-b border-industrial-800">
         {/* Decorative Gradients & Overlays */}
         <div className="absolute inset-0 bg-gradient-to-br from-industrial-900 via-industrial-950 to-black z-0" />
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent-600/10 rounded-full blur-[100px] -mr-64 -mt-64 z-0 pointer-events-none" />
@@ -72,7 +72,7 @@ export function Contact() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-4 tracking-tight drop-shadow-lg"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white mb-3 sm:mb-4 tracking-tight drop-shadow-lg"
           >
             Let's Connect
           </motion.h1>
@@ -81,14 +81,14 @@ export function Contact() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-industrial-300 text-lg max-w-2xl mx-auto leading-relaxed font-medium"
+            className="text-industrial-300 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed font-medium"
           >
             Get in touch with <span className="text-white font-bold">A.V.G. Arunagiri Nadar Sons</span> for all your roofing and building material needs across Tamil Nadu.
           </motion.p>
         </div>
       </div>
 
-      <div className="container mx-auto px-4 md:px-6 py-16">
+      <div className="container mx-auto px-4 md:px-6 py-10 sm:py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
           
           {/* Contact Info */}
@@ -157,7 +157,7 @@ export function Contact() {
 
           {/* Contact Form */}
           <div>
-            <div className="bg-white/80 backdrop-blur-md p-8 rounded-xl border border-white/50 shadow-sm">
+            <div className="bg-white/80 backdrop-blur-md p-5 sm:p-8 rounded-xl border border-white/50 shadow-sm">
               <h3 className="text-2xl font-bold text-industrial-900 mb-6">Send an Enquiry</h3>
               
               {submitted ? (

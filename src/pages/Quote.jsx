@@ -41,11 +41,11 @@ export function Quote() {
   };
 
   return (
-    <div className="bg-industrial-50 min-h-screen py-12">
+    <div className="bg-industrial-50 min-h-screen pt-[90px] pb-12">
       <div className="container mx-auto px-4 md:px-6 max-w-3xl">
-        <div className="text-center mb-10">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-white rounded-full shadow-sm mb-4 text-accent-500">
-            <FileText size={32} />
+        <div className="text-center mb-8 sm:mb-10">
+          <div className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 bg-white rounded-full shadow-sm mb-4 text-accent-500">
+            <FileText size={28} />
           </div>
           <SectionHeading 
             title="Request a Quote" 
@@ -58,7 +58,7 @@ export function Quote() {
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="bg-white rounded-xl shadow-sm border border-industrial-200 p-8"
+          className="bg-white rounded-xl shadow-sm border border-industrial-200 p-5 sm:p-8"
         >
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

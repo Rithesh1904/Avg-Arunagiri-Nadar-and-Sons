@@ -20,7 +20,7 @@ export const gallery = [
       {
         url: "/images/gallery/industrial/industrial-3.jpg",
         title: "Structural Steel Beam & Truss Roof Framework",
-        productTag: "Mild Steel Pipes"
+        productTag: "Steel Pipes"
       },
       {
         url: "/images/gallery/industrial/industrial-4.jpg",
@@ -95,7 +95,7 @@ export const gallery = [
       {
         url: "/images/gallery/commercial/commercial-8.jpg",
         title: "Architectural Commercial Canopy with Steel Structural Pipes",
-        productTag: "Mild Steel Pipes"
+        productTag: "Steel Pipes"
       }
     ]
   },

@@ -221,16 +221,16 @@ export function Product3DViewer({ product, className }) {
       </div>
 
       {/* Interactive Controls Bar */}
-      <div className="mt-3.5 flex flex-wrap items-center justify-between gap-2.5 p-3 bg-industrial-50/90 rounded-xl border border-industrial-200">
-        <div className="flex items-center gap-2">
+      <div className="mt-3.5 flex flex-wrap items-center justify-between gap-2 p-2.5 sm:p-3 bg-industrial-50/90 rounded-xl border border-industrial-200">
+        <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
           {/* Quick Flip Button */}
           <button
             type="button"
             onClick={handleQuickFlip}
-            className="px-3.5 py-2 bg-industrial-900 hover:bg-industrial-800 text-white rounded-lg text-xs font-bold transition-all shadow-sm flex items-center gap-1.5 cursor-pointer hover:shadow"
+            className="px-2.5 sm:px-3.5 py-1.5 sm:py-2 bg-industrial-900 hover:bg-industrial-800 text-white rounded-lg text-[11px] sm:text-xs font-bold transition-all shadow-sm flex items-center gap-1.5 cursor-pointer hover:shadow"
             title="Flip to opposite side"
           >
-            <FlipHorizontal size={14} className="text-accent-400" />
+            <FlipHorizontal size={13} className="text-accent-400" />
             <span>{isBackFacing ? 'Flip to Front' : 'Flip to Backside'}</span>
           </button>
 
@@ -242,7 +242,7 @@ export function Product3DViewer({ product, className }) {
               setIsAutoSpinning(!isAutoSpinning);
             }}
             className={cn(
-              "px-3 py-2 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer border",
+              "px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-lg text-[11px] sm:text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer border",
               isAutoSpinning
                 ? "bg-accent-500 text-industrial-950 border-accent-600 shadow-sm"
                 : "bg-white hover:bg-industrial-100 text-industrial-800 border-industrial-200"
@@ -251,12 +251,12 @@ export function Product3DViewer({ product, className }) {
           >
             {isAutoSpinning ? (
               <>
-                <Pause size={13} />
+                <Pause size={12} />
                 <span>Pause Spin</span>
               </>
             ) : (
               <>
-                <Play size={13} />
+                <Play size={12} />
                 <span>Auto Spin 360°</span>
               </>
             )}
@@ -267,11 +267,11 @@ export function Product3DViewer({ product, className }) {
         <button
           type="button"
           onClick={handleReset}
-          className="p-2 text-industrial-600 hover:text-industrial-900 bg-white hover:bg-industrial-100 rounded-lg border border-industrial-200 text-xs font-semibold transition-colors flex items-center gap-1 cursor-pointer"
+          className="p-1.5 sm:p-2 text-industrial-600 hover:text-industrial-900 bg-white hover:bg-industrial-100 rounded-lg border border-industrial-200 text-[11px] sm:text-xs font-semibold transition-colors flex items-center gap-1 cursor-pointer"
           title="Reset to default front view"
         >
-          <RefreshCw size={13} />
-          <span className="hidden sm:inline">Reset</span>
+          <RefreshCw size={12} />
+          <span className="inline">Reset</span>
         </button>
       </div>
 

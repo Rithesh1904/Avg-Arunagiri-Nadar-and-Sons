@@ -116,7 +116,7 @@ export function AboutUsSection({ transparentBg = false, hideStats = false }) {
     <section
       id="about-section"
       ref={sectionRef}
-      className={`w-full py-24 px-4 overflow-hidden relative ${transparentBg ? "bg-transparent" : "bg-industrial-50"}`}
+      className={`w-full py-14 sm:py-20 md:py-24 px-4 overflow-hidden relative ${transparentBg ? "bg-transparent" : "bg-industrial-50"}`}
     >
       <motion.div
         className="absolute top-20 left-10 w-64 h-64 rounded-full bg-accent-500/10 blur-3xl"
@@ -143,7 +143,7 @@ export function AboutUsSection({ transparentBg = false, hideStats = false }) {
             <Zap className="w-4 h-4" />
             A.V.G. ARUNAGIRI NADAR SONS
           </motion.span>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center text-industrial-900">About Us</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-center text-industrial-900">About Us</h2>
           <motion.div
             className="w-24 h-1 bg-accent-500"
             initial={{ width: 0 }}
@@ -195,7 +195,7 @@ export function AboutUsSection({ transparentBg = false, hideStats = false }) {
                 </motion.div>
               </motion.div>
               <motion.div
-                className="absolute inset-0 border-4 border-industrial-300 rounded-xl -m-4 z-[-1]"
+                className="absolute inset-0 border-4 border-industrial-300 rounded-xl -m-2 sm:-m-4 z-[-1] pointer-events-none"
                 initial={{ opacity: 0, scale: 1.1 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
@@ -238,7 +238,7 @@ function ServiceItem({ icon, secondaryIcon, title, description, variants, delay,
         </motion.div>
         <h3 className="text-xl font-bold text-industrial-900 group-hover:text-accent-600 transition-colors duration-300">{title}</h3>
       </motion.div>
-      <motion.p className="text-sm text-industrial-600 leading-relaxed pl-[3.5rem]" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6, delay: delay + 0.4 }}>
+      <motion.p className="text-sm text-industrial-600 leading-relaxed pl-0 sm:pl-[3.5rem] mt-1 sm:mt-0" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6, delay: delay + 0.4 }}>
         {description}
       </motion.p>
     </motion.div>

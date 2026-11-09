@@ -28,5 +28,10 @@ export const brands = [
     id: "georoof",
     name: "Georoof",
     logo: "/assets/brands/georoof.png"
+  },
+  {
+    id: "tata",
+    name: "Tata",
+    logo: "/assets/brands/tata.png"
   }
 ];

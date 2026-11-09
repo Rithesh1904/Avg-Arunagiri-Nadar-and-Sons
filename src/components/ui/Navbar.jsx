@@ -52,23 +52,23 @@ export function Navbar() {
           <div className={cn(
             "flex items-center justify-between transition-all duration-500",
             isScrolled 
-              ? "bg-white/85 backdrop-blur-xl border border-white/40 shadow-[0_8px_30px_rgb(0,0,0,0.04)] px-4 md:px-6 py-3 rounded-3xl" 
+              ? "bg-white/85 backdrop-blur-xl border border-white/40 shadow-[0_8px_30px_rgb(0,0,0,0.04)] px-3 sm:px-4 md:px-6 py-2.5 sm:py-3 rounded-2xl sm:rounded-3xl" 
               : "px-0 py-0"
           )}>
             {/* Logo */}
-            <Link to="/" className="flex items-center gap-3 group relative z-10">
-              <span className="text-3xl md:text-4xl font-black text-[#F4B400] tracking-tighter transition-all duration-500 drop-shadow-md">
+            <Link to="/" className="flex items-center gap-2 sm:gap-3 group relative z-10 shrink-0 min-w-0 max-w-[80%] sm:max-w-none">
+              <span className="text-2xl sm:text-3xl md:text-4xl font-black text-[#F4B400] tracking-tighter transition-all duration-500 drop-shadow-md shrink-0">
                 AVG
               </span>
-              <div className="flex flex-col">
+              <div className="flex flex-col min-w-0">
                 <span className={cn(
-                  "text-xl md:text-2xl font-black leading-none tracking-tighter transition-all duration-500 drop-shadow-sm",
+                  "text-base sm:text-xl md:text-2xl font-black leading-tight sm:leading-none tracking-tight sm:tracking-tighter transition-all duration-500 drop-shadow-sm truncate",
                   isScrolled ? "text-industrial-900" : "text-[#F5F7FA]"
                 )}>
                   Arunagiri Nadar Sons
                 </span>
                 <span className={cn(
-                  "text-[0.65rem] md:text-xs font-black tracking-[0.25em] uppercase mt-1",
+                  "text-[0.6rem] sm:text-[0.65rem] md:text-xs font-black tracking-[0.15em] sm:tracking-[0.25em] uppercase mt-0.5 sm:mt-1 truncate",
                   isScrolled ? "text-industrial-500" : "text-[#9CA6B5]"
                 )}>
                   Premium Building Solutions

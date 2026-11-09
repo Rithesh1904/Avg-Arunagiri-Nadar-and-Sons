@@ -17,7 +17,7 @@ export function Products() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState(categoryParam || 'all');
   const [selectedBrand, setSelectedBrand] = useState('all');
-  const [isFilterOpen, setIsFilterOpen] = useState(true);
+  const [isFilterOpen, setIsFilterOpen] = useState(typeof window !== 'undefined' ? window.innerWidth >= 1024 : false);
 
   // Sync state with URL if it changes
   useEffect(() => {
@@ -36,16 +36,65 @@ export function Products() {
     }
   };
 
+  const handleBrandChange = (brandId) => {
+    setSelectedBrand(brandId);
+    if (brandId !== 'all' && selectedCategory !== 'all') {
+      const activeCategoryName = categories.find(c => c.id === selectedCategory || (selectedCategory === 'paper-rolls' && c.id === 'tar-felt-roll') || (selectedCategory === 'mild-steel-pipes' && c.id === 'steel-pipes'))?.name;
+      const brandObj = brands.find(b => b.id === brandId);
+      const targetBrandName = brandObj?.name?.toLowerCase();
+      
+      const hasProductsInCat = products.some(p => {
+        const prodBrand = (p.brand || '').toLowerCase();
+        return (p.category === activeCategoryName) && (
+          prodBrand === targetBrandName ||
+          (brandId === 'vnext' && (prodBrand === 'vnext' || prodBrand === 'visaka')) ||
+          (brandId === 'georoof' && (prodBrand === 'georoof' || prodBrand === 'geo roof')) ||
+          (brandId === 'tata' && prodBrand.includes('tata')) ||
+          (brandId === 'durashine' && (prodBrand === 'durashine' || prodBrand.includes('durashine'))) ||
+          (brandId === 'jsw' && prodBrand.includes('jsw')) ||
+          (brandId === 'lotus' && prodBrand.includes('lotus')) ||
+          (brandId === 'aquastar' && prodBrand.includes('aquastar'))
+        );
+      });
+      
+      if (!hasProductsInCat) {
+        navigate('/products');
+        setSelectedCategory('all');
+      }
+    }
+  };
+
   const filteredProducts = useMemo(() => {
     return products.filter(product => {
       // Category filter
-      if (selectedCategory !== 'all' && product.category !== categories.find(c => c.id === selectedCategory)?.name) {
-        return false;
+      if (selectedCategory !== 'all') {
+        const activeCategoryName = categories.find(c => c.id === selectedCategory || (selectedCategory === 'paper-rolls' && c.id === 'tar-felt-roll') || (selectedCategory === 'mild-steel-pipes' && c.id === 'steel-pipes'))?.name;
+        if (product.category !== activeCategoryName) {
+          return false;
+        }
       }
       
-      // Brand filter
-      if (selectedBrand !== 'all' && product.brand !== brands.find(b => b.id === selectedBrand)?.name) {
-        return false;
+      // Brand filter (resilient alias & case matching)
+      if (selectedBrand !== 'all') {
+        const targetBrand = brands.find(b => b.id === selectedBrand);
+        const bName = (targetBrand?.name || '').toLowerCase();
+        const bId = selectedBrand.toLowerCase();
+        const pBrand = (product.brand || '').toLowerCase();
+        
+        const matchesBrand = 
+          pBrand === bName || 
+          pBrand === bId ||
+          (bId === 'georoof' && (pBrand === 'georoof' || pBrand === 'geo roof')) ||
+          (bId === 'vnext' && (pBrand === 'vnext' || pBrand === 'visaka')) ||
+          (bId === 'tata' && pBrand.includes('tata')) ||
+          (bId === 'durashine' && (pBrand === 'durashine' || pBrand.includes('durashine'))) ||
+          (bId === 'jsw' && pBrand.includes('jsw')) ||
+          (bId === 'lotus' && pBrand.includes('lotus')) ||
+          (bId === 'aquastar' && pBrand.includes('aquastar'));
+
+        if (!matchesBrand) {
+          return false;
+        }
       }
 
       // Search query
@@ -93,29 +142,33 @@ export function Products() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="relative w-full max-w-3xl text-industrial-900"
             >
-              <div className="absolute inset-y-0 left-0 pl-6 flex items-center pointer-events-none">
-                <Search className="h-6 w-6 text-industrial-400" />
+              <div className="absolute inset-y-0 left-0 pl-4 sm:pl-6 flex items-center pointer-events-none">
+                <Search className="h-5 w-5 sm:h-6 sm:w-6 text-industrial-400" />
               </div>
               <input
                 type="text"
-                className="block w-full pl-16 pr-8 py-5 border-2 border-industrial-200/60 rounded-full leading-5 bg-white/80 backdrop-blur-md placeholder-industrial-400 focus:outline-none focus:border-accent-500 focus:ring-4 focus:ring-accent-500/20 transition-all shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] text-lg font-medium"
-                placeholder="Search premium products, categories, brands..."
+                className="block w-full pl-12 sm:pl-16 pr-5 sm:pr-8 py-3.5 sm:py-5 border-2 border-industrial-200/60 rounded-full leading-5 bg-white/80 backdrop-blur-md placeholder-industrial-400 focus:outline-none focus:border-accent-500 focus:ring-4 focus:ring-accent-500/20 transition-all shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] text-base sm:text-lg font-medium"
+                placeholder="Search products, categories, brands..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
             </motion.div>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-8">
+        <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
           {/* Mobile Filter Toggle */}
-          <div className="lg:hidden flex items-center justify-between bg-white/80 backdrop-blur-md p-4 rounded-md shadow-sm border border-industrial-200">
-            <span className="font-semibold text-industrial-800">Filters</span>
+          <div className="lg:hidden flex items-center justify-between bg-white/90 backdrop-blur-md p-3.5 sm:p-4 rounded-xl shadow-sm border border-industrial-200">
+            <div className="flex items-center gap-2">
+              <Filter size={18} className="text-accent-600" />
+              <span className="font-bold text-industrial-800 text-sm">
+                Filters {(selectedCategory !== 'all' || selectedBrand !== 'all') ? '(Active)' : ''}
+              </span>
+            </div>
             <button 
               onClick={() => setIsFilterOpen(!isFilterOpen)}
-              className="flex items-center gap-2 text-industrial-600 hover:text-industrial-900"
+              className="flex items-center gap-1 text-xs font-bold px-3 py-1.5 rounded-lg bg-industrial-100 text-industrial-800 hover:bg-industrial-200 transition-colors"
             >
-              <Filter size={20} />
-              {isFilterOpen ? 'Hide' : 'Show'}
+              {isFilterOpen ? 'Hide Filters' : 'Show Filters'}
             </button>
           </div>
 
@@ -173,7 +226,7 @@ export function Products() {
                           name="brand"
                           value="all"
                           checked={selectedBrand === 'all'}
-                          onChange={(e) => setSelectedBrand(e.target.value)}
+                          onChange={(e) => handleBrandChange(e.target.value)}
                           className="w-4 h-4 text-accent-600 border-industrial-300 focus:ring-accent-500"
                         />
                         <span className="ml-3 text-industrial-700 group-hover:text-industrial-900 transition-colors">All Brands</span>
@@ -185,7 +238,7 @@ export function Products() {
                             name="brand"
                             value={brand.id}
                             checked={selectedBrand === brand.id}
-                            onChange={(e) => setSelectedBrand(e.target.value)}
+                            onChange={(e) => handleBrandChange(e.target.value)}
                             className="w-4 h-4 text-accent-600 border-industrial-300 focus:ring-accent-500"
                           />
                           <span className="ml-3 text-industrial-700 group-hover:text-industrial-900 transition-colors">{brand.name}</span>
@@ -220,7 +273,7 @@ export function Products() {
             </div>
             
             {filteredProducts.length > 0 ? (
-              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5 sm:gap-6">
                 {filteredProducts.map((product) => (
                   <ProductCard key={product.id} product={product} />
                 ))}

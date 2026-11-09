@@ -78,7 +78,7 @@ export function Calculator() {
           <div className="grid grid-cols-1 md:grid-cols-2">
             
             {/* Form */}
-            <div className="p-8 border-b md:border-b-0 md:border-r border-white/30">
+            <div className="p-5 sm:p-8 border-b md:border-b-0 md:border-r border-white/30">
               <form onSubmit={handleCalculate} className="space-y-6">
                 <div>
                   <h3 className="text-lg font-bold text-industrial-900 mb-4">Building Dimensions</h3>
@@ -176,7 +176,7 @@ export function Calculator() {
             </div>
 
             {/* Result */}
-            <div className="p-8 bg-white/40 flex flex-col justify-center">
+            <div className="p-5 sm:p-8 bg-white/40 flex flex-col justify-center">
               {result ? (
                 <motion.div 
                   initial={{ opacity: 0, scale: 0.95 }}

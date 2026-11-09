@@ -117,7 +117,7 @@ export const ProductCard = React.forwardRef(({ product, className, ...props }, r
           <div className="flex gap-2 w-full mt-auto pt-2">
             <Link 
               to={`/product/${product.id}`}
-              className="flex-1 text-center py-2.5 bg-industrial-50 hover:bg-industrial-100 text-industrial-900 rounded-md font-bold transition-colors text-sm"
+              className="flex-1 text-center py-2 sm:py-2.5 px-2 bg-industrial-50 hover:bg-industrial-100 text-industrial-900 rounded-md font-bold transition-colors text-xs sm:text-sm"
             >
               View Details
             </Link>
@@ -125,7 +125,7 @@ export const ProductCard = React.forwardRef(({ product, className, ...props }, r
               href={`https://wa.me/919842874256?text=${encodeURIComponent(`Hello A.V.G. Arunagiri Nadar Sons, I am interested in:\nProduct: ${product.name}\nCategory: ${product.category}\n\nPlease provide availability and details. Thank you.`)}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 text-center py-2.5 bg-[#0f172a] hover:bg-industrial-900 text-white rounded-md font-bold transition-colors text-sm"
+              className="flex-1 text-center py-2 sm:py-2.5 px-2 bg-[#0f172a] hover:bg-industrial-900 text-white rounded-md font-bold transition-colors text-xs sm:text-sm"
             >
               Enquire Now
             </a>

@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { products } from '../data/products';
 import { EmptyState } from '../components/ui/EmptyState';
 import { Product3DViewer } from '../components/ui/Product3DViewer';
+import { ProductQuickHighlights } from '../components/ui/ProductQuickHighlights';
 import { cn } from '../lib/utils';
 
 export function ProductDetails() {
@@ -14,7 +15,14 @@ export function ProductDetails() {
   const [selectedSize, setSelectedSize] = useState(null);
 
   useEffect(() => {
-    const found = products.find(p => p.id === productId);
+    const found = products.find(p => 
+      p.id === productId || 
+      (productId === 'brown-kraft-paper-roll' && p.id === 'tar-felt-roll') ||
+      ((productId === 'puf-sheet-30mm' || productId === 'puf-sheet-40mm') && p.id === 'puff-panel-sheets-40mm') ||
+      (productId === 'puf-sheet-50mm' && p.id === 'puff-panel-sheets-50mm') ||
+      (productId === 'gp-square-pipe' && p.id === 'gi-steel-pipe') ||
+      (productId === 'mild-steel-rectangular-pipe' && p.id === 'ms-steel-pipe')
+    );
     setProduct(found);
     if (found?.availableSizes && found.availableSizes.length > 0) {
       setSelectedSize(found.availableSizes[0]);
@@ -53,9 +61,9 @@ export function ProductDetails() {
   );
 
   return (
-    <div className="bg-white min-h-screen pt-[90px] pb-20 relative z-0">
+    <div className="bg-white min-h-screen pt-[80px] sm:pt-[90px] pb-14 sm:pb-20 relative z-0">
       {/* Breadcrumb & Back */}
-      <div className="bg-industrial-50 border-b border-industrial-100 py-4">
+      <div className="bg-industrial-50 border-b border-industrial-100 py-3 sm:py-4">
         <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
           <button 
             onClick={() => navigate(-1)}
@@ -63,7 +71,7 @@ export function ProductDetails() {
           >
             <ArrowLeft size={16} /> Back
           </button>
-          <div className="text-sm text-industrial-500 hidden sm:block">
+          <div className="text-sm text-industrial-500 hidden sm:block truncate ml-4">
             <Link to="/products" className="hover:text-accent-600 transition-colors">Products</Link>
             <span className="mx-2">/</span>
             <Link to={`/products/${products.find(p=>p.id===productId)?.category ? 'all' : ''}`} className="hover:text-accent-600 transition-colors">{product.category}</Link>
@@ -73,17 +81,18 @@ export function ProductDetails() {
         </div>
       </div>
 
-      <div className="container mx-auto px-4 md:px-6 pt-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+      <div className="container mx-auto px-4 md:px-6 pt-8 sm:pt-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
           
-          {/* Interactive 3D Product Sheet Viewer with Free Drag & Spin */}
+          {/* Interactive 3D Product Sheet Viewer with Free Drag & Spin & Quick Highlights */}
           <motion.div 
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            className="w-full"
+            className="w-full flex flex-col gap-6"
           >
             <Product3DViewer product={product} />
+            <ProductQuickHighlights product={product} />
           </motion.div>
 
           {/* Product Info */}
@@ -99,14 +108,14 @@ export function ProductDetails() {
               </div>
             )}
             
-            <h1 className="text-3xl md:text-4xl font-bold text-industrial-900 mb-2">{product.name}</h1>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-industrial-900 mb-2">{product.name}</h1>
             
             {/* Price removed as per request */}
-            <div className="text-sm text-industrial-500 font-medium italic mb-6 mt-1">
+            <div className="text-sm text-industrial-500 font-medium italic mb-4 sm:mb-6 mt-1">
               * Enquire for price and details
             </div>
             
-            <p className="text-industrial-600 text-lg mb-8 leading-relaxed">
+            <p className="text-industrial-600 text-base sm:text-lg mb-6 sm:mb-8 leading-relaxed">
               {product.description}
             </p>
 
@@ -227,21 +236,21 @@ export function ProductDetails() {
             )}
 
             {/* CTAs */}
-            <div className="mt-auto pt-8 border-t border-industrial-100 flex flex-col sm:flex-row gap-4">
+            <div className="mt-auto pt-6 sm:pt-8 border-t border-industrial-100 flex flex-col sm:flex-row gap-3 sm:gap-4">
               <a 
                 href={`https://wa.me/919842874256?text=${whatsappMessage}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white py-4 px-6 rounded-md font-bold text-lg transition-all shadow-md hover:shadow-lg"
+                className="flex-1 flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white py-3.5 sm:py-4 px-4 sm:px-6 rounded-md font-bold text-base sm:text-lg transition-all shadow-md hover:shadow-lg text-center"
               >
-                <MessageCircle size={22} />
+                <MessageCircle size={20} />
                 Enquire on WhatsApp
               </a>
               <a 
                 href="tel:+919842874256"
-                className="flex items-center justify-center gap-2 bg-industrial-900 hover:bg-industrial-800 text-white py-4 px-6 rounded-md font-bold text-lg transition-colors sm:w-auto"
+                className="flex items-center justify-center gap-2 bg-industrial-900 hover:bg-industrial-800 text-white py-3.5 sm:py-4 px-4 sm:px-6 rounded-md font-bold text-base sm:text-lg transition-colors sm:w-auto text-center"
               >
-                <Phone size={22} />
+                <Phone size={20} />
                 Call Now
               </a>
             </div>

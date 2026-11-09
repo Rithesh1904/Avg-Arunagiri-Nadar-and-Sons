@@ -58,7 +58,7 @@ export const products = [
     "tallyName": "POLYCARBONATED Multiwall / Solid Sheets Colour",
     "category": "Polycarbonate Products",
     "subcategory": "Coloured Polycarbonate",
-    "brand": "Tufflite",
+    "brand": "Lotus",
     "description": "Coloured Polycarbonate Sheets offering UV protection on both sides with decorative and solar control tinting.",
     "image": "/images/Coloured Polycarbonate Sheet.jpg",
     "availableSizes": [
@@ -111,7 +111,7 @@ export const products = [
     "tallyName": "POLYCARBONATED SOLID SHEETS",
     "category": "Polycarbonate Products",
     "subcategory": "Solid Polycarbonate",
-    "brand": "Generic",
+    "brand": "Lotus",
     "description": "Ultra-durable, glass-like transparent solid polycarbonate sheet with high impact resistance and optical clarity.",
     "image": "/images/Polycarbonate Solid Sheet.jpg",
     "availableSizes": [
@@ -179,7 +179,7 @@ export const products = [
     "tallyName": "POLYCARBONATE D SOLID SHEET",
     "category": "Polycarbonate Products",
     "subcategory": "Solid Polycarbonate",
-    "brand": "Generic",
+    "brand": "Lotus",
     "description": "Embossed texture polycarbonate sheet designed for pleasant light diffusion and glare reduction in roofing and skylights.",
     "image": "/images/Industrial Polycarbonate Sheet.jpg",
     "availableSizes": [
@@ -219,7 +219,7 @@ export const products = [
     "tallyName": "POLYCARBONATED SOLID SHEETS (TEXTURED)",
     "category": "Polycarbonate Products",
     "subcategory": "Solid Polycarbonate",
-    "brand": "Generic",
+    "brand": "Lotus",
     "description": "Polycarbonate textured rolls in Raindrop, Diamond, Frosted, and Square patterns for decorative and privacy roofing applications.",
     "image": "/images/Industrial Polycarbonate Sheet.jpg",
     "availableSizes": [
@@ -300,7 +300,7 @@ export const products = [
     "tallyName": "H P L Sheets",
     "category": "Polycarbonate Products",
     "subcategory": "H P L Sheets",
-    "brand": "LOTUS",
+    "brand": "Lotus",
     "description": "High Pressure Laminate exterior sheets with Wood Grain finish for building elevation and porticos.",
     "image": "/images/H P L Sheets.jpg",
     "availableSizes": [
@@ -420,7 +420,7 @@ export const products = [
     "tallyName": "TATA 6 FT .47 MM 1830 MM",
     "category": "Roofing Sheets",
     "subcategory": "GI Color Coated Sheets",
-    "brand": "TATA",
+    "brand": "Tata",
     "description": "Authentic TATA 0.47 mm Color Coated Steel Roofing Sheets engineered for superior weather resistance and longevity.",
     "image": "/images/Sky Blue GI Color Coated Roofing Sheet.jpg",
     "availableSizes": [
@@ -468,7 +468,7 @@ export const products = [
     "tallyName": "TATA CRIMP 5+1",
     "category": "Roofing Sheets",
     "subcategory": "GI Color Coated Sheets",
-    "brand": "TATA",
+    "brand": "Tata",
     "description": "TATA pre-crimped curved bend sheet for corners, canopies, and arched roof profiles.",
     "image": "/images/Sky Blue GI Color Coated Roofing Sheet.jpg",
     "availableSizes": [
@@ -502,7 +502,7 @@ export const products = [
     "tallyName": "GEO ROOF 1.83 MTS X 1.06 MTS",
     "category": "Roofing Sheets",
     "subcategory": "Galvalume Roof Sheets",
-    "brand": "Geo Roof",
+    "brand": "Georoof",
     "description": "Premium Geo Roof corrugated steel sheets engineered for long spans and modern architectural applications.",
     "image": "/images/Galvalume Roof Sheet.jpg",
     "availableSizes": [
@@ -542,7 +542,7 @@ export const products = [
     "tallyName": "GEO ROOF CRIMP 5+1",
     "category": "Roofing Sheets",
     "subcategory": "Galvalume Roof Sheets",
-    "brand": "Geo Roof",
+    "brand": "Georoof",
     "description": "Pre-curved Geo Roof crimp bend sheets offering seamless arched coverage for roofs and eaves.",
     "image": "/images/Galvalume Roof Sheet.jpg",
     "availableSizes": [
@@ -576,7 +576,7 @@ export const products = [
     "tallyName": "GALVALUME SHEETS",
     "category": "Roofing Sheets",
     "subcategory": "Galvalume Roof Sheets",
-    "brand": "Generic",
+    "brand": "JSW",
     "description": "Corrosion resistant zinc-aluminum alloy coated Galvalume corrugated steel roofing sheet with AZ100 coating.",
     "image": "/images/Galvalume Roof Sheet.jpg",
     "availableSizes": [
@@ -614,7 +614,7 @@ export const products = [
     "tallyName": "GALVALUME SHEETS RIDGES 2. 44 MTS (8 FT)",
     "category": "Roofing Sheets",
     "subcategory": "Galvalume Roof Sheets",
-    "brand": "Generic",
+    "brand": "JSW",
     "description": "Standard 8-foot Galvalume roof ridge cap to seal the apex of pitched roofs against water penetration.",
     "image": "/images/Galvalume Roof Sheet.jpg",
     "availableSizes": [
@@ -642,7 +642,7 @@ export const products = [
     "tallyName": "Tata 10ft Ridge",
     "category": "Roofing Sheets",
     "subcategory": "GI Color Coated Sheets",
-    "brand": "TATA",
+    "brand": "Tata",
     "description": "Heavy duty 10-foot TATA color coated ridge capping for pitched roofs and warehouse ridgelines.",
     "image": "/images/Sky Blue GI Color Coated Roofing Sheet.jpg",
     "availableSizes": [
@@ -709,14 +709,14 @@ export const products = [
     "backDetails": "Lotus 3-Layer Co-Extruded Brilliant White Ceiling Reflectance Layer"
   },
   {
-    "id": "puf-sheet-30mm",
-    "name": "PUF Sheet 30mm (Insulated Panel)",
-    "tallyName": "PUFF PANEL SHEETS 30MM",
+    "id": "puff-panel-sheets-40mm",
+    "name": "PUFF panal sheets 40mm",
+    "tallyName": "PUFF PANEL SHEETS 40MM",
     "category": "Roofing Sheets",
-    "subcategory": "Silver XLPE Foam Insulation",
+    "subcategory": "PUFF panal sheets",
     "brand": "Generic",
-    "description": "30mm Polyurethane Foam (PUF) insulated sandwich roofing sheet for superior thermal insulation and energy efficiency.",
-    "image": "/images/Silver Xlpe Foam Insulation.jpg",
+    "description": "40mm Polyurethane Foam (PUF) insulated sandwich roofing sheet for superior thermal insulation and energy efficiency.",
+    "image": "/images/PUFF panal sheets 40mm.jpg",
     "availableSizes": [
       "8 × 3.5 ft",
       "10 × 3.5 ft",
@@ -729,7 +729,7 @@ export const products = [
     ],
     "specifications": {
       "thickness": [
-        "30 mm PUF Core"
+        "40 mm PUF Core"
       ],
       "width": [
         "3.5 ft"
@@ -753,17 +753,17 @@ export const products = [
     ],
     "featured": true,
     "backImage": "/images/backside/puf-back.jpg",
-    "backDetails": "Pre-painted Galvanized Steel Ceiling Liner with High-Density PUF Core"
+    "backDetails": "Pre-painted Galvanized Steel Ceiling Liner with High-Density 40mm PUF Core"
   },
   {
-    "id": "puf-sheet-50mm",
-    "name": "PUF Sheet 50mm (Insulated Panel)",
+    "id": "puff-panel-sheets-50mm",
+    "name": "PUFF panal sheets 50mm",
     "tallyName": "PUFF PANEL SHEETS 50MM",
     "category": "Roofing Sheets",
-    "subcategory": "Silver XLPE Foam Insulation",
+    "subcategory": "PUFF panal sheets",
     "brand": "Generic",
     "description": "50mm Heavy-duty PUF Insulated Sandwich Roof Panel designed for maximum temperature regulation and cold chain facilities.",
-    "image": "/images/Silver Xlpe Foam Insulation.jpg",
+    "image": "/images/PUFF panal sheets 50mm.jpg",
     "availableSizes": [
       "8 × 3.5 ft",
       "10 × 3.5 ft",
@@ -798,7 +798,7 @@ export const products = [
       "Warehousing",
       "Cold Rooms"
     ],
-    "featured": false,
+    "featured": true,
     "backImage": "/images/backside/puf-back.jpg",
     "backDetails": "50mm Insulated PUF Panel Structural Inner Liner"
   },
@@ -880,7 +880,7 @@ export const products = [
     "tallyName": "A C SHEETS 2.00 MTS",
     "category": "Roofing Sheets",
     "subcategory": "Cement Roofing Sheets",
-    "brand": "Visaka",
+    "brand": "Vnext",
     "description": "Traditional robust corrugated Asbestos Cement (AC) roofing sheets known for thermal insulation and high sound dampening.",
     "image": "/images/Cement Roofing Sheets.jpg",
     "availableSizes": [
@@ -920,7 +920,7 @@ export const products = [
     "tallyName": "GI Color Coated Sheets - Green",
     "category": "Roofing Sheets",
     "subcategory": "GI Color Coated Sheets",
-    "brand": "Generic",
+    "brand": "Durashine",
     "description": "Green GI Color Coated Trapezoidal Roofing Sheet, 0.45 mm thickness.",
     "image": "/images/Green GI Color Coated Roofing Sheet.jpg",
     "availableSizes": [
@@ -957,7 +957,7 @@ export const products = [
     "tallyName": "GI Color Coated Sheets - Sky Blue",
     "category": "Roofing Sheets",
     "subcategory": "GI Color Coated Sheets",
-    "brand": "Generic",
+    "brand": "Durashine",
     "description": "Sky Blue Corrugated Galvalume Steel Roofing Sheet.",
     "image": "/images/Sky Blue GI Color Coated Roofing Sheet.jpg",
     "availableSizes": [
@@ -990,7 +990,7 @@ export const products = [
     "id": "silver-xlpe-foam-insulation",
     "name": "Silver Xlpe Foam Insulation",
     "tallyName": "Silver Xlpe Foam Insulation",
-    "category": "Roofing Sheets",
+    "category": "Thermal Insulation",
     "subcategory": "Silver XLPE Foam Insulation",
     "brand": "Generic",
     "description": "Silver XLPE Foam Insulation rolls for under-roof heat barrier and thermal comfort.",
@@ -1023,7 +1023,7 @@ export const products = [
     "tallyName": "GALVALUME TILE SHEET",
     "category": "Roof Tiles",
     "subcategory": "Bamboo Roof Tile",
-    "brand": "Generic / TATA",
+    "brand": "Tata",
     "description": "Kerala Bamboo style pressed galvalume steel roof tiles combining traditional Kerala aesthetics with contemporary weatherproofing.",
     "image": "/images/Bamboo Roof Tile.jpg",
     "availableSizes": [
@@ -1137,7 +1137,7 @@ export const products = [
     "tallyName": "V BOARD",
     "category": "Fiber Cement Boards",
     "subcategory": "Visaka V Board",
-    "brand": "Visaka",
+    "brand": "Vnext",
     "description": "High-density, non-asbestos fiber cement flat boards for exterior walls, false ceilings, partitions, and mezzanine flooring.",
     "image": "/images/Visaka V Board Fiber Cement Board.jpg",
     "availableSizes": [
@@ -1187,7 +1187,7 @@ export const products = [
     "tallyName": "10 feet UPVC Gutter",
     "category": "Rainwater Gutters",
     "subcategory": "10 feet UPVC Gutter",
-    "brand": "Generic",
+    "brand": "Aquastar",
     "description": "White 10 Feet UPVC Rainwater Gutter for efficient roof water drainage.",
     "image": "/images/10 feet Upvc Gutter.jpg",
     "availableSizes": [
@@ -1224,7 +1224,7 @@ export const products = [
     "tallyName": "UPVC Rain Gutter",
     "category": "Rainwater Gutters",
     "subcategory": "UPVC Rain Gutter",
-    "brand": "Generic",
+    "brand": "Aquastar",
     "description": "Heavy-duty UV stabilized half-round UPVC rainwater gutter profiles.",
     "image": "/images/Upvc Rain Gutter.jpg",
     "availableSizes": [
@@ -1252,81 +1252,143 @@ export const products = [
     "backDetails": "Discharge Channel Hydrodynamic Smooth Surface"
   },
   {
-    "id": "gp-square-pipe",
-    "name": "Gp Square Pipe",
-    "tallyName": "GP Square Pipe",
-    "category": "Mild Steel Pipes",
-    "subcategory": "GP Square Pipe",
-    "brand": "Generic",
-    "description": "Galvanized Plain (GP) Square Hollow Structural Pipes for trusses, sheds, and gates.",
+    "id": "gi-steel-pipe",
+    "name": "GI Steel Pipe (Square & Round)",
+    "tallyName": "GI Steel Pipe",
+    "category": "Steel Pipes",
+    "subcategory": "GI Steel Pipe (Square & Round)",
+    "brand": "Tata",
+    "description": "Hot-Dip Galvanized Iron (GI) steel pipes engineered for maximum corrosion resistance and long structural lifespan. Available in both Square Hollow Section (SHS) and Circular Round Pipe profiles for roofing trusses, purlins, sheds, gates, and outdoor fabrication.",
     "image": "/images/Gp Square Pipe.jpg",
     "availableSizes": [
-      "20 × 20 mm (1.5mm) - 20 ft",
-      "25 × 25 mm (1.5mm) - 20 ft",
-      "40 × 40 mm (1.5mm) - 20 ft",
-      "50 × 50 mm (2.0mm) - 20 ft"
+      "Square: 25 × 25 mm (16G) - 20 ft",
+      "Square: 40 × 40 mm (16G) - 20 ft",
+      "Square: 50 × 50 mm (14G) - 20 ft",
+      "Round: 1 inch (25mm OD) - 20 ft",
+      "Round: 1.5 inch (38mm OD) - 20 ft",
+      "Round: 2 inch (50mm OD) - 20 ft"
     ],
     "specifications": {
-      "materialGrade": [
-        "Mild Steel (Galvanized Plain)"
+      "profileTypes": [
+        "Square Hollow Section (SHS)",
+        "Round Circular Pipe (CHS)"
+      ],
+      "coatingType": [
+        "Hot-Dip Galvanized Iron (Anti-Rust Zinc Layer)"
       ],
       "standardLength": [
         "20 ft (6 m)"
+      ],
+      "wallThickness": [
+        "1.6 mm (16 Gauge)",
+        "2.0 mm (14 Gauge)",
+        "2.5 mm"
       ]
     },
     "applications": [
       "Roof Trusses",
-      "Pergolas",
-      "Shed Framing",
-      "Gates"
+      "Pergolas & Sheds",
+      "Purlins & Supports",
+      "Gates & Railings"
     ],
     "featured": true,
     "backImage": "/images/backside/pipe-back.jpg",
-    "backDetails": "Structural Hollow Section Seam Welded Inner Surface"
+    "backDetails": "Galvanized Plain Anti-Corrosive Zinc Coated Internal Bore"
   },
   {
-    "id": "mild-steel-rectangular-pipe",
-    "name": "Mild Steel Rectangular Pipe",
-    "tallyName": "Mild Steel Rectangular Pipe",
-    "category": "Mild Steel Pipes",
-    "subcategory": "Mild Steel Rectangular Pipe",
-    "brand": "Tata Structura",
-    "description": "High tensile structural rectangular steel hollow section pipes for framing and supports.",
+    "id": "ms-steel-pipe",
+    "name": "MS Steel Pipe (Square & Round)",
+    "tallyName": "MS Steel Pipe",
+    "category": "Steel Pipes",
+    "subcategory": "MS Steel Pipe (Square & Round)",
+    "brand": "Tata",
+    "description": "High-tensile Mild Steel (MS) hollow structural pipes manufactured from premium grade hot-rolled carbon steel coils. Available in both Square and Round cross-sections for industrial sheds, columns, heavy truss fabrication, and commercial building frames.",
     "image": "/images/Mild Steel Rectangular Pipe.jpg",
     "availableSizes": [
-      "50 × 25 mm (2×1 in) - 20 ft",
-      "75 × 40 mm - 20 ft",
-      "100 × 50 mm - 20 ft"
+      "Square: 25 × 25 mm - 20 ft",
+      "Square: 50 × 50 mm - 20 ft",
+      "Square: 75 × 75 mm - 20 ft",
+      "Round: 1.5 inch NB - 20 ft",
+      "Round: 2 inch NB - 20 ft",
+      "Round: 3 inch NB - 20 ft"
     ],
     "specifications": {
-      "size": [
-        "50 x 25 mm",
-        "75 x 40 mm",
-        "100 x 50 mm"
+      "profileTypes": [
+        "Square Hollow Section (SHS)",
+        "Round Circular Pipe (CHS)"
       ],
-      "thickness": [
-        "1.6 mm (16 Gauge)",
-        "2.0 mm"
+      "materialGrade": [
+        "High-Tensile Mild Steel (IS 4923 / IS 1161)"
       ],
       "standardLength": [
-        "20 ft"
+        "20 ft (6 m)"
+      ],
+      "wallThickness": [
+        "1.6 mm (16 Gauge)",
+        "2.0 mm",
+        "2.5 mm",
+        "3.0 mm"
       ]
     },
     "applications": [
-      "Building Frames",
-      "Purlins",
-      "Supports",
-      "Columns"
+      "Industrial Sheds",
+      "Building Columns & Beams",
+      "Structural Frameworks",
+      "Heavy Machinery Stands"
     ],
     "featured": false,
     "backImage": "/images/backside/pipe-back.jpg",
-    "backDetails": "Tata Structura Heavy Gauge Tube Inner Core"
+    "backDetails": "High-Frequency ERW Seam Welded Structural Steel Tube Core"
+  },
+  {
+    "id": "apollo-steel-pipe",
+    "name": "Apollo Steel Pipe (Square & Round)",
+    "tallyName": "Apollo Steel Pipe",
+    "category": "Steel Pipes",
+    "subcategory": "Apollo Steel Pipe (Square & Round)",
+    "brand": "Tata",
+    "description": "Certified APL Apollo structural hollow steel sections engineered with superior load-bearing capacity and precise wall gauge. Available in both Square Hollow Section and Round circular profiles for modern architectural and heavy-duty roofing projects.",
+    "image": "/images/mildsteelpipes.jpg",
+    "availableSizes": [
+      "Square: 32 × 32 mm - 20 ft",
+      "Square: 40 × 40 mm - 20 ft",
+      "Square: 50 × 50 mm - 20 ft",
+      "Round: 1.25 inch OD - 20 ft",
+      "Round: 1.5 inch OD - 20 ft",
+      "Round: 2 inch OD - 20 ft"
+    ],
+    "specifications": {
+      "profileTypes": [
+        "Square Hollow Section (SHS)",
+        "Round Circular Pipe (CHS)"
+      ],
+      "brandQuality": [
+        "APL Apollo Certified Structural Steel"
+      ],
+      "standardLength": [
+        "20 ft (6 m)"
+      ],
+      "wallThickness": [
+        "1.6 mm",
+        "2.0 mm",
+        "2.5 mm"
+      ]
+    },
+    "applications": [
+      "Pre-Engineered Buildings",
+      "Architectural Space Frames",
+      "Commercial Sheds",
+      "High-Load Roof Purlins"
+    ],
+    "featured": true,
+    "backImage": "/images/backside/pipe-back.jpg",
+    "backDetails": "Mill-Embossed Apollo Quality Standard Inner Bore"
   },
   {
     "id": "8mm-silver-foil-roll",
     "name": "8mm Silver foil roll",
     "tallyName": "8mm Silver Foil Roll",
-    "category": "Paper Rolls",
+    "category": "Thermal Insulation",
     "subcategory": "Silver Foil Roll",
     "brand": "Generic",
     "description": "Imitation Silver foil rolls (120 GSM) for packaging and insulation barrier.",
@@ -1352,39 +1414,48 @@ export const products = [
     "backDetails": "Foil Backer Protective Kraft Base"
   },
   {
-    "id": "brown-kraft-paper-roll",
-    "name": "Brown Kraft Paper Roll",
-    "tallyName": "Brown Kraft Paper Roll",
-    "category": "Paper Rolls",
-    "subcategory": "Brown Kraft Paper Roll",
+    "id": "tar-felt-roll",
+    "name": "Tar Felt Roll",
+    "tallyName": "Tar Felt Roll",
+    "category": "Tar Felt Roll",
+    "subcategory": "Tar Felt Roll",
     "brand": "Generic",
-    "description": "Recycled Brown Kraft Paper Roll for wrapping, packaging, and construction underlay.",
+    "description": "Premium Heavy-Duty Tar Felt Roll (Waterproofing Bitumen Hessian/Felt Roll) engineered for roof shed underlayment, damp-proof courses, and joint waterproofing.",
     "image": "/images/Brown Kraft Paper Roll.jpg",
     "availableSizes": [
+      "10 m × 1 m Roll (Type 3 Grade 1)",
+      "20 m × 1 m Roll",
       "1067 mm (42 in width roll)"
     ],
     "specifications": {
-      "gsm": [
-        "120 gsm"
+      "material": [
+        "Bituminous Tar Saturated Felt"
       ],
-      "rollWidth": [
-        "1067 mm (42 in)"
+      "grade": [
+        "Type 3 Grade 1 (Heavy Duty)"
+      ],
+      "rollDimensions": [
+        "10 m × 1 m",
+        "20 m × 1 m",
+        "1067 mm (42 in) Width"
       ]
     },
     "applications": [
-      "Road Work",
-      "Packaging",
-      "Surface Protection"
+      "Roof Waterproofing",
+      "Shed Underlayment",
+      "Damp-Proof Course (DPC)",
+      "Foundation Waterproofing",
+      "Road Work"
     ],
-    "featured": false,
+    "featured": true,
     "backImage": "/images/backside/vboard-back.jpg",
-    "backDetails": "Recycled High-Density Fiber Paper Underside"
+    "backDetails": "High-Density Bitumen Saturated Moisture Barrier"
   },
   {
     "id": "pvc-lattice-sheets",
     "name": "Pvc Lattice Sheets",
     "tallyName": "PVC Lattice Sheets",
-    "category": "Accessories & Ventilation",
+    "category": "Roofing Sheets",
     "subcategory": "PVC Lattice Sheets",
     "brand": "Branded",
     "description": "Square PVC Lattice Sheets, UV Coated for privacy screening, gardens, and verandas.",
@@ -1472,22 +1543,24 @@ export const products = [
   },
   {
     "id": "pvc-sheet-thoomanom",
-    "name": "Pvc Sheet Thoomanom",
+    "name": "PVC Sheet Thoomanom",
     "tallyName": "PVC Sheet Thoomanom",
-    "category": "Accessories & Ventilation",
-    "subcategory": "PVC Sheet Thoomanom",
-    "brand": "Generic",
+    "category": "Thoranam Designs",
+    "subcategory": "Classic Temple Bell Thoranam",
+    "brand": "Branded",
     "description": "Decorative traditional PVC Thoomanom border edging sheet for roof eaves and verandas.",
-    "image": "/images/Pvc Sheet Thoomanom.jpg",
+    "image": "/images/pvc-thoranam-category.jpg",
     "availableSizes": [
-      "8 Feet (8 mm thickness)"
+      "8 Feet (8 mm thickness)",
+      "10 Feet (8 mm thickness)"
     ],
     "specifications": {
       "thickness": [
         "8 mm"
       ],
       "length": [
-        "8 Feet"
+        "8 Feet",
+        "10 Feet"
       ],
       "colors": [
         "White"
@@ -1501,5 +1574,200 @@ export const products = [
     "featured": false,
     "backImage": "/images/backside/upvc-back.jpg",
     "backDetails": "Traditional Eaves Border Mounting Reverse Face"
+  },
+  {
+    "id": "pvc-thoranam-gopuram-spear",
+    "name": "PVC Thoranam - Gopuram Arrow Spear (Design 1)",
+    "tallyName": "PVC THORANAM DESIGN 1",
+    "category": "Thoranam Designs",
+    "subcategory": "Gopuram Spear Thoranam",
+    "brand": "Branded",
+    "description": "Traditional South Indian Gopuram Arrow & Spearhead fretwork cut PVC plastic thoranam for roof eaves, car porches, and verandas.",
+    "image": "/images/pvc-thoranam-design-1.jpg",
+    "availableSizes": [
+      "8 ft × 6 inch (6mm)",
+      "8 ft × 8 inch (8mm)",
+      "10 ft × 8 inch (8mm)"
+    ],
+    "specifications": {
+      "material": [
+        "High-Density UV Rigid PVC"
+      ],
+      "designPattern": [
+        "Gopuram Arrow Spear (Design 1)"
+      ],
+      "thickness": [
+        "6 mm",
+        "8 mm"
+      ],
+      "color": [
+        "Brilliant White"
+      ]
+    },
+    "applications": [
+      "Roof Eaves Border",
+      "Temple Gables",
+      "Veranda Fascia",
+      "Car Shed Edging"
+    ],
+    "featured": true,
+    "backImage": "/images/backside/upvc-back.jpg",
+    "backDetails": "Matte White Weatherproof PVC Protective Rear Face"
+  },
+  {
+    "id": "pvc-thoranam-temple-bell",
+    "name": "PVC Thoranam - Classic Temple Bell (Design 2)",
+    "tallyName": "PVC THORANAM DESIGN 2",
+    "category": "Thoranam Designs",
+    "subcategory": "Classic Temple Bell Thoranam",
+    "brand": "Branded",
+    "description": "Classic scalloped temple bell motif plastic thoranam border designed for traditional residential porticos and mandapam rooflines.",
+    "image": "/images/pvc-thoranam-design-2.jpg",
+    "availableSizes": [
+      "8 ft × 6 inch (6mm)",
+      "8 ft × 8 inch (8mm)",
+      "10 ft × 8 inch (8mm)"
+    ],
+    "specifications": {
+      "material": [
+        "Weather-Resistant Virgin PVC"
+      ],
+      "designPattern": [
+        "Classic Temple Bell (Design 2)"
+      ],
+      "thickness": [
+        "6 mm",
+        "8 mm"
+      ],
+      "color": [
+        "Brilliant White"
+      ]
+    },
+    "applications": [
+      "Pitched Roof Borders",
+      "Mandapams",
+      "Porch Valance",
+      "Bungalow Eaves"
+    ],
+    "featured": true,
+    "backImage": "/images/backside/upvc-back.jpg",
+    "backDetails": "Matte White Weatherproof PVC Protective Rear Face"
+  },
+  {
+    "id": "pvc-thoranam-chevron-droplet",
+    "name": "PVC Thoranam - Droplet Chevron Valance (Design 4)",
+    "tallyName": "PVC THORANAM DESIGN 4",
+    "category": "Thoranam Designs",
+    "subcategory": "Droplet Chevron Valance Thoranam",
+    "brand": "Branded",
+    "description": "Contemporary chevron droplet hanging valance plastic thoranam combining geometric modern lines with traditional rainwater runoff guidance.",
+    "image": "/images/pvc-thoranam-design-4.jpg",
+    "availableSizes": [
+      "8 ft × 6 inch (6mm)",
+      "8 ft × 8 inch (8mm)",
+      "10 ft × 8 inch (8mm)"
+    ],
+    "specifications": {
+      "material": [
+        "UV-Stabilized Exterior PVC"
+      ],
+      "designPattern": [
+        "Droplet Chevron Valance (Design 4)"
+      ],
+      "thickness": [
+        "6 mm",
+        "8 mm"
+      ],
+      "color": [
+        "Brilliant White"
+      ]
+    },
+    "applications": [
+      "Modern House Eaves",
+      "Pergola Edging",
+      "Balcony Valance",
+      "Commercial Canopies"
+    ],
+    "featured": false,
+    "backImage": "/images/backside/upvc-back.jpg",
+    "backDetails": "Matte White Weatherproof PVC Protective Rear Face"
+  },
+  {
+    "id": "pvc-thoranam-lotus-petal",
+    "name": "PVC Thoranam - Heritage Lotus Petal (Design 5)",
+    "tallyName": "PVC THORANAM DESIGN 5",
+    "category": "Thoranam Designs",
+    "subcategory": "Heritage Lotus Petal Thoranam",
+    "brand": "Branded",
+    "description": "Multi-tier scalloped lotus petal ornamental eaves board engineered from non-rotting, termite-proof plastic PVC sheets.",
+    "image": "/images/pvc-thoranam-design-5.jpg",
+    "availableSizes": [
+      "8 ft × 6 inch (6mm)",
+      "8 ft × 8 inch (8mm)",
+      "10 ft × 8 inch (8mm)"
+    ],
+    "specifications": {
+      "material": [
+        "High-Grade Plastic Multi-PVC"
+      ],
+      "designPattern": [
+        "Heritage Lotus Petal (Design 5)"
+      ],
+      "thickness": [
+        "6 mm",
+        "8 mm"
+      ],
+      "color": [
+        "Brilliant White"
+      ]
+    },
+    "applications": [
+      "Heritage Architecture",
+      "Temple Rooflines",
+      "Gazebos",
+      "Villa Porches"
+    ],
+    "featured": true,
+    "backImage": "/images/backside/upvc-back.jpg",
+    "backDetails": "Matte White Weatherproof PVC Protective Rear Face"
+  },
+  {
+    "id": "pvc-thoranam-peacock-fan",
+    "name": "PVC Thoranam - Floral Peacock Fan (Design 7)",
+    "tallyName": "PVC THORANAM DESIGN 7",
+    "category": "Thoranam Designs",
+    "subcategory": "Floral Peacock Fan Thoranam",
+    "brand": "Branded",
+    "description": "Intricate radiating floral peacock feather fan cut thoranam border patti for premium architectural roofing finishes.",
+    "image": "/images/pvc-thoranam-design-7.jpg",
+    "availableSizes": [
+      "8 ft × 6 inch (6mm)",
+      "8 ft × 8 inch (8mm)",
+      "10 ft × 8 inch (8mm)"
+    ],
+    "specifications": {
+      "material": [
+        "CNC Routed Exterior PVC Foam Board"
+      ],
+      "designPattern": [
+        "Floral Peacock Fan (Design 7)"
+      ],
+      "thickness": [
+        "6 mm",
+        "8 mm"
+      ],
+      "color": [
+        "Brilliant White"
+      ]
+    },
+    "applications": [
+      "Resort Roofing",
+      "Entrance Porticos",
+      "Gazebos",
+      "Courtyard Eaves"
+    ],
+    "featured": false,
+    "backImage": "/images/backside/upvc-back.jpg",
+    "backDetails": "Matte White Weatherproof PVC Protective Rear Face"
   }
 ];

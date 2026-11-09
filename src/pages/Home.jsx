@@ -116,8 +116,8 @@ export function Home() {
             ))}
           </motion.div>
           {/* Gradient masks for smooth edges */}
-          <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
-          <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute inset-y-0 left-0 w-12 sm:w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute inset-y-0 right-0 w-12 sm:w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
         </div>
       </section>
 
@@ -162,12 +162,30 @@ export function Home() {
                       </h3>
                     </div>
 
-                    <div className="flex flex-wrap items-center justify-between gap-2 text-sm text-industrial-500 pb-2">
+                    <div className="flex flex-wrap items-center justify-between gap-2 text-sm text-industrial-500 pb-1">
                       <div className="flex items-center gap-1.5 truncate">
-                        <Tag className="h-4 w-4 shrink-0" />
-                        <span className="truncate">Product Range &gt; {category.name}</span>
+                        <Tag className="h-4 w-4 shrink-0 text-accent-500" />
+                        <span className="truncate font-medium text-xs">Product Range &gt; {category.name}</span>
                       </div>
                     </div>
+
+                    {category.subcategories && category.subcategories.length > 0 && (
+                      <div className="flex flex-wrap gap-1.5 pb-2">
+                        {category.subcategories.slice(0, 3).map((sub, sIdx) => (
+                          <span 
+                            key={sIdx}
+                            className="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-industrial-100/80 text-industrial-700"
+                          >
+                            {sub}
+                          </span>
+                        ))}
+                        {category.subcategories.length > 3 && (
+                          <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[11px] font-semibold text-accent-700 bg-accent-50">
+                            +{category.subcategories.length - 3} types
+                          </span>
+                        )}
+                      </div>
+                    )}
 
                     <div className="flex gap-2 w-full mt-auto pt-2">
                       <Link 
@@ -213,7 +231,7 @@ export function Home() {
             />
           </div>
           
-          <div className="w-full relative px-12">
+          <div className="w-full relative px-0 sm:px-10 md:px-12">
             <Carousel
               opts={{
                 align: "start",
@@ -221,17 +239,17 @@ export function Home() {
               }}
               className="w-full"
             >
-              <CarouselContent className="-ml-4 md:-ml-6">
+              <CarouselContent className="-ml-3 sm:-ml-4 md:-ml-6">
                 {products.map((product) => (
-                  <CarouselItem key={product.id} className="pl-4 md:pl-6 basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4 xl:basis-1/5">
+                  <CarouselItem key={product.id} className="pl-3 sm:pl-4 md:pl-6 basis-[86%] sm:basis-1/2 md:basis-1/3 lg:basis-1/4 xl:basis-1/5">
                     <div className="h-full">
                       <ProductCard product={product} />
                     </div>
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <CarouselPrevious className="absolute -left-12 top-1/2 animate-bounce-left border-accent-500 text-accent-500 hover:bg-accent-50 shadow-[0_0_15px_rgba(234,179,8,0.5)] ring-2 ring-accent-500/50" />
-              <CarouselNext className="absolute -right-12 top-1/2 animate-bounce-right border-accent-500 text-accent-500 hover:bg-accent-50 shadow-[0_0_15px_rgba(234,179,8,0.5)] ring-2 ring-accent-500/50" />
+              <CarouselPrevious className="hidden sm:flex absolute -left-6 md:-left-12 top-1/2 animate-bounce-left border-accent-500 text-accent-500 hover:bg-accent-50 shadow-[0_0_15px_rgba(234,179,8,0.5)] ring-2 ring-accent-500/50" />
+              <CarouselNext className="hidden sm:flex absolute -right-6 md:-right-12 top-1/2 animate-bounce-right border-accent-500 text-accent-500 hover:bg-accent-50 shadow-[0_0_15px_rgba(234,179,8,0.5)] ring-2 ring-accent-500/50" />
             </Carousel>
           </div>
           
@@ -276,10 +294,10 @@ export function Home() {
                   <div className="w-12 h-1 bg-accent-500 rounded-sm" />
                   <span className="text-accent-500 font-bold tracking-[0.2em] uppercase text-sm">Why Choose Us</span>
                 </div>
-                <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
                   Building <span className="text-accent-500 font-light italic">Trust</span> Through Quality.
                 </h2>
-                <p className="text-industrial-300 text-lg md:text-xl mb-8 leading-relaxed">
+                <p className="text-industrial-300 text-base sm:text-lg md:text-xl mb-8 leading-relaxed">
                   We don't just supply materials; we provide the foundation for your most important projects with unmatched reliability and expert support.
                 </p>
                 <button className="flex items-center gap-2 text-white font-bold hover:text-accent-500 transition-colors group">
@@ -303,7 +321,7 @@ export function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: idx * 0.15 }}
-                  className="group relative p-8 rounded-3xl bg-industrial-900 border border-white/5 hover:border-accent-500/30 transition-all duration-500 hover:shadow-2xl hover:shadow-accent-500/10 overflow-hidden"
+                  className="group relative p-6 sm:p-8 rounded-2xl sm:rounded-3xl bg-industrial-900 border border-white/5 hover:border-accent-500/30 transition-all duration-500 hover:shadow-2xl hover:shadow-accent-500/10 overflow-hidden"
                 >
                   {/* Hover gradient background */}
                   <div className="absolute inset-0 bg-gradient-to-br from-accent-500/0 to-accent-500/5 group-hover:to-accent-500/10 transition-colors duration-500" />
@@ -349,7 +367,7 @@ export function Home() {
           >
             {applications.map((app, idx) => (
               <ScrollStackItem key={app.id}>
-                <div className="h-[380px] md:h-[500px] w-full rounded-[40px] overflow-hidden relative group shadow-2xl">
+                <div className="h-[320px] sm:h-[400px] md:h-[500px] w-full rounded-[24px] sm:rounded-[40px] overflow-hidden relative group shadow-2xl">
                   <div className="absolute inset-0 bg-industrial-800 flex items-center justify-center text-industrial-500">
                     <img 
                       src={app.image} 
@@ -361,9 +379,9 @@ export function Home() {
                     />
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/10 z-10" />
-                  <div className="absolute inset-0 p-8 md:p-12 flex flex-col justify-end z-20">
-                    <h3 className="text-3xl md:text-5xl font-bold text-white mb-3">{app.title}</h3>
-                    <p className="text-white/80 text-lg md:text-xl max-w-2xl">
+                  <div className="absolute inset-0 p-6 sm:p-8 md:p-12 flex flex-col justify-end z-20">
+                    <h3 className="text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-2 sm:mb-3">{app.title}</h3>
+                    <p className="text-white/80 text-sm sm:text-base md:text-xl max-w-2xl">
                       {app.description}
                     </p>
                   </div>
@@ -394,13 +412,13 @@ export function Home() {
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link
                 to="/quote"
-                className="bg-industrial-900 hover:bg-industrial-800 text-white px-8 py-4 rounded-md font-bold text-lg transition-colors shadow-lg"
+                className="w-full sm:w-auto text-center bg-industrial-900 hover:bg-industrial-800 text-white px-8 py-4 rounded-md font-bold text-lg transition-colors shadow-lg"
               >
                 Request a Quote
               </Link>
               <Link
                 to="/calculator"
-                className="bg-white hover:bg-industrial-50 text-industrial-900 px-8 py-4 rounded-md font-bold text-lg transition-colors shadow-lg"
+                className="w-full sm:w-auto text-center bg-white hover:bg-industrial-50 text-industrial-900 px-8 py-4 rounded-md font-bold text-lg transition-colors shadow-lg"
               >
                 Try Roofing Calculator
               </Link>
