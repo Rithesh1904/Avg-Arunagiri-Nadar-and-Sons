@@ -242,10 +242,14 @@ export function Home() {
       </section>
 
       {/* 4. Featured Products (Preview) */}
-      <section className="py-20 relative z-0">
+      <section className="py-20 relative z-0 overflow-hidden">
         <div 
-          className="absolute inset-0 -z-10 bg-[url('/images/productbk1.jpg')] bg-cover bg-center bg-fixed opacity-[0.08]"
+          className="absolute inset-0 -z-10 bg-[url('/images/contact-bg.jpg')] bg-cover bg-center md:bg-fixed opacity-[0.10] pointer-events-none"
         />
+        {/* Smooth top and bottom gradient fades to prevent any cut-off lines on mobile */}
+        <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-white via-white/80 to-transparent pointer-events-none -z-10" />
+        <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-white via-white/80 to-transparent pointer-events-none -z-10" />
+
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="mb-12">
             <SectionHeading 
@@ -290,11 +294,13 @@ export function Home() {
       </section>
 
       {/* 5. About Us */}
-      <div className="relative z-0">
+      <div className="relative z-0 overflow-hidden">
         {/* Background Image with Low Opacity */}
         <div 
-          className="absolute inset-0 -z-10 bg-[url('/images/about-team-bg.jpg')] bg-cover bg-center bg-fixed opacity-[0.10]"
+          className="absolute inset-0 -z-10 bg-[url('/images/contact-bg.jpg')] bg-cover bg-center md:bg-fixed opacity-[0.08] pointer-events-none"
         />
+        <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-white via-white/80 to-transparent pointer-events-none -z-10" />
+        <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-white via-white/80 to-transparent pointer-events-none -z-10" />
         <AboutUsSection transparentBg={true} hideStats={true} />
       </div>
 

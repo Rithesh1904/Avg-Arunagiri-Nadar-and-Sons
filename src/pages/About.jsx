@@ -9,7 +9,7 @@ export function About() {
     <div className="bg-industrial-50 min-h-screen relative z-0 pt-[90px]">
       {/* Background Image with Low Opacity */}
       <div 
-        className="absolute inset-0 -z-10 bg-[url('/images/about-team-bg.jpg')] bg-cover bg-center bg-fixed opacity-[0.10]"
+        className="absolute inset-0 -z-10 bg-[url('/images/contact-bg.jpg')] bg-cover bg-center md:bg-fixed opacity-[0.10] pointer-events-none"
       />
       <AboutUsSection transparentBg={true} />
       

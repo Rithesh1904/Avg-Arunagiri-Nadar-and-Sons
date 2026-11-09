@@ -32,7 +32,7 @@ export function Contact() {
     <div className="bg-industrial-50 min-h-screen relative z-0 pt-[90px]">
       {/* Background Image with Low Opacity */}
       <div 
-        className="absolute inset-0 -z-10 bg-[url('/images/contact-bg.jpg')] bg-cover bg-center bg-fixed opacity-[0.25]"
+        className="absolute inset-0 -z-10 bg-[url('/images/contact-bg.jpg')] bg-cover bg-center md:bg-fixed opacity-[0.25] pointer-events-none"
       />
       {/* Premium Contact Header */}
       <div className="relative bg-industrial-950 pt-16 pb-10 sm:pt-24 sm:pb-12 md:pt-32 md:pb-16 overflow-hidden border-b border-industrial-800">
