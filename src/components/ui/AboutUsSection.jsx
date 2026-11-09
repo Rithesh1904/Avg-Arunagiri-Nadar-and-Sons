@@ -92,8 +92,8 @@ export function AboutUsSection({ transparentBg = false, hideStats = false }) {
     {
       icon: <Truck className="w-6 h-6" />,
       secondaryIcon: <CheckCircle className="w-4 h-4 absolute -top-1 -right-1 text-industrial-400" />,
-      title: "Statewide Supply",
-      description: "Based in Madurai, our logistics network efficiently supplies requirements to customers and construction sites across the entirety of Tamil Nadu.",
+      title: "Lorry Transportation",
+      description: "Dedicated lorry transportation service available for direct, secure on-site delivery of roofing sheets and steel across Tamil Nadu.",
       position: "right",
     },
     {
@@ -108,7 +108,7 @@ export function AboutUsSection({ transparentBg = false, hideStats = false }) {
   const stats = [
     { icon: <Award />, value: 1500, label: "Projects Supplied", suffix: "+" },
     { icon: <Users />, value: 5000, label: "Happy Clients", suffix: "+" },
-    { icon: <Clock />, value: 35, label: "Years Heritage", suffix: "+" },
+    { icon: <Clock />, value: 54, label: "Years Heritage (Since 1970)", suffix: "+" },
     { icon: <TrendingUp />, value: 100, label: "Quality Focus", suffix: "%" },
   ]
 
@@ -141,7 +141,7 @@ export function AboutUsSection({ transparentBg = false, hideStats = false }) {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <Zap className="w-4 h-4" />
-            A.V.G. ARUNAGIRI NADAR SONS
+            A.V.G. ARUNAGIRI NADAR SONS • SINCE 1970
           </motion.span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-center text-industrial-900">About Us</h2>
           <motion.div
@@ -153,7 +153,7 @@ export function AboutUsSection({ transparentBg = false, hideStats = false }) {
         </motion.div>
 
         <motion.p className="text-center max-w-3xl mx-auto mb-16 text-industrial-600 text-lg leading-relaxed" variants={itemVariants}>
-          We are a premier supplier of high-quality roofing materials, steel structural products, and building accessories in Tamil Nadu. Based in Madurai, we are dedicated to providing durable, top-tier solutions that form the backbone of residential, commercial, industrial, and agricultural structures across the state.
+          Established in 1970, we are a trusted premier supplier of high-quality roofing materials, steel structural products, and building accessories in Tamil Nadu. Based in Madurai, with dedicated lorry transportation service available, we ensure reliable direct-to-site delivery for residential, commercial, industrial, and agricultural projects across the state.
         </motion.p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">

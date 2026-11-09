@@ -1025,7 +1025,7 @@ export const products = [
     "subcategory": "Bamboo Roof Tile",
     "brand": "Generic",
     "description": "Kerala Bamboo style pressed galvalume steel roof tiles combining traditional Kerala aesthetics with contemporary weatherproofing.",
-    "image": "/images/Bamboo Roof Tile.jpg",
+    "image": "/images/bamboo-tile-steel-kerala.jpg",
     "availableSizes": [
       "8 × 3.5 ft",
       "10 × 3.5 ft",
@@ -1063,10 +1063,10 @@ export const products = [
     "name": "Indian Model Steel Sheet",
     "tallyName": "GALVALUME TILE SHEET",
     "category": "Roof Tiles",
-    "subcategory": "Bamboo Roof Tile",
+    "subcategory": "Step Tile Profile",
     "brand": "Generic",
     "description": "Indian Model Step Tile Galvalume sheet featuring classical step tile appearance with quick installation.",
-    "image": "/images/Bamboo Roof Tile.jpg",
+    "image": "/images/indian-model-steel-sheet.jpg",
     "availableSizes": [
       "8 × 3.5 ft",
       "10 × 3.5 ft",

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, MessageCircle } from 'lucide-react';
+import { Phone, Mail, MapPin, MessageCircle, Truck } from 'lucide-react';
 
 export function Footer() {
   return (
@@ -27,13 +27,18 @@ export function Footer() {
                 Arunagiri Nadar Sons
               </span>
               <span className="text-[0.65rem] md:text-xs font-black text-[#9CA6B5] tracking-[0.25em] uppercase">
-                Premium Building Solutions
+                Premium Building Solutions • Since 1970
               </span>
             </Link>
             
-            <p className="text-[#9CA6B5] text-sm leading-relaxed mb-8">
+            <p className="text-[#9CA6B5] text-sm leading-relaxed mb-4">
               Quality roofing, steel and building-material solutions for residential, commercial, industrial and agricultural projects across Tamil Nadu.
             </p>
+
+            <div className="flex items-center gap-2 text-xs font-semibold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3 py-2 rounded-md mb-8">
+              <Truck size={15} className="shrink-0 text-emerald-400" />
+              <span>Lorry transportation service available for direct site delivery</span>
+            </div>
 
             <div className="bg-white/[0.02] border border-white/[0.05] p-5 rounded-lg">
               <h4 className="text-white font-semibold text-sm mb-2">Need the Right Material for Your Project?</h4>
@@ -117,7 +122,7 @@ export function Footer() {
 
         {/* Bottom Copyright Bar */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-medium text-[#8F99A8]">
-          <p>© 2026 A.V.G. Arunagiri Nadar Sons. All Rights Reserved.</p>
+          <p>© 2026 A.V.G. Arunagiri Nadar Sons • Building Trust Since 1970. All Rights Reserved.</p>
           <div className="flex flex-wrap justify-center md:justify-end items-center gap-6">
             <Link to="/privacy" className="hover:text-[#F4B400] transition-colors duration-200">Privacy Policy</Link>
             <Link to="/terms" className="hover:text-[#F4B400] transition-colors duration-200">Terms & Conditions</Link>

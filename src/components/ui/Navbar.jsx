@@ -71,7 +71,7 @@ export function Navbar() {
                   "text-[0.6rem] sm:text-[0.65rem] md:text-xs font-black tracking-[0.15em] sm:tracking-[0.25em] uppercase mt-0.5 sm:mt-1 truncate",
                   isScrolled ? "text-industrial-500" : "text-[#9CA6B5]"
                 )}>
-                  Premium Building Solutions
+                  Premium Building Solutions • Since 1970
                 </span>
               </div>
             </Link>

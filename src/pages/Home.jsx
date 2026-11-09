@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, CheckCircle2, Tag } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Tag, Truck, Sparkles, ShieldCheck } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { SectionHeading } from '../components/ui/SectionHeading';
 import { categories } from '../data/categories';
@@ -75,6 +75,27 @@ export function Home() {
         </motion.div>
       </section>
 
+      {/* 1.5 Trust & Logistics Highlights Bar */}
+      <section className="bg-industrial-900 text-white border-y border-industrial-800 py-3 sm:py-3.5 relative z-10 shadow-inner">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="flex flex-wrap items-center justify-around gap-4 sm:gap-8 text-xs sm:text-sm font-semibold">
+            <div className="flex items-center gap-2 text-accent-400">
+              <Sparkles size={16} className="text-accent-500 shrink-0" />
+              <span>Trusted Building Partner <strong className="text-white">Since 1970</strong> (54+ Years of Trust)</span>
+            </div>
+            <div className="hidden md:block w-px h-4 bg-white/20" />
+            <div className="flex items-center gap-2 text-emerald-400">
+              <Truck size={17} className="text-emerald-400 shrink-0" />
+              <span><strong className="text-white">Lorry Transportation Service Available</strong> for Direct Site Delivery</span>
+            </div>
+            <div className="hidden lg:block w-px h-4 bg-white/20" />
+            <div className="hidden sm:flex items-center gap-2 text-blue-300">
+              <ShieldCheck size={16} className="text-blue-400 shrink-0" />
+              <span>Direct Statewide Supply Across Tamil Nadu</span>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* 2. Brands Marquee */}
       <section className="py-4 sm:py-8 border-y border-industrial-200 overflow-hidden relative bg-industrial-50">
@@ -307,10 +328,10 @@ export function Home() {
             {/* Right side features grid */}
             <div className="w-full lg:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
               {[
-                { title: 'Wide Product Range', desc: 'Comprehensive selection of roofing and structural materials under one roof.' },
-                { title: 'Quality Assured', desc: 'Partnering with trusted product brands to ensure durability and reliability.' },
-                { title: 'Statewide Service', desc: 'Serving customers and delivering solutions across the entirety of Tamil Nadu.' },
-                { title: 'Expert Assistance', desc: 'Enquiry-based professional guidance to help you select the right materials.' }
+                { title: 'Legacy Since 1970', desc: 'Over 54+ years of trusted excellence and reliability, supplying premium building and roofing materials across Tamil Nadu.' },
+                { title: 'Lorry Transport Service', desc: 'Dedicated lorry transportation service available for safe, direct on-site delivery to your construction project.' },
+                { title: 'Wide Product Range', desc: 'Comprehensive selection of roofing sheets, steel pipes, polycarbonate, and rainwater systems under one roof.' },
+                { title: 'Authorized Stockist', desc: 'Direct authorized partner for Tata, JSW, Lotus, Aquastar, Vnext, and industry-leading manufacturers.' }
               ].map((feature, idx) => (
                 <motion.div
                   key={idx}
