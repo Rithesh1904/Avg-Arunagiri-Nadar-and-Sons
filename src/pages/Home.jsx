@@ -173,37 +173,37 @@ export function Home() {
                     />
                   </div>
                   
-                  <div className="space-y-3 p-5 flex flex-col flex-grow">
-                    <div className="flex flex-col items-start justify-between gap-1 flex-grow">
-                      <h3 className="text-lg font-semibold tracking-tight text-industrial-900 leading-tight w-full">
+                  <div className="p-5 flex flex-col flex-grow">
+                    <div className="min-h-[50px] flex items-start mb-2">
+                      <h3 className="text-lg font-semibold tracking-tight text-industrial-900 leading-snug w-full">
                         {category.name}
                       </h3>
                     </div>
 
-                    <div className="flex flex-wrap items-center justify-between gap-2 text-sm text-industrial-500 pb-1">
-                      <div className="flex items-center gap-1.5 truncate">
-                        <Tag className="h-4 w-4 shrink-0 text-accent-500" />
-                        <span className="truncate font-medium text-xs">Product Range &gt; {category.name}</span>
-                      </div>
+                    <div className="flex items-center gap-1.5 truncate text-industrial-500 mb-2.5">
+                      <Tag className="h-4 w-4 shrink-0 text-accent-500" />
+                      <span className="truncate font-medium text-xs">Product Range &gt; {category.name}</span>
                     </div>
 
-                    {category.subcategories && category.subcategories.length > 0 && (
-                      <div className="flex flex-wrap gap-1.5 pb-2">
-                        {category.subcategories.slice(0, 3).map((sub, sIdx) => (
-                          <span 
-                            key={sIdx}
-                            className="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-industrial-100/80 text-industrial-700"
-                          >
-                            {sub}
-                          </span>
-                        ))}
-                        {category.subcategories.length > 3 && (
-                          <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[11px] font-semibold text-accent-700 bg-accent-50">
-                            +{category.subcategories.length - 3} types
-                          </span>
-                        )}
-                      </div>
-                    )}
+                    <div className="min-h-[50px] flex flex-wrap content-start gap-1.5 mb-4">
+                      {category.subcategories && category.subcategories.length > 0 && (
+                        <>
+                          {category.subcategories.slice(0, 3).map((sub, sIdx) => (
+                            <span 
+                              key={sIdx}
+                              className="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-industrial-100/80 text-industrial-700"
+                            >
+                              {sub}
+                            </span>
+                          ))}
+                          {category.subcategories.length > 3 && (
+                            <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[11px] font-semibold text-accent-700 bg-accent-50">
+                              +{category.subcategories.length - 3} types
+                            </span>
+                          )}
+                        </>
+                      )}
+                    </div>
 
                     <div className="flex gap-2 w-full mt-auto pt-2">
                       <Link 

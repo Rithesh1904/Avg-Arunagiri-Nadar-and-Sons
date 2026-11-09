@@ -55,15 +55,15 @@ export const ProductCard = React.forwardRef(({ product, className, ...props }, r
         </div>
 
         {/* Content Section */}
-        <div className="space-y-3 p-5 flex flex-col flex-grow">
-          <div className="flex flex-col items-start justify-between gap-1 flex-grow">
+        <div className="p-5 flex flex-col flex-grow">
+          <div className="min-h-[54px] flex flex-col items-start gap-1 mb-2">
             {product.brand && (
               <motion.div
                 variants={textVariants}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                className="text-xs font-bold tracking-wider text-accent-600 uppercase mb-1"
+                className="text-xs font-bold tracking-wider text-accent-600 uppercase"
               >
                 {product.brand}
               </motion.div>
@@ -74,14 +74,14 @@ export const ProductCard = React.forwardRef(({ product, className, ...props }, r
               whileInView="visible"
               viewport={{ once: true }}
               style={{ transitionDelay: '0.1s' }}
-              className="text-lg font-semibold tracking-tight text-industrial-900 leading-tight w-full"
+              className="text-base sm:text-lg font-semibold tracking-tight text-industrial-900 leading-snug w-full"
               title={product.name}
             >
               {product.name}
             </motion.h3>
           </div>
 
-          <div className="flex flex-wrap items-center justify-between gap-2 text-sm text-industrial-500 pb-2">
+          <div className="flex flex-col gap-1.5 text-sm text-industrial-500 mb-3">
             <motion.div
               variants={textVariants}
               initial="hidden"
@@ -91,8 +91,8 @@ export const ProductCard = React.forwardRef(({ product, className, ...props }, r
               className="flex flex-col gap-1.5 w-full"
             >
               <div className="flex items-center gap-1.5 truncate">
-                <Tag className="h-4 w-4 shrink-0" />
-                <span className="truncate">{product.category} {product.subcategory ? ` > ${product.subcategory}` : ''}</span>
+                <Tag className="h-4 w-4 shrink-0 text-accent-500" />
+                <span className="truncate text-xs font-medium">{product.category} {product.subcategory ? ` > ${product.subcategory}` : ''}</span>
               </div>
               
               {/* Available Sizes Badge - Viewable at Main */}
