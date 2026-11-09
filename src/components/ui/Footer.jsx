@@ -56,16 +56,23 @@ export function Footer() {
           {/* Column 1: Brand & Logistics */}
           <div className="flex flex-col">
             {/* Branding */}
-            <Link to="/" className="flex flex-col mb-6 group inline-block">
-              <span className="text-3xl md:text-4xl font-black text-[#F4B400] tracking-tighter mb-1">
-                AVG
-              </span>
-              <span className="text-xl md:text-2xl font-black text-[#F5F7FA] tracking-tighter leading-none mb-1">
-                Arunagiri Nadar Sons
-              </span>
-              <span className="text-[0.65rem] md:text-xs font-black text-[#9CA6B5] tracking-[0.25em] uppercase">
-                Premium Building Solutions • Since 1970
-              </span>
+            <Link to="/" className="flex items-center gap-3 mb-6 group inline-flex">
+              <div className="flex flex-col items-center justify-center shrink-0">
+                <span className="text-3xl md:text-4xl font-black text-[#F4B400] tracking-tighter leading-none mb-1">
+                  AVG
+                </span>
+                <span className="text-[8px] md:text-[8.5px] font-black tracking-[0.2em] uppercase px-1.5 py-[1.5px] rounded bg-amber-500/10 text-amber-300 border border-amber-400/30 whitespace-nowrap">
+                  SINCE 1970
+                </span>
+              </div>
+              <div className="flex flex-col min-w-0 justify-center">
+                <span className="text-xl md:text-2xl font-black text-[#F5F7FA] tracking-tighter leading-none mb-1">
+                  Arunagiri Nadar Sons
+                </span>
+                <span className="text-[0.65rem] md:text-xs font-bold text-[#9CA6B5] tracking-[0.2em] uppercase">
+                  Premium Building Solutions
+                </span>
+              </div>
             </Link>
             
             <p className="text-[#9CA6B5] text-sm leading-relaxed mb-4">

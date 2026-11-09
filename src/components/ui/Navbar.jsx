@@ -56,11 +56,24 @@ export function Navbar() {
               : "px-0 py-0"
           )}>
             {/* Logo */}
-            <Link to="/" className="flex items-center gap-2 sm:gap-3 group relative z-10 shrink-0 min-w-0 max-w-[80%] sm:max-w-none">
-              <span className="text-2xl sm:text-3xl md:text-4xl font-black text-[#F4B400] tracking-tighter transition-all duration-500 drop-shadow-md shrink-0">
-                AVG
-              </span>
-              <div className="flex flex-col min-w-0">
+            <Link to="/" className="flex items-center gap-2 sm:gap-3 group relative z-10 shrink-0 min-w-0 max-w-[85%] sm:max-w-none">
+              {/* AVG Brand Mark with Since 1970 Badge directly underneath */}
+              <div className="flex flex-col items-center justify-center shrink-0">
+                <span className="text-2xl sm:text-3xl md:text-4xl font-black text-[#F4B400] tracking-tighter leading-none transition-all duration-500 drop-shadow-md">
+                  AVG
+                </span>
+                <span className={cn(
+                  "text-[7px] sm:text-[8px] md:text-[8.5px] font-black tracking-[0.2em] sm:tracking-[0.22em] uppercase mt-1 px-1 sm:px-1.5 py-[1.5px] rounded transition-all duration-500 leading-none whitespace-nowrap",
+                  isScrolled 
+                    ? "bg-amber-500/10 text-amber-800 border border-amber-500/25" 
+                    : "bg-white/10 text-amber-300 border border-amber-400/30 backdrop-blur-sm shadow-sm"
+                )}>
+                  SINCE 1970
+                </span>
+              </div>
+
+              {/* Company Wordmark */}
+              <div className="flex flex-col min-w-0 justify-center">
                 <span className={cn(
                   "text-base sm:text-xl md:text-2xl font-black leading-tight sm:leading-none tracking-tight sm:tracking-tighter transition-all duration-500 drop-shadow-sm truncate",
                   isScrolled ? "text-industrial-900" : "text-[#F5F7FA]"
@@ -68,10 +81,10 @@ export function Navbar() {
                   Arunagiri Nadar Sons
                 </span>
                 <span className={cn(
-                  "text-[0.6rem] sm:text-[0.65rem] md:text-xs font-black tracking-[0.15em] sm:tracking-[0.25em] uppercase mt-0.5 sm:mt-1 truncate",
+                  "text-[0.6rem] sm:text-[0.65rem] md:text-xs font-bold tracking-[0.16em] sm:tracking-[0.22em] uppercase mt-0.5 sm:mt-1 truncate",
                   isScrolled ? "text-industrial-500" : "text-[#9CA6B5]"
                 )}>
-                  Premium Building Solutions • Since 1970
+                  Premium Building Solutions
                 </span>
               </div>
             </Link>
