@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, MessageCircle, Truck } from 'lucide-react';
+import { Phone, Mail, MapPin, MessageCircle, Truck, Sparkles, ArrowRight } from 'lucide-react';
 
 export function Footer() {
   return (
@@ -13,10 +13,47 @@ export function Footer() {
       
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         
+        {/* Centered Rectangle CTA Box */}
+        <div className="mb-14 relative overflow-hidden rounded-2xl bg-gradient-to-r from-[#10192b] via-[#16233b] to-[#10192b] border border-white/10 p-6 sm:p-8 md:p-10 shadow-2xl">
+          <div className="absolute top-0 right-0 w-80 h-80 bg-[#F4B400]/10 rounded-full blur-3xl pointer-events-none -translate-y-1/2 translate-x-1/4" />
+          <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#3b82f6]/10 rounded-full blur-3xl pointer-events-none translate-y-1/2 -translate-x-1/4" />
+          
+          <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-10 text-center lg:text-left">
+            <div className="max-w-2xl">
+              <span className="inline-flex items-center gap-1.5 text-xs font-bold tracking-widest text-[#F4B400] uppercase mb-2">
+                <Sparkles size={14} className="text-[#F4B400]" /> Expert Consultation & Best Price Quotes
+              </span>
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mb-2">
+                Need the Right Material for Your Project?
+              </h3>
+              <p className="text-[#9CA6B5] text-sm sm:text-base leading-relaxed">
+                Talk to our team about your roofing, steel pipe and building-material requirements. We provide instant estimates and statewide delivery.
+              </p>
+            </div>
+
+            <div className="flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto shrink-0">
+              <Link 
+                to="/contact"
+                className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-7 py-3.5 bg-[#F4B400] hover:bg-[#EAA800] text-[#0B1220] font-black text-sm tracking-wider uppercase rounded-lg shadow-lg hover:shadow-[#F4B400]/20 transition-all duration-200"
+              >
+                GET A QUOTE <ArrowRight size={16} />
+              </Link>
+              <a
+                href="https://wa.me/919842874256"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3.5 bg-white/5 hover:bg-white/10 border border-white/15 text-white font-bold text-sm rounded-lg transition-colors"
+              >
+                <MessageCircle size={16} className="text-[#25D366]" /> WhatsApp Us
+              </a>
+            </div>
+          </div>
+        </div>
+
         {/* Main 4-Column Layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           
-          {/* Column 1: Brand & CTA */}
+          {/* Column 1: Brand & Logistics */}
           <div className="flex flex-col">
             {/* Branding */}
             <Link to="/" className="flex flex-col mb-6 group inline-block">
@@ -35,20 +72,9 @@ export function Footer() {
               Quality roofing, steel and building-material solutions for residential, commercial, industrial and agricultural projects across Tamil Nadu.
             </p>
 
-            <div className="flex items-center gap-2 text-xs font-semibold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3 py-2 rounded-md mb-8">
+            <div className="flex items-center gap-2 text-xs font-semibold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3 py-2.5 rounded-md">
               <Truck size={15} className="shrink-0 text-emerald-400" />
               <span>Lorry transportation service available for direct site delivery</span>
-            </div>
-
-            <div className="bg-white/[0.02] border border-white/[0.05] p-5 rounded-lg">
-              <h4 className="text-white font-semibold text-sm mb-2">Need the Right Material for Your Project?</h4>
-              <p className="text-[#7F8998] text-xs mb-4">Talk to our team about your roofing, steel pipe and building-material requirements.</p>
-              <Link 
-                to="/contact"
-                className="inline-flex items-center justify-center w-full px-4 py-2 bg-[#F4B400] hover:bg-[#EAA800] text-[#0B1220] text-sm font-bold rounded transition-colors duration-200"
-              >
-                GET A QUOTE
-              </Link>
             </div>
           </div>
 
