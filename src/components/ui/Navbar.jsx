@@ -57,11 +57,13 @@ export function Navbar() {
           )}>
             {/* Logo */}
             <Link to="/" className="flex items-center gap-2 sm:gap-3 group relative z-10 shrink-0 min-w-0 max-w-[85%] sm:max-w-none">
-              {/* AVG Brand Mark with Since 1970 Badge directly underneath */}
+              {/* AVG Authentic Roof Peaks Brand Logo Mark */}
               <div className="flex flex-col items-center justify-center shrink-0">
-                <span className="text-2xl sm:text-3xl md:text-4xl font-black text-[#F4B400] tracking-tighter leading-none transition-all duration-500 drop-shadow-md">
-                  AVG
-                </span>
+                <img
+                  src={isScrolled ? "/assets/avg-logo-dark.png" : "/assets/avg-logo-light.png"}
+                  alt="A.V.G. Logo"
+                  className="h-8 sm:h-9 md:h-10 w-auto object-contain transition-all duration-300 group-hover:scale-105 drop-shadow-sm"
+                />
                 <span className={cn(
                   "text-[7px] sm:text-[8px] md:text-[8.5px] font-black tracking-[0.2em] sm:tracking-[0.22em] uppercase mt-1 px-1 sm:px-1.5 py-[1.5px] rounded transition-all duration-500 leading-none whitespace-nowrap",
                   isScrolled 

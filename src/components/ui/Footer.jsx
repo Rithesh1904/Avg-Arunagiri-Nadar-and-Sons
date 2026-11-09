@@ -58,9 +58,11 @@ export function Footer() {
             {/* Branding */}
             <Link to="/" className="flex items-center gap-3 mb-6 group inline-flex">
               <div className="flex flex-col items-center justify-center shrink-0">
-                <span className="text-3xl md:text-4xl font-black text-[#F4B400] tracking-tighter leading-none mb-1">
-                  AVG
-                </span>
+                <img
+                  src="/assets/avg-logo-light.png"
+                  alt="A.V.G. Logo"
+                  className="h-9 md:h-11 w-auto object-contain mb-1 drop-shadow-md"
+                />
                 <span className="text-[8px] md:text-[8.5px] font-black tracking-[0.2em] uppercase px-1.5 py-[1.5px] rounded bg-amber-500/10 text-amber-300 border border-amber-400/30 whitespace-nowrap">
                   SINCE 1970
                 </span>
