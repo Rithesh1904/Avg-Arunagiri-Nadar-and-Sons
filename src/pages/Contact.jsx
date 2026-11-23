@@ -129,13 +129,11 @@ export function Contact() {
                 <div>
                   <h4 className="text-lg font-bold text-industrial-900 mb-1">Phone Numbers</h4>
                   <p className="text-industrial-600 mb-2">For immediate assistance, enquiries & site orders.</p>
-                  <div className="flex flex-col gap-2">
-                    <a href="tel:+919842174256" className="text-accent-600 font-bold hover:text-accent-700 transition-colors flex items-center gap-2 text-base">
-                      <span className="text-[11px] bg-accent-500/10 text-accent-800 font-bold px-2 py-0.5 rounded uppercase tracking-wider">Primary</span>
+                  <div className="flex flex-col gap-1.5">
+                    <a href="tel:+919842174256" className="text-accent-600 font-bold hover:text-accent-700 transition-colors text-base">
                       +91 98421 74256
                     </a>
-                    <a href="tel:+919842874256" className="text-industrial-700 font-bold hover:text-industrial-900 transition-colors flex items-center gap-2 text-base">
-                      <span className="text-[11px] bg-industrial-100 text-industrial-700 font-bold px-2 py-0.5 rounded uppercase tracking-wider">Secondary</span>
+                    <a href="tel:+919842874256" className="text-accent-600 font-bold hover:text-accent-700 transition-colors text-base">
                       +91 98428 74256
                     </a>
                   </div>
