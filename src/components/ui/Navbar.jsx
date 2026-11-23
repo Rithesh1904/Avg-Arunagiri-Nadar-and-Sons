@@ -103,7 +103,7 @@ export function Navbar() {
               
               <div className="flex items-center gap-3 xl:gap-4">
                 <a
-                  href="https://wa.me/919842874256"
+                  href={`https://wa.me/918489421954?text=${encodeURIComponent('*A.V.G. ARUNAGIRI NADAR SONS – QUICK ENQUIRY*\n───────────────────────────────\nHello, I would like to enquire about your roofing and building solutions.\n\nThank you!')}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={cn(
@@ -175,7 +175,7 @@ export function Navbar() {
 
               <div className="mt-auto pt-8 flex flex-col gap-4">
                 <a
-                  href="https://wa.me/919842874256"
+                  href={`https://wa.me/918489421954?text=${encodeURIComponent('*A.V.G. ARUNAGIRI NADAR SONS – QUICK ENQUIRY*\n───────────────────────────────\nHello, I would like to enquire about your roofing and building solutions.\n\nThank you!')}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 bg-green-50 text-green-700 py-3 rounded-md font-semibold"

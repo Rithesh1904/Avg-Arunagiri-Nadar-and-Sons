@@ -39,7 +39,7 @@ export function Footer() {
                 GET A QUOTE <ArrowRight size={16} />
               </Link>
               <a
-                href="https://wa.me/919842874256"
+                href={`https://wa.me/918489421954?text=${encodeURIComponent('*A.V.G. ARUNAGIRI NADAR SONS – QUICK ENQUIRY*\n───────────────────────────────\nHello, I would like to enquire about your roofing and building solutions.\n\nThank you!')}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3.5 bg-white/5 hover:bg-white/10 border border-white/15 text-white font-bold text-sm rounded-lg transition-colors"
@@ -142,7 +142,7 @@ export function Footer() {
 
               <div className="pt-4">
                 <a
-                  href="https://wa.me/919842874256"
+                  href={`https://wa.me/918489421954?text=${encodeURIComponent('*A.V.G. ARUNAGIRI NADAR SONS – QUICK ENQUIRY*\n───────────────────────────────\nHello, I would like to enquire about your roofing and building solutions.\n\nThank you!')}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 bg-white/5 border border-white/10 hover:bg-white/10 text-white px-5 py-3 sm:py-2.5 rounded font-semibold text-sm transition-colors duration-200 w-full sm:w-auto"

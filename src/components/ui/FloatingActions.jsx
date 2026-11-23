@@ -51,7 +51,7 @@ export function FloatingActions() {
 
       {/* WhatsApp Button */}
       <a
-        href="https://wa.me/919842874256"
+        href={`https://wa.me/918489421954?text=${encodeURIComponent('*A.V.G. ARUNAGIRI NADAR SONS – QUICK ENQUIRY*\n───────────────────────────────\nHello, I would like to enquire about your roofing and building solutions.\n\nThank you!')}`}
         target="_blank"
         rel="noopener noreferrer"
         className="group relative flex items-center justify-center w-11 h-11 sm:w-14 sm:h-14 bg-[#25D366] text-white rounded-full shadow-lg hover:bg-[#20bd5a] transition-all duration-300 hover:scale-105"

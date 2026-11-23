@@ -76,12 +76,14 @@ export function ProductDetails() {
   })();
 
   const whatsappMessage = encodeURIComponent(
-    `Hello A.V.G. Arunagiri Nadar Sons, I am interested in:\n` +
-    `Product: ${product.name}\n` +
-    `Category: ${product.category}\n` +
-    (selectedSize ? `Required Size: ${selectedSize}\n` : '') +
-    (product.tallyName ? `Tally Ref: ${product.tallyName}\n` : '') +
-    `\nPlease provide price quotation and stock availability. Thank you.`
+    `*A.V.G. ARUNAGIRI NADAR SONS – PRODUCT ENQUIRY*\n` +
+    `───────────────────────────────\n` +
+    `Hello, I would like to enquire about:\n\n` +
+    `• *Product:* ${product.name}\n` +
+    `• *Category:* ${product.category}\n` +
+    (selectedSize ? `• *Required Size:* ${selectedSize}\n` : '') +
+    (product.tallyName ? `• *Item Code:* ${product.tallyName}\n` : '') +
+    `\nPlease provide the latest price quotation, availability, and site delivery details.\n\nThank you!`
   );
 
   return (
@@ -321,7 +323,7 @@ export function ProductDetails() {
             {/* 4. Action CTAs (Enquire on WhatsApp & Call Now) */}
             <div className="pt-2 pb-6 border-b border-industrial-100 flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6">
               <a 
-                href={`https://wa.me/919842874256?text=${whatsappMessage}`}
+                href={`https://wa.me/918489421954?text=${whatsappMessage}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex-1 flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white py-3.5 sm:py-4 px-4 sm:px-6 rounded-md font-bold text-base sm:text-lg transition-all shadow-md hover:shadow-lg text-center"
@@ -330,7 +332,7 @@ export function ProductDetails() {
                 Enquire on WhatsApp
               </a>
               <a 
-                href="tel:+919842874256"
+                href="tel:+919842174256"
                 className="flex items-center justify-center gap-2 bg-industrial-900 hover:bg-industrial-800 text-white py-3.5 sm:py-4 px-4 sm:px-6 rounded-md font-bold text-base sm:text-lg transition-colors sm:w-auto text-center"
               >
                 <Phone size={20} />

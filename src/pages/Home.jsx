@@ -86,7 +86,7 @@ export function Home() {
 
             {/* Feature 2: Lorry Service */}
             <a 
-              href="https://wa.me/919842874256?text=Hello%20A.V.G.%20Arunagiri%20Nadar%20Sons%2C%20I%20would%20like%20to%20enquire%20about%20direct%20site%20lorry%20transportation%20and%20delivery."
+              href={`https://wa.me/918489421954?text=${encodeURIComponent('*A.V.G. ARUNAGIRI NADAR SONS – SITE LOGISTICS ENQUIRY*\n───────────────────────────────\nHello, I would like to enquire about direct site lorry transportation and delivery service for building materials.\n\nPlease provide details. Thank you!')}`}
               target="_blank"
               rel="noopener noreferrer"
               className="group flex items-center gap-3.5 lg:gap-4 px-4 py-2.5 lg:px-5 lg:py-3 hover:bg-industrial-50/70 rounded-xl transition-all duration-200"
@@ -142,7 +142,7 @@ export function Home() {
             </Link>
 
             <a 
-              href="https://wa.me/919842874256?text=Hello%20A.V.G.%20Arunagiri%20Nadar%20Sons%2C%20I%20would%20like%20to%20enquire%20about%20direct%20site%20lorry%20transportation%20and%20delivery."
+              href={`https://wa.me/918489421954?text=${encodeURIComponent('*A.V.G. ARUNAGIRI NADAR SONS – SITE LOGISTICS ENQUIRY*\n───────────────────────────────\nHello, I would like to enquire about direct site lorry transportation and delivery service for building materials.\n\nPlease provide details. Thank you!')}`}
               target="_blank"
               rel="noopener noreferrer"
               className="flex flex-col items-center text-center px-1 py-1 active:bg-industrial-50 rounded-lg transition-colors"
@@ -292,7 +292,7 @@ export function Home() {
                         View Products
                       </Link>
                       <a 
-                        href={`https://wa.me/919842874256?text=${encodeURIComponent(`Hello A.V.G. Arunagiri Nadar Sons, I am interested in exploring your ${category.name} range.\n\nPlease provide more information.`)}`}
+                        href={`https://wa.me/918489421954?text=${encodeURIComponent(`*A.V.G. ARUNAGIRI NADAR SONS – CATEGORY ENQUIRY*\n───────────────────────────────\nHello, I am interested in exploring your *${category.name}* range.\n\nPlease share current catalogue, available specifications, and pricing.\n\nThank you!`)}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex-1 text-center py-2.5 bg-[#0f172a] hover:bg-industrial-900 text-white rounded-md font-bold transition-colors text-sm"

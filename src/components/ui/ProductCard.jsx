@@ -75,7 +75,7 @@ export const ProductCard = React.forwardRef(({ product, className, ...props }, r
               View Details
             </Link>
             <a 
-              href={`https://wa.me/919842874256?text=${encodeURIComponent(`Hello A.V.G. Arunagiri Nadar Sons, I am interested in:\nProduct: ${product.name}\nCategory: ${product.category}\n\nPlease provide availability and details. Thank you.`)}`}
+              href={`https://wa.me/918489421954?text=${encodeURIComponent(`*A.V.G. ARUNAGIRI NADAR SONS – PRODUCT ENQUIRY*\n───────────────────────────────\nHello, I would like to enquire about:\n\n• *Product:* ${product.name}\n• *Category:* ${product.category}\n\nPlease provide current price quotation, available specifications, and delivery options.\n\nThank you!`)}`}
               target="_blank"
               rel="noopener noreferrer"
               className="flex-1 text-center py-2 sm:py-2.5 px-2 bg-[#0f172a] hover:bg-industrial-900 text-white rounded-md font-bold transition-colors text-xs sm:text-sm"
