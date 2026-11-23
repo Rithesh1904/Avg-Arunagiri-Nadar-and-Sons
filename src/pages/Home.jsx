@@ -36,37 +36,24 @@ export function Home() {
 
   return (
     <div className="flex flex-col w-full">
-      {/* 1. Hero Section - Natural un-zoomed framing showing the full authentic scene */}
-      <section className="relative w-full aspect-[16/9] sm:aspect-auto sm:h-[50vh] sm:min-h-[380px] md:h-[56vh] md:min-h-[440px] md:max-h-[520px] lg:h-[60vh] lg:min-h-[480px] lg:max-h-[560px] xl:h-[62vh] xl:max-h-[600px] flex items-center justify-center bg-[#070D18] overflow-hidden">
-        {/* Ambient blurred backdrop to softly fill widescreen edges with authentic scene colors without harsh empty black bands */}
-        <video
-          autoPlay
-          muted
-          playsInline
-          loop
-          aria-hidden="true"
-          className="hidden md:block absolute inset-0 w-full h-full object-cover blur-2xl opacity-40 scale-105 pointer-events-none"
-        >
-          <source src="/assets/shop1.mp4" type="video/mp4" />
-        </video>
-
-        {/* Primary crisp un-cropped hero video: preserves 100% of the authentic scene with zero zoom */}
+      {/* 1. Hero Section - Full-bleed cinematic video with shop nameboard clearly displayed */}
+      <section className="relative w-full aspect-[16/9] sm:aspect-auto sm:h-[52vh] sm:min-h-[400px] md:h-[58vh] md:min-h-[460px] md:max-h-[540px] lg:h-[62vh] lg:min-h-[500px] lg:max-h-[580px] xl:h-[64vh] xl:max-h-[620px] flex items-center justify-center bg-black overflow-hidden">
         <video
           ref={videoRef}
           autoPlay
           muted
           playsInline
           loop
-          className="relative z-10 w-full h-full object-contain pointer-events-none"
+          className="absolute inset-0 w-full h-full object-cover object-[center_top] pointer-events-none"
         >
           <source src="/assets/shop1.mp4" type="video/mp4" />
         </video>
 
-        {/* Top dark gradient overlay under navbar for seamless text contrast and zero bleed */}
-        <div className="absolute top-0 left-0 right-0 h-24 sm:h-28 bg-gradient-to-b from-black/80 via-black/40 to-transparent pointer-events-none z-20" />
+        {/* Delicate top gradient overlay for crisp navbar legibility while keeping shop nameboard completely clear and bright */}
+        <div className="absolute top-0 left-0 right-0 h-20 sm:h-24 bg-gradient-to-b from-black/50 via-black/20 to-transparent pointer-events-none z-10" />
 
         {/* Subtle bottom dark gradient for smooth docking of the floating information panel */}
-        <div className="absolute bottom-0 left-0 right-0 h-16 sm:h-20 bg-gradient-to-t from-black/50 to-transparent pointer-events-none z-20" />
+        <div className="absolute bottom-0 left-0 right-0 h-16 sm:h-20 bg-gradient-to-t from-black/50 to-transparent pointer-events-none z-10" />
       </section>
 
       {/* 1.5 Sleek Floating Corporate Trust & Logistics Panel */}
