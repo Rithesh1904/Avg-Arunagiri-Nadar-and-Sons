@@ -61,10 +61,10 @@ export function Navbar() {
                 <img
                   src={isScrolled ? "/assets/avg-logo-dark.png" : "/assets/avg-logo-light.png"}
                   alt="A.V.G. Logo"
-                  className="h-7.5 sm:h-9 lg:h-9.5 xl:h-10 w-auto object-contain transition-all duration-300 group-hover:scale-105 drop-shadow-sm"
+                  className="h-8 sm:h-9 lg:h-10 w-auto object-contain transition-all duration-300 group-hover:scale-105 drop-shadow-sm"
                 />
                 <span className={cn(
-                  "text-[6.5px] sm:text-[7.5px] lg:text-[8px] font-black tracking-[0.2em] sm:tracking-[0.22em] uppercase mt-0.5 sm:mt-1 px-1 sm:px-1.5 py-[1px] rounded transition-all duration-500 leading-none whitespace-nowrap",
+                  "text-[7px] sm:text-[7.5px] lg:text-[8px] font-black tracking-[0.2em] sm:tracking-[0.22em] uppercase mt-0.5 sm:mt-1 px-1 sm:px-1.5 py-[1px] rounded transition-all duration-500 leading-none whitespace-nowrap",
                   isScrolled 
                     ? "bg-amber-500/10 text-amber-800 border border-amber-500/25" 
                     : "bg-white/10 text-amber-300 border border-amber-400/30 backdrop-blur-sm shadow-sm"

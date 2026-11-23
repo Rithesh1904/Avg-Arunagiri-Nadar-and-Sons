@@ -36,30 +36,41 @@ export function Home() {
 
   return (
     <div className="flex flex-col w-full">
-      {/* 1. Hero Section - Full cinematic visibility on laptop, beautifully framed on mobile */}
-      <section className="relative w-full aspect-[16/9] sm:aspect-auto sm:h-[48vh] sm:min-h-[340px] md:h-[62vh] md:min-h-[460px] md:max-h-[560px] lg:h-[66vh] lg:min-h-[500px] lg:max-h-[600px] xl:h-[68vh] xl:max-h-[640px] flex items-center bg-black overflow-hidden">
-        <div className="absolute inset-0 z-0 flex items-center justify-center overflow-hidden">
-          <video
-            ref={videoRef}
-            autoPlay
-            muted
-            playsInline
-            loop
-            className="absolute inset-0 w-full h-full object-cover object-center sm:object-[center_top] pointer-events-none"
-          >
-            <source src="/assets/shop1.mp4" type="video/mp4" />
-          </video>
+      {/* 1. Hero Section - Natural un-zoomed framing showing the full authentic scene */}
+      <section className="relative w-full aspect-[16/9] sm:aspect-auto sm:h-[50vh] sm:min-h-[380px] md:h-[56vh] md:min-h-[440px] md:max-h-[520px] lg:h-[60vh] lg:min-h-[480px] lg:max-h-[560px] xl:h-[62vh] xl:max-h-[600px] flex items-center justify-center bg-[#070D18] overflow-hidden">
+        {/* Ambient blurred backdrop to softly fill widescreen edges with authentic scene colors without harsh empty black bands */}
+        <video
+          autoPlay
+          muted
+          playsInline
+          loop
+          aria-hidden="true"
+          className="hidden md:block absolute inset-0 w-full h-full object-cover blur-2xl opacity-40 scale-105 pointer-events-none"
+        >
+          <source src="/assets/shop1.mp4" type="video/mp4" />
+        </video>
 
-          {/* Top dark gradient overlay under navbar for seamless text contrast and zero bleed */}
-          <div className="absolute top-0 left-0 right-0 h-20 sm:h-32 bg-gradient-to-b from-black/75 via-black/30 to-transparent pointer-events-none z-10" />
+        {/* Primary crisp un-cropped hero video: preserves 100% of the authentic scene with zero zoom */}
+        <video
+          ref={videoRef}
+          autoPlay
+          muted
+          playsInline
+          loop
+          className="relative z-10 w-full h-full object-contain pointer-events-none"
+        >
+          <source src="/assets/shop1.mp4" type="video/mp4" />
+        </video>
 
-          {/* Subtle bottom dark gradient for smooth docking of the floating information panel */}
-          <div className="absolute bottom-0 left-0 right-0 h-16 sm:h-24 bg-gradient-to-t from-black/50 to-transparent pointer-events-none z-10" />
-        </div>
+        {/* Top dark gradient overlay under navbar for seamless text contrast and zero bleed */}
+        <div className="absolute top-0 left-0 right-0 h-24 sm:h-28 bg-gradient-to-b from-black/80 via-black/40 to-transparent pointer-events-none z-20" />
+
+        {/* Subtle bottom dark gradient for smooth docking of the floating information panel */}
+        <div className="absolute bottom-0 left-0 right-0 h-16 sm:h-20 bg-gradient-to-t from-black/50 to-transparent pointer-events-none z-20" />
       </section>
 
       {/* 1.5 Sleek Floating Corporate Trust & Logistics Panel */}
-      <section className="relative z-20 -mt-4 sm:-mt-6 md:-mt-8 lg:-mt-10 container mx-auto px-3 sm:px-6 lg:px-8 max-w-6xl">
+      <section className="relative z-20 -mt-4 sm:-mt-6 md:-mt-8 lg:-mt-9 container mx-auto px-3.5 sm:px-6 lg:px-8 max-w-6xl">
         <div className="bg-white/95 backdrop-blur-xl rounded-xl sm:rounded-2xl shadow-[0_20px_50px_-15px_rgba(11,37,69,0.12)] border border-industrial-200/80 p-1.5 sm:p-2.5 md:p-3 transition-all duration-300">
           
           {/* Desktop & Laptop View: 3 Equal-Width Horizontal Cells */}
@@ -192,13 +203,13 @@ export function Home() {
                 key={`${brand.id}-${idx}`} 
                 className="flex items-center justify-center px-2 min-[360px]:px-3 sm:px-4 md:px-5 group/brand cursor-default"
               >
-                <div className="w-22 h-9 min-[360px]:w-24 min-[360px]:h-10 sm:w-32 sm:h-13 md:w-38 md:h-14 lg:w-44 lg:h-16 flex items-center justify-center mix-blend-multiply hover:mix-blend-normal transition-all duration-300">
+                <div className="w-20 h-9 sm:w-28 sm:h-12 md:w-36 md:h-14 lg:w-44 lg:h-16 flex items-center justify-center mix-blend-multiply hover:mix-blend-normal transition-all duration-300">
                   <img 
                     src={brand.logo} 
                     alt={brand.name} 
                     loading="lazy"
                     decoding="async"
-                    className="max-w-full max-h-full object-contain scale-100 min-[360px]:scale-105 md:scale-110 lg:scale-115 transition-transform duration-300 drop-shadow-xs group-hover/brand:drop-shadow-md group-hover/brand:scale-[1.25]"
+                    className="max-w-full max-h-full object-contain transition-transform duration-300 drop-shadow-xs group-hover/brand:drop-shadow-md group-hover/brand:scale-110"
                     onError={(e) => { 
                       e.target.style.display = 'none'; 
                       e.target.nextSibling.style.display = 'block';
