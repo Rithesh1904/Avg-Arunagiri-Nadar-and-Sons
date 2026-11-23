@@ -37,7 +37,7 @@ export function Home() {
   return (
     <div className="flex flex-col w-full">
       {/* 1. Hero Section - Full cinematic visibility on laptop, beautifully framed on mobile */}
-      <section className="relative w-full h-[38vh] min-h-[250px] max-h-[310px] sm:h-[48vh] sm:min-h-[340px] md:h-[58vh] md:min-h-[420px] md:max-h-[520px] lg:h-[60vh] flex items-center bg-black overflow-hidden">
+      <section className="relative w-full h-[38vh] min-h-[250px] max-h-[310px] sm:h-[48vh] sm:min-h-[340px] md:h-[62vh] md:min-h-[460px] md:max-h-[560px] lg:h-[66vh] lg:min-h-[500px] lg:max-h-[600px] xl:h-[68vh] xl:max-h-[640px] flex items-center bg-black overflow-hidden">
         <div className="absolute inset-0 z-0 flex items-center justify-center overflow-hidden">
           <video
             ref={videoRef}
@@ -45,38 +45,45 @@ export function Home() {
             muted
             playsInline
             loop
-            className="absolute inset-0 w-full h-full object-cover object-[center_top]"
+            className="absolute inset-0 w-full h-full object-cover object-[center_top] pointer-events-none"
           >
             <source src="/assets/shop1.mp4" type="video/mp4" />
           </video>
+
+          {/* Top dark gradient overlay under navbar for seamless text contrast and zero bleed */}
+          <div className="absolute top-0 left-0 right-0 h-28 sm:h-32 bg-gradient-to-b from-black/75 via-black/30 to-transparent pointer-events-none z-10" />
+
+          {/* Subtle bottom dark gradient for smooth docking of the floating information panel */}
+          <div className="absolute bottom-0 left-0 right-0 h-20 sm:h-24 bg-gradient-to-t from-black/50 to-transparent pointer-events-none z-10" />
         </div>
       </section>
 
-      {/* 1.5 Sleek Low-Profile Trust & Logistics Bar - Slim, Elegant & Perfectly Aligned */}
-      <section className="relative z-20 -mt-5 sm:-mt-6 md:-mt-7 container mx-auto px-3 sm:px-4 md:px-6 max-w-5xl">
-        <div className="bg-white/95 backdrop-blur-xl rounded-xl sm:rounded-2xl shadow-[0_12px_32px_-8px_rgba(0,0,0,0.12)] border border-industrial-200/80 p-1.5 sm:p-2.5 md:p-3 transition-all duration-300">
+      {/* 1.5 Sleek Floating Corporate Trust & Logistics Panel */}
+      <section className="relative z-20 -mt-5 sm:-mt-6 md:-mt-8 lg:-mt-10 container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+        <div className="bg-white/95 backdrop-blur-xl rounded-2xl shadow-[0_20px_50px_-15px_rgba(11,37,69,0.12)] border border-industrial-200/80 p-2 sm:p-2.5 md:p-3 transition-all duration-300">
           
-          {/* Desktop & Laptop View: 3 Clean Horizontal Cells */}
+          {/* Desktop & Laptop View: 3 Equal-Width Horizontal Cells */}
           <div className="hidden sm:grid grid-cols-3 divide-x divide-industrial-100">
             {/* Feature 1: Heritage */}
             <Link 
               to="/about"
-              className="group flex items-center gap-3 px-3.5 py-1.5 hover:bg-industrial-50/70 rounded-xl transition-all"
+              className="group flex items-center gap-3.5 lg:gap-4 px-4 py-2.5 lg:px-5 lg:py-3 hover:bg-industrial-50/70 rounded-xl transition-all duration-200"
             >
-              <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-600 shrink-0 group-hover:scale-105 transition-transform">
-                <Award size={18} className="text-amber-600" />
+              <div className="w-10 h-10 lg:w-11 lg:h-11 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-600 shrink-0 group-hover:scale-105 group-hover:bg-amber-500/20 transition-all">
+                <Award size={20} className="text-amber-600" />
               </div>
-              <div className="min-w-0">
+              <div className="min-w-0 flex-1">
                 <div className="text-[10px] font-black uppercase tracking-wider text-amber-600 leading-none mb-1">
                   EST. 1970 • 54+ YEARS
                 </div>
-                <div className="text-xs md:text-sm font-black text-industrial-900 tracking-tight leading-tight group-hover:text-amber-600 transition-colors truncate">
+                <div className="text-xs sm:text-sm lg:text-[15px] font-black text-industrial-900 tracking-tight leading-tight group-hover:text-amber-600 transition-colors truncate">
                   54+ Years of Legacy
                 </div>
-                <div className="text-[10.5px] text-industrial-500 leading-none mt-0.5 truncate hidden lg:block">
+                <div className="text-[11px] text-industrial-500 leading-normal mt-0.5 truncate hidden md:block">
                   Tamil Nadu's most trusted roofing & steel landmark
                 </div>
               </div>
+              <ArrowRight size={15} className="text-industrial-300 group-hover:text-amber-600 group-hover:translate-x-1 transition-all shrink-0 hidden xl:block" />
             </Link>
 
             {/* Feature 2: Lorry Service */}
@@ -84,43 +91,45 @@ export function Home() {
               href="https://wa.me/919842874256?text=Hello%20A.V.G.%20Arunagiri%20Nadar%20Sons%2C%20I%20would%20like%20to%20enquire%20about%20direct%20site%20lorry%20transportation%20and%20delivery."
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center gap-3 px-3.5 py-1.5 hover:bg-industrial-50/70 rounded-xl transition-all"
+              className="group flex items-center gap-3.5 lg:gap-4 px-4 py-2.5 lg:px-5 lg:py-3 hover:bg-industrial-50/70 rounded-xl transition-all duration-200"
             >
-              <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-600 shrink-0 group-hover:scale-105 transition-transform">
-                <Truck size={18} className="text-emerald-600" />
+              <div className="w-10 h-10 lg:w-11 lg:h-11 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-600 shrink-0 group-hover:scale-105 group-hover:bg-emerald-500/20 transition-all">
+                <Truck size={20} className="text-emerald-600" />
               </div>
-              <div className="min-w-0">
+              <div className="min-w-0 flex-1">
                 <div className="text-[10px] font-black uppercase tracking-wider text-emerald-600 leading-none mb-1">
                   SITE LOGISTICS • DIRECT FLEET
                 </div>
-                <div className="text-xs md:text-sm font-black text-industrial-900 tracking-tight leading-tight group-hover:text-emerald-600 transition-colors truncate">
+                <div className="text-xs sm:text-sm lg:text-[15px] font-black text-industrial-900 tracking-tight leading-tight group-hover:text-emerald-600 transition-colors truncate">
                   Lorry Service Available
                 </div>
-                <div className="text-[10.5px] text-industrial-500 leading-none mt-0.5 truncate hidden lg:block">
+                <div className="text-[11px] text-industrial-500 leading-normal mt-0.5 truncate hidden md:block">
                   Dedicated truck delivery to your site
                 </div>
               </div>
+              <ArrowRight size={15} className="text-industrial-300 group-hover:text-emerald-600 group-hover:translate-x-1 transition-all shrink-0 hidden xl:block" />
             </a>
 
             {/* Feature 3: Authorized Stockist */}
             <Link 
               to="/quote"
-              className="group flex items-center gap-3 px-3.5 py-1.5 hover:bg-industrial-50/70 rounded-xl transition-all"
+              className="group flex items-center gap-3.5 lg:gap-4 px-4 py-2.5 lg:px-5 lg:py-3 hover:bg-industrial-50/70 rounded-xl transition-all duration-200"
             >
-              <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-600 shrink-0 group-hover:scale-105 transition-transform">
-                <ShieldCheck size={18} className="text-blue-600" />
+              <div className="w-10 h-10 lg:w-11 lg:h-11 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-600 shrink-0 group-hover:scale-105 group-hover:bg-blue-500/20 transition-all">
+                <ShieldCheck size={20} className="text-blue-600" />
               </div>
-              <div className="min-w-0">
+              <div className="min-w-0 flex-1">
                 <div className="text-[10px] font-black uppercase tracking-wider text-blue-600 leading-none mb-1">
                   100% GENUINE • CERTIFIED
                 </div>
-                <div className="text-xs md:text-sm font-black text-industrial-900 tracking-tight leading-tight group-hover:text-blue-600 transition-colors truncate">
+                <div className="text-xs sm:text-sm lg:text-[15px] font-black text-industrial-900 tracking-tight leading-tight group-hover:text-blue-600 transition-colors truncate">
                   Authorized Stockist of Tata, JSW & Georoof
                 </div>
-                <div className="text-[10.5px] text-industrial-500 leading-none mt-0.5 truncate hidden lg:block">
+                <div className="text-[11px] text-industrial-500 leading-normal mt-0.5 truncate hidden md:block">
                   Factory-certified sheets, pipes & structures
                 </div>
               </div>
+              <ArrowRight size={15} className="text-industrial-300 group-hover:text-blue-600 group-hover:translate-x-1 transition-all shrink-0 hidden xl:block" />
             </Link>
           </div>
 
@@ -160,36 +169,36 @@ export function Home() {
       </section>
 
       {/* 2. Brands Marquee - Sleek & Prominent */}
-      <section className="pt-3.5 sm:pt-5 pb-3 sm:pb-4 border-b border-industrial-200 overflow-hidden relative bg-industrial-50">
+      <section className="pt-3.5 sm:pt-4 md:pt-5 lg:pt-6 pb-3.5 sm:pb-4 md:pb-5 lg:pb-6 border-b border-industrial-200/80 overflow-hidden relative bg-[#F8FAFC]">
         {/* Premium subtle background image */}
         <div 
-          className="absolute inset-0 bg-[url('/images/contact-bg.jpg')] bg-cover bg-center opacity-60 pointer-events-none mix-blend-multiply"
+          className="absolute inset-0 bg-[url('/images/contact-bg.jpg')] bg-cover bg-center opacity-20 pointer-events-none mix-blend-multiply"
         />
 
-        <div className="container mx-auto px-4 md:px-6 text-center mb-1.5 sm:mb-2.5 relative z-20">
-          <h3 className="inline-block px-3.5 sm:px-6 py-0.5 sm:py-1 bg-white/95 backdrop-blur-sm border border-industrial-200 rounded-full text-[9.5px] sm:text-xs font-black text-industrial-800 tracking-[0.18em] sm:tracking-[0.2em] uppercase shadow-sm">
+        <div className="container mx-auto px-4 md:px-6 text-center mb-2 sm:mb-2.5 md:mb-3 relative z-20">
+          <h3 className="inline-flex items-center gap-2 px-3.5 sm:px-5 py-0.5 sm:py-1 bg-white/95 backdrop-blur-sm border border-industrial-200/80 rounded-full text-[9.5px] sm:text-xs font-black text-industrial-800 tracking-[0.18em] sm:tracking-[0.2em] uppercase shadow-xs">
             Authorized Stockist Of
           </h3>
         </div>
 
         <div className="relative flex overflow-x-hidden group mt-0.5 sm:mt-1 z-10">
           <motion.div
-            className="flex items-center gap-10 sm:gap-14 md:gap-18 whitespace-nowrap px-6 sm:px-8"
+            className="flex items-center gap-10 sm:gap-14 md:gap-16 lg:gap-20 whitespace-nowrap px-6 sm:px-8"
             animate={{ x: ["0%", "-50%"] }}
-            transition={{ ease: "linear", duration: 30, repeat: Infinity }}
+            transition={{ ease: "linear", duration: 32, repeat: Infinity }}
           >
             {[...brands, ...brands, ...brands, ...brands, ...brands].map((brand, idx) => (
               <div 
                 key={`${brand.id}-${idx}`} 
                 className="flex items-center justify-center px-3 sm:px-4 md:px-5 group/brand cursor-default"
               >
-                <div className="w-24 h-11 sm:w-32 sm:h-13 md:w-40 md:h-16 flex items-center justify-center mix-blend-multiply hover:mix-blend-normal transition-all duration-300">
+                <div className="w-24 h-11 sm:w-32 sm:h-13 md:w-38 md:h-14 lg:w-44 lg:h-16 flex items-center justify-center mix-blend-multiply hover:mix-blend-normal transition-all duration-300">
                   <img 
                     src={brand.logo} 
                     alt={brand.name} 
                     loading="lazy"
                     decoding="async"
-                    className="max-w-full max-h-full object-contain scale-110 md:scale-120 transition-transform duration-300 drop-shadow-sm group-hover/brand:drop-shadow-md group-hover/brand:scale-[1.28]"
+                    className="max-w-full max-h-full object-contain scale-105 md:scale-110 lg:scale-115 transition-transform duration-300 drop-shadow-xs group-hover/brand:drop-shadow-md group-hover/brand:scale-[1.25]"
                     onError={(e) => { 
                       e.target.style.display = 'none'; 
                       e.target.nextSibling.style.display = 'block';
@@ -201,13 +210,13 @@ export function Home() {
             ))}
           </motion.div>
           {/* Gradient masks for smooth edges */}
-          <div className="absolute inset-y-0 left-0 w-12 sm:w-28 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
-          <div className="absolute inset-y-0 right-0 w-12 sm:w-28 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute inset-y-0 left-0 w-12 sm:w-24 md:w-36 lg:w-48 bg-gradient-to-r from-[#F8FAFC] to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute inset-y-0 right-0 w-12 sm:w-24 md:w-36 lg:w-48 bg-gradient-to-l from-[#F8FAFC] to-transparent z-10 pointer-events-none"></div>
         </div>
       </section>
 
       {/* 3. Product Categories */}
-      <section className="pt-4 pb-12 sm:pt-10 sm:pb-16 md:py-20 border-y border-industrial-100 relative z-0">
+      <section className="pt-6 pb-12 sm:pt-10 sm:pb-16 md:pt-12 md:pb-20 border-y border-industrial-100 relative z-0">
         <div 
           className="absolute inset-0 -z-10 bg-[url('/images/productbk1.jpg')] bg-cover bg-center bg-fixed opacity-[0.08]"
         />

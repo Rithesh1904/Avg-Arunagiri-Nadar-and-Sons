@@ -40,32 +40,31 @@ export function Navbar() {
         className={cn(
           'fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out',
           isScrolled
-            ? 'py-3'
+            ? 'py-2.5 sm:py-3'
             : (isHomePage 
-                ? 'py-3.5 sm:py-4 bg-transparent border-b border-white/10' 
-                : 'py-4 border-b border-white/[0.08] shadow-2xl bg-gradient-to-r from-[#030712] via-[#0A101D] to-[#030712]')
+                ? 'py-3 sm:py-3.5 lg:py-4 bg-transparent border-b border-white/10' 
+                : 'py-3.5 sm:py-4 border-b border-white/[0.08] shadow-2xl bg-gradient-to-r from-[#030712] via-[#0A101D] to-[#030712]')
         )}
       >
-        {/* Removed video background in favor of the royal midnight blue/black solid gradient */}
-        
-        <div className="container mx-auto px-4 md:px-6 relative z-10">
+        {/* Container with robust responsive padding */}
+        <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl relative z-10">
           <div className={cn(
             "flex items-center justify-between transition-all duration-500",
             isScrolled 
-              ? "bg-white/85 backdrop-blur-xl border border-white/40 shadow-[0_8px_30px_rgb(0,0,0,0.04)] px-3 sm:px-4 md:px-6 py-2.5 sm:py-3 rounded-2xl sm:rounded-3xl" 
+              ? "bg-white/90 backdrop-blur-xl border border-white/40 shadow-[0_8px_30px_rgb(0,0,0,0.06)] px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 rounded-2xl" 
               : "px-0 py-0"
           )}>
             {/* Logo */}
-            <Link to="/" className="flex items-center gap-2 sm:gap-3 group relative z-10 shrink-0 min-w-0 max-w-[85%] sm:max-w-none">
+            <Link to="/" className="flex items-center gap-2.5 sm:gap-3 group relative z-10 shrink-0 min-w-0 max-w-[85%] sm:max-w-none">
               {/* AVG Authentic Roof Peaks Brand Logo Mark */}
               <div className="flex flex-col items-center justify-center shrink-0">
                 <img
                   src={isScrolled ? "/assets/avg-logo-dark.png" : "/assets/avg-logo-light.png"}
                   alt="A.V.G. Logo"
-                  className="h-8 sm:h-9 md:h-10 w-auto object-contain transition-all duration-300 group-hover:scale-105 drop-shadow-sm"
+                  className="h-8 sm:h-9 lg:h-9.5 xl:h-10 w-auto object-contain transition-all duration-300 group-hover:scale-105 drop-shadow-sm"
                 />
                 <span className={cn(
-                  "text-[7px] sm:text-[8px] md:text-[8.5px] font-black tracking-[0.2em] sm:tracking-[0.22em] uppercase mt-1 px-1 sm:px-1.5 py-[1.5px] rounded transition-all duration-500 leading-none whitespace-nowrap",
+                  "text-[7px] sm:text-[7.5px] lg:text-[8px] font-black tracking-[0.2em] sm:tracking-[0.22em] uppercase mt-0.5 sm:mt-1 px-1 sm:px-1.5 py-[1px] rounded transition-all duration-500 leading-none whitespace-nowrap",
                   isScrolled 
                     ? "bg-amber-500/10 text-amber-800 border border-amber-500/25" 
                     : "bg-white/10 text-amber-300 border border-amber-400/30 backdrop-blur-sm shadow-sm"
@@ -77,13 +76,13 @@ export function Navbar() {
               {/* Company Wordmark */}
               <div className="flex flex-col min-w-0 justify-center">
                 <span className={cn(
-                  "text-base sm:text-xl md:text-2xl font-black leading-tight sm:leading-none tracking-tight sm:tracking-tighter transition-all duration-500 drop-shadow-sm truncate",
+                  "text-base sm:text-lg lg:text-xl xl:text-2xl font-black leading-tight sm:leading-none tracking-tight sm:tracking-tighter transition-all duration-500 drop-shadow-sm truncate",
                   isScrolled ? "text-industrial-900" : "text-[#F5F7FA]"
                 )}>
                   Arunagiri Nadar Sons
                 </span>
                 <span className={cn(
-                  "text-[0.6rem] sm:text-[0.65rem] md:text-xs font-bold tracking-[0.16em] sm:tracking-[0.22em] uppercase mt-0.5 sm:mt-1 truncate",
+                  "text-[0.58rem] sm:text-[0.62rem] lg:text-[0.68rem] xl:text-xs font-bold tracking-[0.16em] sm:tracking-[0.2em] uppercase mt-0.5 sm:mt-1 truncate",
                   isScrolled ? "text-industrial-500" : "text-[#9CA6B5]"
                 )}>
                   Premium Building Solutions
@@ -96,13 +95,13 @@ export function Navbar() {
               <AppMenuBar isScrolled={isScrolled} />
               
               {!isScrolled && (
-                <div className="w-px h-7 bg-white/10 mx-6" />
+                <div className="w-px h-6 bg-white/15 mx-4 xl:mx-6" />
               )}
               {isScrolled && (
-                <div className="border-l border-industrial-200/50 pl-6 ml-2 h-7" />
+                <div className="border-l border-industrial-200/60 pl-4 xl:pl-6 ml-2 h-6" />
               )}
               
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-3 xl:gap-4">
                 <a
                   href="https://wa.me/919842874256"
                   target="_blank"
@@ -110,20 +109,20 @@ export function Navbar() {
                   className={cn(
                     "flex items-center justify-center transition-all duration-300",
                     !isScrolled
-                      ? "w-10 h-10 rounded-full bg-white/[0.03] border border-white/10 text-green-500 hover:bg-white/[0.06]" 
-                      : "w-11 h-11 rounded-xl bg-green-50 text-green-600 hover:bg-green-100 shadow-sm"
+                      ? "w-9 h-9 xl:w-10 xl:h-10 rounded-xl bg-white/10 hover:bg-emerald-500/20 text-emerald-400 border border-white/15 hover:border-emerald-500/30 backdrop-blur-md shadow-sm" 
+                      : "w-9 h-9 xl:w-10 xl:h-10 rounded-xl bg-green-50 text-green-600 hover:bg-green-100 border border-green-200/60 shadow-xs"
                   )}
                   aria-label="WhatsApp Us"
                 >
-                  <MessageCircle size={!isScrolled ? 20 : 22} />
+                  <MessageCircle size={!isScrolled ? 19 : 20} />
                 </a>
                 <Link
                   to="/quote"
                   className={cn(
-                    "font-semibold transition-all duration-300",
+                    "font-bold transition-all duration-300 whitespace-nowrap",
                     !isScrolled
-                      ? "px-6 py-2.5 rounded-md bg-[#F4B400] text-[#111827] text-[15px] hover:bg-[#E0A800]"
-                      : "px-6 py-2.5 rounded-xl bg-industrial-900 text-white text-sm shadow-md hover:shadow-lg"
+                      ? "px-4 xl:px-6 py-2 xl:py-2.5 rounded-lg bg-[#F4B400] text-industrial-950 text-xs xl:text-sm shadow-md hover:bg-[#E0A800] hover:shadow-[#F4B400]/25"
+                      : "px-4 xl:px-6 py-2 xl:py-2.5 rounded-xl bg-industrial-900 text-white text-xs xl:text-sm shadow-md hover:bg-industrial-800"
                   )}
                 >
                   Get a Quote

@@ -39,7 +39,7 @@ export default function AppMenuBar({ isScrolled = true }) {
     <nav className={cn(
       "flex items-center transition-colors duration-500",
       !isScrolled 
-        ? "gap-7 lg:gap-9" 
+        ? "gap-5 xl:gap-8" 
         : "gap-1 p-1.5 rounded-2xl border bg-industrial-50/50 border-industrial-100"
     )}>
       {navLinks.map((link) => {
@@ -61,11 +61,11 @@ export default function AppMenuBar({ isScrolled = true }) {
                   "flex items-center transition-all duration-300 relative",
                   !isScrolled 
                     ? cn(
-                        "gap-1.5 font-semibold text-[15px] py-2",
+                        "gap-1.5 font-semibold text-sm xl:text-[15px] py-2",
                         isActive ? "text-white" : "text-[#C4CBD6] hover:text-white"
                       )
                     : cn(
-                        "gap-2 px-4 py-2 rounded-xl text-sm font-semibold",
+                        "gap-2 px-3.5 xl:px-4 py-2 rounded-xl text-sm font-semibold",
                         isActive ? "bg-white text-accent-600 shadow-sm" : "text-industrial-600 hover:text-industrial-900 hover:bg-industrial-100/50"
                       )
                 )}
