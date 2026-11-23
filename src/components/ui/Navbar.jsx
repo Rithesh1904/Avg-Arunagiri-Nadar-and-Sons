@@ -47,7 +47,7 @@ export function Navbar() {
         )}
       >
         {/* Container with robust responsive padding */}
-        <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl relative z-10">
+        <div className="container mx-auto px-3.5 sm:px-6 lg:px-8 max-w-7xl relative z-10">
           <div className={cn(
             "flex items-center justify-between transition-all duration-500",
             isScrolled 
@@ -55,16 +55,16 @@ export function Navbar() {
               : "px-0 py-0"
           )}>
             {/* Logo */}
-            <Link to="/" className="flex items-center gap-2.5 sm:gap-3 group relative z-10 shrink-0 min-w-0 max-w-[85%] sm:max-w-none">
+            <Link to="/" className="flex items-center gap-2 sm:gap-3 group relative z-10 shrink-0 min-w-0 max-w-[82%] sm:max-w-none">
               {/* AVG Authentic Roof Peaks Brand Logo Mark */}
               <div className="flex flex-col items-center justify-center shrink-0">
                 <img
                   src={isScrolled ? "/assets/avg-logo-dark.png" : "/assets/avg-logo-light.png"}
                   alt="A.V.G. Logo"
-                  className="h-8 sm:h-9 lg:h-9.5 xl:h-10 w-auto object-contain transition-all duration-300 group-hover:scale-105 drop-shadow-sm"
+                  className="h-7.5 sm:h-9 lg:h-9.5 xl:h-10 w-auto object-contain transition-all duration-300 group-hover:scale-105 drop-shadow-sm"
                 />
                 <span className={cn(
-                  "text-[7px] sm:text-[7.5px] lg:text-[8px] font-black tracking-[0.2em] sm:tracking-[0.22em] uppercase mt-0.5 sm:mt-1 px-1 sm:px-1.5 py-[1px] rounded transition-all duration-500 leading-none whitespace-nowrap",
+                  "text-[6.5px] sm:text-[7.5px] lg:text-[8px] font-black tracking-[0.2em] sm:tracking-[0.22em] uppercase mt-0.5 sm:mt-1 px-1 sm:px-1.5 py-[1px] rounded transition-all duration-500 leading-none whitespace-nowrap",
                   isScrolled 
                     ? "bg-amber-500/10 text-amber-800 border border-amber-500/25" 
                     : "bg-white/10 text-amber-300 border border-amber-400/30 backdrop-blur-sm shadow-sm"
@@ -76,13 +76,13 @@ export function Navbar() {
               {/* Company Wordmark */}
               <div className="flex flex-col min-w-0 justify-center">
                 <span className={cn(
-                  "text-base sm:text-lg lg:text-xl xl:text-2xl font-black leading-tight sm:leading-none tracking-tight sm:tracking-tighter transition-all duration-500 drop-shadow-sm truncate",
+                  "text-[15px] sm:text-lg lg:text-xl xl:text-2xl font-black leading-tight sm:leading-none tracking-tight sm:tracking-tighter transition-all duration-500 drop-shadow-sm truncate",
                   isScrolled ? "text-industrial-900" : "text-[#F5F7FA]"
                 )}>
                   Arunagiri Nadar Sons
                 </span>
                 <span className={cn(
-                  "text-[0.58rem] sm:text-[0.62rem] lg:text-[0.68rem] xl:text-xs font-bold tracking-[0.16em] sm:tracking-[0.2em] uppercase mt-0.5 sm:mt-1 truncate",
+                  "text-[0.55rem] sm:text-[0.62rem] lg:text-[0.68rem] xl:text-xs font-bold tracking-[0.14em] sm:tracking-[0.2em] uppercase mt-0.5 sm:mt-1 truncate",
                   isScrolled ? "text-industrial-500" : "text-[#9CA6B5]"
                 )}>
                   Premium Building Solutions
@@ -133,13 +133,13 @@ export function Navbar() {
             {/* Mobile Menu Toggle */}
             <button
               className={cn(
-                "lg:hidden p-2.5 rounded-xl transition-colors",
-                !isScrolled ? "text-white bg-white/10" : "text-industrial-800 bg-industrial-50"
+                "lg:hidden p-2 sm:p-2.5 rounded-xl transition-colors shrink-0",
+                !isScrolled ? "text-white bg-white/10 hover:bg-white/15" : "text-industrial-800 bg-industrial-50 hover:bg-industrial-100"
               )}
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label="Toggle mobile menu"
             >
-              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              {mobileMenuOpen ? <X size={22} className="sm:w-6 sm:h-6" /> : <Menu size={22} className="sm:w-6 sm:h-6" />}
             </button>
           </div>
         </div>
