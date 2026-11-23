@@ -184,11 +184,11 @@ export function Navbar() {
                   WhatsApp Us
                 </a>
                 <a
-                  href="tel:+919842874256"
+                  href="tel:+919842174256"
                   className="flex items-center justify-center gap-2 bg-industrial-100 text-industrial-800 py-3 rounded-md font-semibold"
                 >
                   <Phone size={20} />
-                  Call 9842874256
+                  Call 98421 74256
                 </a>
                 <Link
                   to="/quote"

@@ -42,7 +42,7 @@ export function FloatingActions() {
 
       {/* Call Button (Mobile Primary Focus) */}
       <a
-        href="tel:+919842874256"
+        href="tel:+919842174256"
         className="md:hidden flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-industrial-900 text-white rounded-full shadow-lg hover:bg-industrial-800 transition-colors"
         aria-label="Call Us"
       >

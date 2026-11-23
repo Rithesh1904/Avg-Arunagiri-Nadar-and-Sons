@@ -127,11 +127,18 @@ export function Contact() {
                   <Phone size={24} />
                 </div>
                 <div>
-                  <h4 className="text-lg font-bold text-industrial-900 mb-1">Phone Number</h4>
-                  <p className="text-industrial-600 mb-2">For immediate assistance and enquiries.</p>
-                  <a href="tel:+919842874256" className="text-accent-600 font-bold hover:text-accent-700 transition-colors">
-                    +91 9842874256
-                  </a>
+                  <h4 className="text-lg font-bold text-industrial-900 mb-1">Phone Numbers</h4>
+                  <p className="text-industrial-600 mb-2">For immediate assistance, enquiries & site orders.</p>
+                  <div className="flex flex-col gap-2">
+                    <a href="tel:+919842174256" className="text-accent-600 font-bold hover:text-accent-700 transition-colors flex items-center gap-2 text-base">
+                      <span className="text-[11px] bg-accent-500/10 text-accent-800 font-bold px-2 py-0.5 rounded uppercase tracking-wider">Primary</span>
+                      +91 98421 74256
+                    </a>
+                    <a href="tel:+919842874256" className="text-industrial-700 font-bold hover:text-industrial-900 transition-colors flex items-center gap-2 text-base">
+                      <span className="text-[11px] bg-industrial-100 text-industrial-700 font-bold px-2 py-0.5 rounded uppercase tracking-wider">Secondary</span>
+                      +91 98428 74256
+                    </a>
+                  </div>
                 </div>
               </motion.div>
 
@@ -174,20 +181,20 @@ export function Contact() {
                   
                   <div className="flex flex-col gap-3">
                     <a 
-                      href={`https://wa.me/919842874256?text=${encodeURIComponent(`Enquiry from ${formData.name}\nPhone: ${formData.phone}\nSubject: ${formData.subject}\nMessage: ${formData.message}`)}`}
+                      href={`https://wa.me/918489421954?text=${encodeURIComponent(`*A.V.G. ARUNAGIRI NADAR SONS – GENERAL ENQUIRY*\n───────────────────────────────\n• *Name:* ${formData.name}\n• *Phone:* ${formData.phone}\n• *Subject:* ${formData.subject}\n• *Message:* ${formData.message}\n───────────────────────────────\n_Sent via A.V.G. Online Portal_`)}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white py-3 rounded-md font-bold transition-colors"
                     >
                       <MessageCircle size={20} />
-                      Send via WhatsApp
+                      Send via WhatsApp (+91 84894 21954)
                     </a>
                     <a 
-                      href="tel:+919842874256"
+                      href="tel:+919842174256"
                       className="flex items-center justify-center gap-2 bg-industrial-900 hover:bg-industrial-800 text-white py-3 rounded-md font-bold transition-colors"
                     >
                       <Phone size={20} />
-                      Call Us Now
+                      Call Us: +91 98421 74256
                     </a>
                   </div>
                 </motion.div>

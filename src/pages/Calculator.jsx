@@ -71,21 +71,29 @@ export function Calculator() {
 
   const whatsappMessage = result ? encodeURIComponent(
     result.type === 'steel'
-      ? `Hello, I would like a quote for Steel Roofing Sheets:\n` +
-        `• Building Dimensions: ${formData.length} ft (L) × ${formData.width} ft (W)\n` +
-        `• Roof Type: ${formData.roofType === 'pitched' ? 'Pitched / Sloped (+15% slope)' : 'Flat / Low Slope'}\n` +
-        `• Sheet Specification: Standard 3.5 ft Width × ${result.sheetLength} ft Custom Length\n` +
-        `• Estimated Requirement: ${result.sheets} Sheets (Total: ${result.totalRunningFeet} Running ft)\n` +
-        `• Roof Area: ~${result.area} sq.ft\n\n` +
-        `Please share the best price quote.`
-      : `Hello, I would like a quote for Polycarbonate Sheets:\n` +
-        `• Building Dimensions: ${formData.length} ft (L) × ${formData.width} ft (W)\n` +
-        `• Roof Type: ${formData.roofType === 'pitched' ? 'Pitched / Sloped (+15% slope)' : 'Flat / Low Slope'}\n` +
-        `• Polycarbonate Sheet Width: ${result.selectedWidth} ft\n` +
-        `• Cut Length: ${result.sheetLength} ft continuous\n` +
-        `• Estimated Requirement: ${result.sheets} Panels (Total: ${result.totalRunningFeet} Running ft)\n` +
-        `• Roof Area: ~${result.area} sq.ft\n\n` +
-        `Please share the best price quote.`
+      ? `*A.V.G. ARUNAGIRI NADAR SONS – ROOFING ESTIMATE & QUOTE REQUEST*\n` +
+        `─────────────────────────────────────────\n` +
+        `Hello, I calculated our steel roofing requirement on your website estimator and would like an official quote:\n\n` +
+        `*Building Specifications:*\n` +
+        `• *Dimensions:* ${formData.length} ft (L) × ${formData.width} ft (W)\n` +
+        `• *Roof Profile:* ${formData.roofType === 'pitched' ? 'Pitched / Sloped (+15% slope)' : 'Flat / Low Slope'}\n` +
+        `• *Sheet Spec:* Standard 3.5 ft Width × ${result.sheetLength} ft Custom Cut\n` +
+        `• *Estimated Sheets:* ${result.sheets} Sheets (Total: ${result.totalRunningFeet} Running ft)\n` +
+        `• *Roof Surface Area:* ~${result.area} sq.ft\n\n` +
+        `─────────────────────────────────────────\n` +
+        `Please share your best factory price and delivery schedule. Thank you!`
+      : `*A.V.G. ARUNAGIRI NADAR SONS – POLYCARBONATE ESTIMATE & QUOTE REQUEST*\n` +
+        `─────────────────────────────────────────\n` +
+        `Hello, I calculated our polycarbonate requirement on your website estimator and would like an official quote:\n\n` +
+        `*Building Specifications:*\n` +
+        `• *Dimensions:* ${formData.length} ft (L) × ${formData.width} ft (W)\n` +
+        `• *Roof Profile:* ${formData.roofType === 'pitched' ? 'Pitched / Sloped (+15% slope)' : 'Flat / Low Slope'}\n` +
+        `• *Sheet Width Profile:* ${result.selectedWidth} ft Width\n` +
+        `• *Cut Length:* ${result.sheetLength} ft Continuous\n` +
+        `• *Estimated Panels:* ${result.sheets} Panels (Total: ${result.totalRunningFeet} Running ft)\n` +
+        `• *Roof Surface Area:* ~${result.area} sq.ft\n\n` +
+        `─────────────────────────────────────────\n` +
+        `Please share your best factory price and delivery schedule. Thank you!`
   ) : '';
 
   return (
@@ -322,7 +330,7 @@ export function Calculator() {
                   </div>
 
                   <a 
-                    href={`https://wa.me/919842874256?text=${whatsappMessage}`}
+                    href={`https://wa.me/918489421954?text=${whatsappMessage}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white py-3.5 px-6 rounded-xl font-bold transition-all shadow-md hover:shadow-lg text-sm sm:text-base"

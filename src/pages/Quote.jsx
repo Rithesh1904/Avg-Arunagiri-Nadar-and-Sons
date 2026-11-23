@@ -18,19 +18,26 @@ export function Quote() {
   const handleSubmit = (e) => {
     e.preventDefault();
     
-    // Construct WhatsApp message
-    const waText = `*New Quote Enquiry*\n\n` +
-      `*Name:* ${formData.name}\n` +
-      `*Phone:* ${formData.phone}\n` +
-      `*Location:* ${formData.location}\n` +
-      `*Product Category:* ${formData.productCategory}\n` +
-      `*Product:* ${formData.product}\n` +
-      `*Quantity:* ${formData.quantity}\n` +
-      `*Requirements:* ${formData.requirements}\n` +
-      `*Message:* ${formData.message}\n`;
+    // Construct predefined professional WhatsApp quote request message
+    const waText = 
+      `*A.V.G. ARUNAGIRI NADAR SONS – OFFICIAL QUOTE REQUEST*\n` +
+      `─────────────────────────────────────────\n` +
+      `Hello, I would like to request an official quotation for our project requirements:\n\n` +
+      `*Client / Contractor Details:*\n` +
+      `• *Name:* ${formData.name}\n` +
+      `• *Contact Number:* ${formData.phone}\n` +
+      `• *Site Location / District:* ${formData.location}\n\n` +
+      `*Material Requirements:*\n` +
+      `• *Product Category:* ${formData.productCategory || 'Building / Roofing Solutions'}\n` +
+      (formData.product ? `• *Product / Profile:* ${formData.product}\n` : '') +
+      (formData.quantity ? `• *Estimated Quantity:* ${formData.quantity}\n` : '') +
+      (formData.requirements ? `• *Specifications / Thickness:* ${formData.requirements}\n` : '') +
+      (formData.message ? `\n*Additional Project Notes:*\n${formData.message}\n` : '') +
+      `\n─────────────────────────────────────────\n` +
+      `Please provide product availability, best factory-direct pricing, and lorry delivery schedule. Thank you!`;
 
     const encodedText = encodeURIComponent(waText);
-    window.open(`https://wa.me/919842874256?text=${encodedText}`, '_blank');
+    window.open(`https://wa.me/918489421954?text=${encodedText}`, '_blank');
   };
 
   const handleChange = (e) => {
@@ -177,7 +184,7 @@ export function Quote() {
               Send Request via WhatsApp
             </button>
             <p className="text-center text-xs text-industrial-500 mt-4">
-              Clicking this button will open WhatsApp with your formatted enquiry.
+              Clicking this button will open WhatsApp with your formatted enquiry directly to +91 84894 21954.
             </p>
           </form>
         </motion.div>
