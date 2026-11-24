@@ -25,6 +25,11 @@ export const brands = [
     logo: "/assets/brands/ms-pipe.svg"
   },
   {
+    id: "gp-steel-pipe",
+    name: "GP Pipe",
+    logo: "/assets/brands/gp-pipe.svg"
+  },
+  {
     id: "gi-steel-pipe",
     name: "GI Pipe",
     logo: "/assets/brands/gi-pipe.svg"

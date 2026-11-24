@@ -51,12 +51,13 @@ export const categories = [
   {
     id: "steel-pipes",
     name: "Steel Pipes",
-    description: "High-strength GI steel pipes, MS steel pipes, and Apollo steel pipes available in both Square and Round profiles for structural fabrication and roofing frames.",
+    description: "High-strength MS pipes, GP pipes, GI pipes, and Apollo certified steel pipes (Square, Rectangular & Round profiles in 20 ft standard lengths) for structural fabrication and roofing frames.",
     image: "/images/mildsteelpipes.jpg",
     subcategories: [
-      "GI Steel Pipe (Square & Round)",
-      "MS Steel Pipe (Square & Round)",
-      "Apollo Steel Pipe (Square & Round)"
+      "MS Steel Pipe (20 ft)",
+      "GP Steel Pipe (20 ft)",
+      "GI Steel Pipe (20 ft)",
+      "Apollo Steel Pipe (20 ft)"
     ]
   },
   {

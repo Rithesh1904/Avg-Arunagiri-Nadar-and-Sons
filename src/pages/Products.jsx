@@ -70,8 +70,9 @@ export function Products() {
           (brandId === 'jsw' && prodBrand.includes('jsw')) ||
           (brandId === 'lotus' && prodBrand.includes('lotus')) ||
           (brandId === 'aquastar' && prodBrand.includes('aquastar')) ||
-          (brandId === 'gi-steel-pipe' && (prodBrand.includes('gi steel') || prodBrand.includes('gi-steel'))) ||
-          (brandId === 'ms-steel-pipe' && (prodBrand.includes('ms steel') || prodBrand.includes('ms-steel'))) ||
+          (brandId === 'gi-steel-pipe' && (prodBrand.includes('gi steel') || prodBrand.includes('gi-steel') || prodBrand.includes('gi pipe'))) ||
+          (brandId === 'gp-steel-pipe' && (prodBrand.includes('gp steel') || prodBrand.includes('gp-steel') || prodBrand.includes('gp pipe'))) ||
+          (brandId === 'ms-steel-pipe' && (prodBrand.includes('ms steel') || prodBrand.includes('ms-steel') || prodBrand.includes('ms pipe'))) ||
           ((brandId === 'apollo-steel-pipe' || brandId === 'appalo-steel-pipe') && (prodBrand.includes('apollo') || prodBrand.includes('appalo')))
         );
       });
@@ -109,8 +110,9 @@ export function Products() {
           (bId === 'jsw' && pBrand.includes('jsw')) ||
           (bId === 'lotus' && pBrand.includes('lotus')) ||
           (bId === 'aquastar' && pBrand.includes('aquastar')) ||
-          (bId === 'gi-steel-pipe' && (pBrand.includes('gi steel') || pBrand.includes('gi-steel') || pBrand === 'gi steel pipe')) ||
-          (bId === 'ms-steel-pipe' && (pBrand.includes('ms steel') || pBrand.includes('ms-steel') || pBrand === 'ms steel pipe')) ||
+          (bId === 'gi-steel-pipe' && (pBrand.includes('gi steel') || pBrand.includes('gi-steel') || pBrand.includes('gi pipe') || pBrand === 'gi steel pipe')) ||
+          (bId === 'gp-steel-pipe' && (pBrand.includes('gp steel') || pBrand.includes('gp-steel') || pBrand.includes('gp pipe') || pBrand === 'gp steel pipe')) ||
+          (bId === 'ms-steel-pipe' && (pBrand.includes('ms steel') || pBrand.includes('ms-steel') || pBrand.includes('ms pipe') || pBrand === 'ms steel pipe')) ||
           ((bId === 'apollo-steel-pipe' || bId === 'appalo-steel-pipe') && (pBrand.includes('apollo') || pBrand.includes('appalo')));
 
         if (!matchesBrand) {

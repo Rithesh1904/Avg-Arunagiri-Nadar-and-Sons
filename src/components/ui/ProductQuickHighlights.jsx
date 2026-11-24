@@ -129,7 +129,7 @@ export function ProductQuickHighlights({ product }) {
         tagline: 'High-Tensile Structural Strength in Square & Round Profiles',
         summary: 'Precision-manufactured hollow structural sections available in both Square Hollow Section (SHS) and Circular Round Pipe (CHS) profiles across GI, MS, and Apollo grades with certified yield strength for rigid roof trusses, sheds, and frameworks.',
         cards: [
-          { icon: Layers, title: 'Square & Round Profiles', desc: 'Available in both square hollow sections (SHS) and round circular pipes (CHS) to fit all architectural designs.' },
+          { icon: Layers, title: '20 Feet Standard Length', desc: 'Every pipe is supplied in standard 20 ft (6m) mill length for optimal structural spans and minimal cut wastage.' },
           { icon: Award, title: 'Certified Yield Strength', desc: 'Engineered to bear heavy roofing loads and wind stress with superior strength-to-weight ratio.' },
           { icon: ShieldCheck, title: 'Anti-Rust Coating', desc: 'Hot-dip galvanized zinc barrier and mill coating defend against rust, humidity, and weather oxidation.' },
           { icon: Hammer, title: 'Seamless Fabrication', desc: 'Uniform clean walls and precise gauge ensure smooth on-site cutting, bending, and high-strength welding.' }

@@ -1669,133 +1669,368 @@ export const products = [
     "backDetails": "Discharge Channel Hydrodynamic Smooth Surface"
   },
   {
-    "id": "gi-steel-pipe",
-    "name": "GI Steel Pipe (Square & Round)",
-    "tallyName": "GI Steel Pipe",
+    "id": "ms-steel-pipe",
+    "name": "MS Steel Pipe (Square, Rectangular & Round)",
+    "tallyName": "MS Steel Pipe 20ft",
     "category": "Steel Pipes",
-    "subcategory": "GI Steel Pipe (Square & Round)",
-    "brand": "GI Steel Pipe",
-    "description": "Hot-Dip Galvanized Iron (GI) steel pipes engineered for maximum corrosion resistance and long structural lifespan. Available in both Square Hollow Section (SHS) and Circular Round Pipe profiles for roofing trusses, purlins, sheds, gates, and outdoor fabrication.",
-    "image": "/images/Gp Square Pipe.jpg",
+    "subcategory": "MS Steel Pipe (20 ft)",
+    "brand": "MS Pipe",
+    "description": "High-tensile Mild Steel (MS) structural pipes manufactured in standard 20 feet lengths. Available in square (1x1 to 4x4), rectangular (1.5x0.75 to 4x2), and circular round profiles (1.5\" & 2\") for building columns, trusses, purlins, and heavy structural fabrication.",
+    "image": "/images/Mild Steel Rectangular Pipe.jpg",
     "availableSizes": [
-      "Square: 25 × 25 mm (16G) - 20 ft",
-      "Square: 40 × 40 mm (16G) - 20 ft",
-      "Square: 50 × 50 mm (14G) - 20 ft",
-      "Round: 1 inch (25mm OD) - 20 ft",
-      "Round: 1.5 inch (38mm OD) - 20 ft",
-      "Round: 2 inch (50mm OD) - 20 ft"
+      "1\" × 1\" (Square) - 20 ft",
+      "1.25\" × 1.25\" (Square) - 20 ft",
+      "1.5\" × 0.75\" (Rectangular) - 20 ft",
+      "1.5\" × 1.5\" (Square) - 20 ft",
+      "2\" × 1\" (Rectangular) - 20 ft",
+      "2\" × 2\" (Square) - 20 ft",
+      "2.5\" × 1.5\" (Rectangular) - 20 ft",
+      "3\" × 1.5\" (Rectangular) - 20 ft",
+      "3\" × 3\" (Square) - 20 ft",
+      "4\" × 2\" (Rectangular) - 20 ft",
+      "4\" × 4\" (Square) - 20 ft",
+      "1.5\" Round Pipe - 20 ft",
+      "2\" Round Pipe - 20 ft"
     ],
     "specifications": {
-      "profileTypes": [
-        "Square Hollow Section (SHS)",
-        "Round Circular Pipe (CHS)"
-      ],
-      "coatingType": [
-        "Hot-Dip Galvanized Iron (Anti-Rust Zinc Layer)"
-      ],
       "standardLength": [
-        "20 ft (6 m)"
+        "20 Feet (6.096 m) per pipe"
       ],
-      "wallThickness": [
-        "1.6 mm (16 Gauge)",
-        "2.0 mm (14 Gauge)",
-        "2.5 mm"
+      "squareSizes": [
+        "1\" × 1\"",
+        "1.25\" × 1.25\"",
+        "1.5\" × 1.5\"",
+        "2\" × 2\"",
+        "3\" × 3\"",
+        "4\" × 4\""
+      ],
+      "rectangularSizes": [
+        "1.5\" × 0.75\"",
+        "2\" × 1\"",
+        "2.5\" × 1.5\"",
+        "3\" × 1.5\"",
+        "4\" × 2\""
+      ],
+      "roundSizes": [
+        "1.5 inch Round",
+        "2 inch Round"
+      ],
+      "materialGrade": [
+        "High-Tensile ERW Carbon Mild Steel (IS 4923 / IS 1161)"
+      ]
+    },
+    "applications": [
+      "Industrial Sheds & Warehouses",
+      "Building Trusses & Columns",
+      "Roof Purlins & Rafters",
+      "Gates, Grills & Railings",
+      "Heavy Machinery Frameworks"
+    ],
+    "featured": true,
+    "backImage": "/images/backside/pipe-back.jpg",
+    "backDetails": "High-Frequency ERW Seam Welded Structural Steel Tube Core"
+  },
+  {
+    "id": "ms-square-pipe",
+    "name": "MS Square & Rectangular Pipe (20 ft)",
+    "tallyName": "MS Square Rectangular Pipe",
+    "category": "Steel Pipes",
+    "subcategory": "MS Steel Pipe (20 ft)",
+    "brand": "MS Pipe",
+    "description": "Mild Steel (MS) square and rectangular hollow section (SHS & RHS) box pipes in full 20 ft lengths, offering superior torsional rigidity for roof structures, shed frames, and architectural purlins.",
+    "image": "/images/Mild Steel Rectangular Pipe.jpg",
+    "availableSizes": [
+      "1\" × 1\" - 20 ft",
+      "1.25\" × 1.25\" - 20 ft",
+      "1.5\" × 0.75\" - 20 ft",
+      "1.5\" × 1.5\" - 20 ft",
+      "2\" × 1\" - 20 ft",
+      "2\" × 2\" - 20 ft",
+      "2.5\" × 1.5\" - 20 ft",
+      "3\" × 1.5\" - 20 ft",
+      "3\" × 3\" - 20 ft",
+      "4\" × 2\" - 20 ft",
+      "4\" × 4\" - 20 ft"
+    ],
+    "specifications": {
+      "standardLength": [
+        "20 Feet (6 m)"
+      ],
+      "profileType": [
+        "Square Hollow Section (SHS) & Rectangular Hollow Section (RHS)"
+      ],
+      "materialGrade": [
+        "High-Tensile Structural Mild Steel"
       ]
     },
     "applications": [
       "Roof Trusses",
-      "Pergolas & Sheds",
-      "Purlins & Supports",
-      "Gates & Railings"
-    ],
-    "featured": true,
-    "backImage": "/images/backside/pipe-back.jpg",
-    "backDetails": "Galvanized Plain Anti-Corrosive Zinc Coated Internal Bore"
-  },
-  {
-    "id": "ms-steel-pipe",
-    "name": "MS Steel Pipe (Square & Round)",
-    "tallyName": "MS Steel Pipe",
-    "category": "Steel Pipes",
-    "subcategory": "MS Steel Pipe (Square & Round)",
-    "brand": "MS Steel Pipe",
-    "description": "High-tensile Mild Steel (MS) hollow structural pipes manufactured from premium grade hot-rolled carbon steel coils. Available in both Square and Round cross-sections for industrial sheds, columns, heavy truss fabrication, and commercial building frames.",
-    "image": "/images/Mild Steel Rectangular Pipe.jpg",
-    "availableSizes": [
-      "Square: 25 × 25 mm - 20 ft",
-      "Square: 50 × 50 mm - 20 ft",
-      "Square: 75 × 75 mm - 20 ft",
-      "Round: 1.5 inch NB - 20 ft",
-      "Round: 2 inch NB - 20 ft",
-      "Round: 3 inch NB - 20 ft"
-    ],
-    "specifications": {
-      "profileTypes": [
-        "Square Hollow Section (SHS)",
-        "Round Circular Pipe (CHS)"
-      ],
-      "materialGrade": [
-        "High-Tensile Mild Steel (IS 4923 / IS 1161)"
-      ],
-      "standardLength": [
-        "20 ft (6 m)"
-      ],
-      "wallThickness": [
-        "1.6 mm (16 Gauge)",
-        "2.0 mm",
-        "2.5 mm",
-        "3.0 mm"
-      ]
-    },
-    "applications": [
-      "Industrial Sheds",
-      "Building Columns & Beams",
-      "Structural Frameworks",
-      "Heavy Machinery Stands"
+      "Purlin Frames",
+      "Door & Window Frames",
+      "Shed Structures"
     ],
     "featured": false,
     "backImage": "/images/backside/pipe-back.jpg",
     "backDetails": "High-Frequency ERW Seam Welded Structural Steel Tube Core"
   },
   {
-    "id": "apollo-steel-pipe",
-    "name": "Apollo Steel Pipe (Square & Round)",
-    "tallyName": "Apollo Steel Pipe",
+    "id": "ms-round-pipe",
+    "name": "MS Round Steel Pipe (20 ft)",
+    "tallyName": "MS Round Pipe",
     "category": "Steel Pipes",
-    "subcategory": "Apollo Steel Pipe (Square & Round)",
-    "brand": "Apollo Steel Pipe",
-    "description": "Certified APL Apollo structural hollow steel sections engineered with superior load-bearing capacity and precise wall gauge. Available in both Square Hollow Section and Round circular profiles for modern architectural and heavy-duty roofing projects.",
-    "image": "/images/mildsteelpipes.jpg",
+    "subcategory": "MS Steel Pipe (20 ft)",
+    "brand": "MS Pipe",
+    "description": "Mild Steel (MS) circular hollow section (CHS) round structural pipes in standard 20 ft lengths for posts, railings, canopies, and curved steel frameworks.",
+    "image": "/images/Mild Steel Rectangular Pipe.jpg",
     "availableSizes": [
-      "Square: 32 × 32 mm - 20 ft",
-      "Square: 40 × 40 mm - 20 ft",
-      "Square: 50 × 50 mm - 20 ft",
-      "Round: 1.25 inch OD - 20 ft",
-      "Round: 1.5 inch OD - 20 ft",
-      "Round: 2 inch OD - 20 ft"
+      "1.5\" Round Pipe - 20 ft",
+      "2\" Round Pipe - 20 ft"
     ],
     "specifications": {
-      "profileTypes": [
-        "Square Hollow Section (SHS)",
-        "Round Circular Pipe (CHS)"
+      "standardLength": [
+        "20 Feet (6 m)"
+      ],
+      "profileType": [
+        "Circular Hollow Section (Round Pipe)"
+      ],
+      "availableDiameters": [
+        "1.5 inch Round",
+        "2 inch Round"
+      ]
+    },
+    "applications": [
+      "Handrails & Balustrades",
+      "Support Posts",
+      "Curved Roof Arches",
+      "Canopy Frames"
+    ],
+    "featured": false,
+    "backImage": "/images/backside/pipe-back.jpg",
+    "backDetails": "High-Frequency ERW Seam Welded Structural Steel Tube Core"
+  },
+  {
+    "id": "gp-steel-pipe",
+    "name": "GP Steel Pipe (Square, Rectangular & Round)",
+    "tallyName": "GP Steel Pipe 20ft",
+    "category": "Steel Pipes",
+    "subcategory": "GP Steel Pipe (20 ft)",
+    "brand": "GP Pipe",
+    "description": "Premium Galvanized Plain (GP) steel pipes with pre-galvanized anti-corrosion zinc coating in standard 20 feet lengths. Available in full range of square (0.5x0.5 to 6x6), rectangular (1.5x0.75 to 4x2), and circular round profiles (2.5\") for weather-exposed roofing, pergolas, and structural frames.",
+    "image": "/images/Gp Square Pipe.jpg",
+    "availableSizes": [
+      "0.5\" × 0.5\" (Square) - 20 ft",
+      "0.75\" × 0.75\" (Square) - 20 ft",
+      "1\" × 1\" (Square) - 20 ft",
+      "1.25\" × 1.25\" (Square) - 20 ft",
+      "1.5\" × 0.75\" (Rectangular) - 20 ft",
+      "1.5\" × 1.5\" (Square) - 20 ft",
+      "2\" × 1\" (Rectangular) - 20 ft",
+      "2\" × 2\" (Square) - 20 ft",
+      "2.5\" × 1.5\" (Rectangular) - 20 ft",
+      "3\" × 1\" (Rectangular) - 20 ft",
+      "3\" × 1.5\" (Rectangular) - 20 ft",
+      "3\" × 3\" (Square) - 20 ft",
+      "4\" × 2\" (Rectangular) - 20 ft",
+      "4\" × 4\" (Square) - 20 ft",
+      "6\" × 6\" (Square) - 20 ft",
+      "2.5\" Round Pipe - 20 ft"
+    ],
+    "specifications": {
+      "standardLength": [
+        "20 Feet (6.096 m) per pipe"
+      ],
+      "squareSizes": [
+        "0.5\" × 0.5\"",
+        "0.75\" × 0.75\"",
+        "1\" × 1\"",
+        "1.25\" × 1.25\"",
+        "1.5\" × 1.5\"",
+        "2\" × 2\"",
+        "3\" × 3\"",
+        "4\" × 4\"",
+        "6\" × 6\""
+      ],
+      "rectangularSizes": [
+        "1.5\" × 0.75\"",
+        "2\" × 1\"",
+        "2.5\" × 1.5\"",
+        "3\" × 1\"",
+        "3\" × 1.5\"",
+        "4\" × 2\""
+      ],
+      "roundSizes": [
+        "2.5 inch Round"
+      ],
+      "coatingType": [
+        "Pre-Galvanized Zinc Protective Anti-Rust Coating"
+      ]
+    },
+    "applications": [
+      "Roofing Trusses & Purlins",
+      "Car Parking Sheds",
+      "Pergolas & Polyhouse Frames",
+      "Outdoor Structural Frameworks",
+      "Modern Architectural Steel"
+    ],
+    "featured": true,
+    "backImage": "/images/backside/pipe-back.jpg",
+    "backDetails": "Galvanized Plain Anti-Corrosive Zinc Coated Internal Bore"
+  },
+  {
+    "id": "gp-square-pipe",
+    "name": "GP Square & Rectangular Pipe (20 ft)",
+    "tallyName": "GP Square Rectangular Pipe",
+    "category": "Steel Pipes",
+    "subcategory": "GP Steel Pipe (20 ft)",
+    "brand": "GP Pipe",
+    "description": "Pre-galvanized zinc coated square and rectangular box pipes in 20 ft lengths, delivering maximum weather durability and rust resistance without mandatory painting.",
+    "image": "/images/Gp Square Pipe.jpg",
+    "availableSizes": [
+      "0.5\" × 0.5\" - 20 ft",
+      "0.75\" × 0.75\" - 20 ft",
+      "1\" × 1\" - 20 ft",
+      "1.25\" × 1.25\" - 20 ft",
+      "1.5\" × 0.75\" - 20 ft",
+      "1.5\" × 1.5\" - 20 ft",
+      "2\" × 1\" - 20 ft",
+      "2\" × 2\" - 20 ft",
+      "2.5\" × 1.5\" - 20 ft",
+      "3\" × 1\" - 20 ft",
+      "3\" × 1.5\" - 20 ft",
+      "3\" × 3\" - 20 ft",
+      "4\" × 2\" - 20 ft",
+      "4\" × 4\" - 20 ft",
+      "6\" × 6\" - 20 ft"
+    ],
+    "specifications": {
+      "standardLength": [
+        "20 Feet (6 m)"
+      ],
+      "coating": [
+        "Pre-Galvanized Anti-Corrosive Zinc Finish"
+      ],
+      "profileType": [
+        "Square & Rectangular Hollow Section"
+      ]
+    },
+    "applications": [
+      "Balcony Railings",
+      "Outdoor Sheds",
+      "Solar Panel Mounting Frames",
+      "Greenhouses & Nurseries"
+    ],
+    "featured": false,
+    "backImage": "/images/backside/pipe-back.jpg",
+    "backDetails": "Galvanized Plain Anti-Corrosive Zinc Coated Internal Bore"
+  },
+  {
+    "id": "gp-round-pipe",
+    "name": "GP Round Steel Pipe (20 ft)",
+    "tallyName": "GP Round Pipe",
+    "category": "Steel Pipes",
+    "subcategory": "GP Steel Pipe (20 ft)",
+    "brand": "GP Pipe",
+    "description": "Pre-galvanized circular round steel pipe in 2.5 inch diameter and 20 ft length for exterior posts, gates, shade structures, and weather-proof fabrication.",
+    "image": "/images/Gp Square Pipe.jpg",
+    "availableSizes": [
+      "2.5\" Round Pipe - 20 ft"
+    ],
+    "specifications": {
+      "standardLength": [
+        "20 Feet (6 m)"
+      ],
+      "diameter": [
+        "2.5 inch Round"
+      ],
+      "coating": [
+        "Pre-Galvanized Anti-Rust Zinc Coating"
+      ]
+    },
+    "applications": [
+      "Perimeter Fencing Posts",
+      "Outdoor Shade Supports",
+      "Agricultural Stanchions",
+      "Tubular Handrails"
+    ],
+    "featured": false,
+    "backImage": "/images/backside/pipe-back.jpg",
+    "backDetails": "Galvanized Plain Anti-Corrosive Zinc Coated Internal Bore"
+  },
+  {
+    "id": "gi-steel-pipe",
+    "name": "GI Steel Pipe (Heavy-Duty Round)",
+    "tallyName": "GI Round Pipe 20ft",
+    "category": "Steel Pipes",
+    "subcategory": "GI Steel Pipe (20 ft)",
+    "brand": "GI Pipe",
+    "description": "Heavy-duty Hot-Dip Galvanized Iron (GI) circular round pipes in standard 20 feet lengths. Superior heavy zinc alloy layer for maximum corrosion resistance in coastal, agricultural, water transmission, and high-moisture structural applications.",
+    "image": "/images/mildsteelpipes.jpg",
+    "availableSizes": [
+      "1.5\" Round Pipe (48.3 mm OD) - 20 ft",
+      "2\" Round Pipe (60.3 mm OD) - 20 ft",
+      "2.5\" Round Pipe (76.1 mm OD) - 20 ft",
+      "3\" Round Pipe (88.9 mm OD) - 20 ft"
+    ],
+    "specifications": {
+      "standardLength": [
+        "20 Feet (6.096 m) per pipe"
+      ],
+      "roundSizes": [
+        "1.5 inch Round (Class Medium/Heavy)",
+        "2 inch Round (Class Medium/Heavy)",
+        "2.5 inch Round (Class Medium/Heavy)",
+        "3 inch Round (Class Medium/Heavy)"
+      ],
+      "coatingType": [
+        "Hot-Dip Galvanized Zinc Layer (IS 1239 / IS 1161)"
+      ],
+      "profile": [
+        "Circular Hollow Section (Round Pipe)"
+      ]
+    },
+    "applications": [
+      "Heavy-Duty Structural Columns",
+      "Water Supply & Irrigation Lines",
+      "Scaffolding & Support Posts",
+      "Industrial Perimeter Fencing",
+      "Coastal & High-Humidity Structures"
+    ],
+    "featured": true,
+    "backImage": "/images/backside/pipe-back.jpg",
+    "backDetails": "Hot-Dip Galvanized Uniform Zinc Coated Inner & Outer Walls"
+  },
+  {
+    "id": "apollo-steel-pipe",
+    "name": "Apollo Steel Pipe (Certified Structural)",
+    "tallyName": "Apollo Steel Pipe 20ft",
+    "category": "Steel Pipes",
+    "subcategory": "Apollo Steel Pipe (20 ft)",
+    "brand": "Apollo Pipe",
+    "description": "Original APL Apollo structural hollow steel sections certified to national standards in 20 feet lengths. Engineered with precise wall thickness, superior strength-to-weight ratio, and uniform dimensions for high-load modern architectural structures.",
+    "image": "/images/mildsteelpipes.jpg",
+    "availableSizes": [
+      "1\" × 1\" to 4\" × 4\" Square (SHS) - 20 ft",
+      "2\" × 1\" to 4\" × 2\" Rectangular (RHS) - 20 ft",
+      "1.5\" & 2\" Round Pipe (CHS) - 20 ft"
+    ],
+    "specifications": {
+      "standardLength": [
+        "20 Feet (6.096 m) per pipe"
       ],
       "brandQuality": [
         "APL Apollo Certified Structural Steel"
       ],
-      "standardLength": [
-        "20 ft (6 m)"
-      ],
-      "wallThickness": [
-        "1.6 mm",
-        "2.0 mm",
-        "2.5 mm"
+      "profileTypes": [
+        "Square Hollow Section (SHS)",
+        "Rectangular Hollow Section (RHS)",
+        "Circular Hollow Section (CHS)"
       ]
     },
     "applications": [
-      "Pre-Engineered Buildings",
-      "Architectural Space Frames",
-      "Commercial Sheds",
-      "High-Load Roof Purlins"
+      "Pre-Engineered Buildings (PEB)",
+      "Commercial Space Frames",
+      "High-Span Roof Trusses",
+      "Auditoriums & Stadiums"
     ],
     "featured": true,
     "backImage": "/images/backside/pipe-back.jpg",
