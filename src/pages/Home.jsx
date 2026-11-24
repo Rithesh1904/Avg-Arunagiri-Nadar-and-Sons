@@ -20,14 +20,27 @@ export function Home() {
 
   React.useEffect(() => {
     // Ensure smooth autoplay in loop mode across mobile and desktop browsers
-    if (videoRef.current) {
-      videoRef.current.defaultMuted = true;
-      videoRef.current.muted = true;
-      const playPromise = videoRef.current.play();
+    const video = videoRef.current;
+    if (!video) return;
+
+    video.defaultMuted = true;
+    video.muted = true;
+
+    const playVideo = () => {
+      const playPromise = video.play();
       if (playPromise !== undefined) {
         playPromise.catch(() => {});
       }
-    }
+    };
+
+    video.addEventListener('loadeddata', playVideo);
+    video.addEventListener('canplay', playVideo);
+    playVideo();
+
+    return () => {
+      video.removeEventListener('loadeddata', playVideo);
+      video.removeEventListener('canplay', playVideo);
+    };
   }, []);
 
   return (
@@ -41,10 +54,10 @@ export function Home() {
           playsInline
           loop
           preload="auto"
+          poster="/assets/hero-poster.jpg"
           className="absolute inset-0 w-full h-full object-cover object-[center_top] pointer-events-none"
         >
-          <source src="/assets/shopbk.MOV" type="video/quicktime" />
-          <source src="/assets/shopbk.MOV" type="video/mp4" />
+          <source src="/assets/shopbk.mp4" type="video/mp4" />
           <source src="/assets/shop1.mp4" type="video/mp4" />
         </video>
 
