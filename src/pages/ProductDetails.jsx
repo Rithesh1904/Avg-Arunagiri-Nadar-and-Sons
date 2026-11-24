@@ -20,8 +20,8 @@ export function ProductDetails() {
       (productId === 'brown-kraft-paper-roll' && p.id === 'tar-felt-roll') ||
       ((productId === 'puf-sheet-30mm' || productId === 'puf-sheet-40mm') && p.id === 'puff-panel-sheets-40mm') ||
       (productId === 'puf-sheet-50mm' && p.id === 'puff-panel-sheets-50mm') ||
-      (productId === 'gp-square-pipe' && p.id === 'gi-steel-pipe') ||
-      (productId === 'mild-steel-rectangular-pipe' && p.id === 'ms-steel-pipe')
+      ((productId === 'gp-square-pipe' || productId === 'gp-round-pipe') && p.id === 'gp-steel-pipe') ||
+      ((productId === 'ms-square-pipe' || productId === 'ms-round-pipe' || productId === 'mild-steel-rectangular-pipe' || productId === 'apollo-steel-pipe') && p.id === 'ms-steel-pipe')
     );
     setProduct(found);
     if (found?.availableSizes && found.availableSizes.length > 0) {

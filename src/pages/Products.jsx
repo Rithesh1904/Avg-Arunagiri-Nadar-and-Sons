@@ -73,7 +73,7 @@ export function Products() {
           (brandId === 'gi-steel-pipe' && (prodBrand.includes('gi steel') || prodBrand.includes('gi-steel') || prodBrand.includes('gi pipe'))) ||
           (brandId === 'gp-steel-pipe' && (prodBrand.includes('gp steel') || prodBrand.includes('gp-steel') || prodBrand.includes('gp pipe'))) ||
           (brandId === 'ms-steel-pipe' && (prodBrand.includes('ms steel') || prodBrand.includes('ms-steel') || prodBrand.includes('ms pipe'))) ||
-          ((brandId === 'apollo-steel-pipe' || brandId === 'appalo-steel-pipe') && (prodBrand.includes('apollo') || prodBrand.includes('appalo')))
+          ((brandId === 'apollo-steel-pipe' || brandId === 'appalo-steel-pipe') && (prodBrand.includes('apollo') || prodBrand.includes('appalo') || product.id === 'ms-steel-pipe'))
         );
       });
       
@@ -113,7 +113,7 @@ export function Products() {
           (bId === 'gi-steel-pipe' && (pBrand.includes('gi steel') || pBrand.includes('gi-steel') || pBrand.includes('gi pipe') || pBrand === 'gi steel pipe')) ||
           (bId === 'gp-steel-pipe' && (pBrand.includes('gp steel') || pBrand.includes('gp-steel') || pBrand.includes('gp pipe') || pBrand === 'gp steel pipe')) ||
           (bId === 'ms-steel-pipe' && (pBrand.includes('ms steel') || pBrand.includes('ms-steel') || pBrand.includes('ms pipe') || pBrand === 'ms steel pipe')) ||
-          ((bId === 'apollo-steel-pipe' || bId === 'appalo-steel-pipe') && (pBrand.includes('apollo') || pBrand.includes('appalo')));
+          ((bId === 'apollo-steel-pipe' || bId === 'appalo-steel-pipe') && (pBrand.includes('apollo') || pBrand.includes('appalo') || product.id === 'ms-steel-pipe'));
 
         if (!matchesBrand) {
           return false;
