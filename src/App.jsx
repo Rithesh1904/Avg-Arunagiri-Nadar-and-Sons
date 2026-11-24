@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Layout } from './components/Layout';
 import { ScrollToTop } from './components/ScrollToTop';
 import { SmoothScroll } from './components/SmoothScroll';
+import { SEO } from './components/SEO';
 
 import { Home } from './pages/Home';
 import { Products } from './pages/Products';
@@ -28,6 +29,7 @@ const NotFound = () => (
 function App() {
   return (
     <Router>
+      <SEO />
       <SmoothScroll />
       <ScrollToTop />
       <Routes>

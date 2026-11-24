@@ -1,0 +1,12 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Disallow build or internal paths if any
+Disallow: /assets/*.map$
+
+# Host
+Host: https://avg-arunagiri-nadar-and-sons.vercel.app
+
+# Sitemap
+Sitemap: https://avg-arunagiri-nadar-and-sons.vercel.app/sitemap.xml
