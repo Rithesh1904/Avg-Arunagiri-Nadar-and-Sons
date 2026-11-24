@@ -19,19 +19,16 @@ export function Home() {
   const videoRef = React.useRef(null);
 
   React.useEffect(() => {
-    let timeout;
-    if (showSlide) {
-      // Display the slide for 2.5 seconds to allow time for the 1s transition
-      timeout = setTimeout(() => {
-        setShowSlide(false);
-        if (videoRef.current) {
-          videoRef.current.currentTime = 0;
-          videoRef.current.play();
-        }
-      }, 3000); // 1s transition in + 2s display time
+    // Ensure smooth autoplay in loop mode across mobile and desktop browsers
+    if (videoRef.current) {
+      videoRef.current.defaultMuted = true;
+      videoRef.current.muted = true;
+      const playPromise = videoRef.current.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {});
+      }
     }
-    return () => clearTimeout(timeout);
-  }, [showSlide]);
+  }, []);
 
   return (
     <div className="flex flex-col w-full">
@@ -43,8 +40,11 @@ export function Home() {
           muted
           playsInline
           loop
+          preload="auto"
           className="absolute inset-0 w-full h-full object-cover object-[center_top] pointer-events-none"
         >
+          <source src="/assets/shopbk.MOV" type="video/quicktime" />
+          <source src="/assets/shopbk.MOV" type="video/mp4" />
           <source src="/assets/shop1.mp4" type="video/mp4" />
         </video>
 
