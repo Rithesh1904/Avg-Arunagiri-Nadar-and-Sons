@@ -10,16 +10,14 @@ export function SmoothScroll() {
     // Detect if device is primary touch (mobile/tablet)
     const isTouchOnly = window.matchMedia('(pointer: coarse) and (hover: none)').matches;
 
-    // Professional, silky, highly-calibrated scroll configuration
+    // Highly calibrated, responsive scroll configuration
+    // Uses lerp (linear interpolation) for instantaneous response, natural momentum, and zero sluggishness
     const lenis = new Lenis({
-      duration: 0.85, // Snappy & controlled: avoids endless floating while staying silky smooth
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Apple-like smooth exponential curve
-      orientation: 'vertical',
-      gestureOrientation: 'vertical',
-      smoothWheel: !isTouchOnly, // Smooth wheel on laptops/desktops
-      wheelMultiplier: 1.0, // Natural 1:1 scroll speed (never sluggish)
+      lerp: 0.1, // Gold-standard responsive interpolation (instantaneous reaction, silky smooth settling)
+      wheelMultiplier: 1.15, // Responsive 1:1.15 scroll speed so scrolling feels effortless and brisk
       touchMultiplier: 1.0,
-      smoothTouch: false, // CRITICAL: NEVER smooth touch on mobile to preserve 120Hz native finger response
+      smoothWheel: !isTouchOnly, // Fluid wheel smoothing on laptops/desktops
+      syncTouch: false, // Keep native 120Hz finger response on mobile/touch screens
       infinite: false,
       autoResize: true,
     });

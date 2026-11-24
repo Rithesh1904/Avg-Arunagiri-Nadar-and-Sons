@@ -9,7 +9,6 @@ import { brands } from '../data/brands';
 import { applications } from '../data/applications';
 import { testimonials } from '../data/testimonials';
 import { cn } from '../lib/utils';
-import ScrollStack, { ScrollStackItem } from '../components/ui/ScrollStack';
 import { ProductCard } from '../components/ui/ProductCard';
 import { AboutUsSection } from '../components/ui/AboutUsSection';
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from '../components/ui/carousel';
@@ -216,7 +215,7 @@ export function Home() {
       {/* 3. Product Categories */}
       <section className="pt-6 pb-12 sm:pt-10 sm:pb-16 md:pt-12 md:pb-20 border-y border-industrial-100 relative z-0">
         <div 
-          className="absolute inset-0 -z-10 bg-[url('/images/productbk1.jpg')] bg-cover bg-center bg-fixed opacity-[0.08]"
+          className="absolute inset-0 -z-10 bg-[url('/images/productbk1.jpg')] bg-cover bg-center md:bg-fixed opacity-[0.08]"
         />
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           <SectionHeading 
@@ -451,58 +450,69 @@ export function Home() {
       </section>
 
       {/* 6. Applications */}
-      <section className="bg-white relative">
-        <div className="pt-20 pb-0 -mb-4 container mx-auto px-4 md:px-6">
+      <section className="py-16 sm:py-20 md:py-24 bg-white relative">
+        <div className="container mx-auto px-4 md:px-6">
           <SectionHeading 
             title="Solutions for Every Application" 
-            subtitle="Our materials are suitable for diverse building requirements."
+            subtitle="Engineered for strength, endurance, and seamless installation across diverse architectural needs."
             center
-            className="[&_h2]:text-industrial-900 [&_p]:text-industrial-600 relative z-10"
+            className="[&_h2]:text-industrial-900 [&_p]:text-industrial-600 relative z-10 mb-10 sm:mb-14"
           />
-        </div>
-        
-        <div className="w-full relative max-w-6xl mx-auto px-4 pb-12 sm:pb-16 md:pb-24">
-          <ScrollStack>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-6xl mx-auto">
             {applications.map((app, idx) => (
-              <ScrollStackItem key={app.id}>
-                <div className="h-[320px] sm:h-[400px] md:h-[500px] w-full rounded-[24px] sm:rounded-[36px] md:rounded-[40px] overflow-hidden relative group">
-                  <div className="absolute inset-0 bg-industrial-900 flex items-center justify-center text-industrial-500">
+              <motion.div
+                key={app.id}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "100px" }}
+                transition={{ duration: 0.45, delay: idx * 0.08, ease: "easeOut" }}
+              >
+                <Link
+                  to="/quote"
+                  className="group relative rounded-2xl sm:rounded-3xl overflow-hidden min-h-[320px] sm:min-h-[380px] md:min-h-[420px] flex flex-col justify-end p-6 sm:p-8 md:p-10 shadow-sm hover:shadow-2xl transition-all duration-500 border border-industrial-200/90 hover:border-accent-500/50 block"
+                >
+                  {/* Background Image with Zoom on Hover */}
+                  <div className="absolute inset-0 bg-industrial-900">
                     <img 
                       src={app.image} 
                       alt={app.title}
                       loading="lazy"
                       decoding="async"
-                      className={cn(
-                        "absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                      )}
+                      className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-108"
                     />
                   </div>
-                  {/* Subtle top-down and bottom-up gradients for readability */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-black/20 z-10" />
+
+                  {/* Layered Cinematic Gradient Overlays */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/45 to-black/15 z-10 transition-opacity duration-300 group-hover:from-black/90" />
                   
                   {/* Top Badge: Number and Category */}
-                  <div className="absolute top-4 sm:top-6 left-4 sm:left-8 right-4 sm:right-8 flex items-center justify-between z-20">
-                    <div className="px-3 sm:px-4 py-1 sm:py-1.5 rounded-full bg-black/50 backdrop-blur-md border border-white/20 text-[11px] sm:text-xs font-bold text-accent-400 tracking-widest uppercase shadow-sm">
+                  <div className="absolute top-5 sm:top-6 left-5 sm:left-6 right-5 sm:right-6 flex items-center justify-between z-20">
+                    <div className="px-3.5 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-[11px] sm:text-xs font-black text-accent-400 tracking-widest uppercase shadow-sm">
                       Application 0{idx + 1}
                     </div>
-                    <div className="hidden sm:flex px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-xs text-white/80 font-medium">
+                    <div className="px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-[11px] sm:text-xs text-white/90 font-medium">
                       AVG Solutions
                     </div>
                   </div>
 
-                  {/* Bottom Content */}
-                  <div className="absolute inset-0 p-6 sm:p-8 md:p-12 flex flex-col justify-end z-20">
-                    <h3 className="text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-2 sm:mb-3 tracking-tight">
+                  {/* Bottom Content with Interactive CTA */}
+                  <div className="relative z-20 flex flex-col justify-end">
+                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-2 sm:mb-3 tracking-tight group-hover:text-accent-300 transition-colors">
                       {app.title}
                     </h3>
-                    <p className="text-white/85 text-sm sm:text-base md:text-xl max-w-2xl leading-relaxed">
+                    <p className="text-white/85 text-sm sm:text-base leading-relaxed mb-4 max-w-xl">
                       {app.description}
                     </p>
+                    <div className="flex items-center gap-2 text-accent-400 font-bold text-xs sm:text-sm uppercase tracking-wider group-hover:text-accent-300">
+                      <span>Request Quote for {app.title}</span>
+                      <ArrowRight size={16} className="group-hover:translate-x-1.5 transition-transform" />
+                    </div>
                   </div>
-                </div>
-              </ScrollStackItem>
+                </Link>
+              </motion.div>
             ))}
-          </ScrollStack>
+          </div>
         </div>
       </section>
 
