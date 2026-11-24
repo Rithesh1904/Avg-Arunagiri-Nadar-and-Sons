@@ -1565,7 +1565,7 @@ export const products = [
     "category": "Rainwater Gutters",
     "subcategory": "Gutter Accessories",
     "brand": "Aquastar",
-    "description": "Heavy-duty fascia mounting clamp bracket designed with structural ribs and screw anchors to support 6-inch and 8-inch gutter channels firmly.",
+    "description": "Heavy-duty metal rafter extension support clamp bracket engineered for rigid under-trough support and secure anchoring of 6-inch and 8-inch gutter channels to roof rafters and fascia.",
     "image": "/images/upvc-gutter-clamp.jpg",
     "availableSizes": [
       "6 inch (160mm)",
@@ -1573,100 +1573,27 @@ export const products = [
     ],
     "specifications": {
       "material": [
-        "UPVC (Heavy-Duty)"
+        "Heavy-Duty Galvanized Steel / High-Impact Alloy"
       ],
       "size": [
         "6 inch",
         "8 inch"
       ],
       "type": [
-        "Fascia Support Clamp / Bracket"
+        "Rafter & Fascia Support Clamp / Gutter Bracket"
       ],
       "colors": [
-        "White"
+        "Metallic Silver / Zinc Finish"
       ]
     },
     "applications": [
+      "Roof Rafter Anchoring",
       "Fascia Board Mounting",
-      "Rafter & Truss Under-Gutter Support"
+      "High-Load Under-Gutter Support"
     ],
     "featured": false,
     "backImage": "/images/backside/gutter-back.jpg",
-    "backDetails": "Reinforced Fascia Mounting Screw Anchor"
-  },
-  {
-    "id": "10-feet-upvc-gutter",
-    "name": "10 feet Upvc Gutter",
-    "tallyName": "10 feet UPVC Gutter",
-    "category": "Rainwater Gutters",
-    "subcategory": "10 feet UPVC Gutter",
-    "brand": "Aquastar",
-    "description": "White 10 Feet UPVC Rainwater Gutter for efficient roof water drainage.",
-    "image": "/images/upvc-gutter-3mt.jpg",
-    "availableSizes": [
-      "6 inch (160mm)",
-      "8 inch (220mm)"
-    ],
-    "specifications": {
-      "material": [
-        "UPVC"
-      ],
-      "size": [
-        "6 inches",
-        "8 inches"
-      ],
-      "length": [
-        "10 ft (approx 3mt)"
-      ],
-      "colors": [
-        "White"
-      ]
-    },
-    "applications": [
-      "Home Roofing",
-      "Commercial Drainage",
-      "Terraces"
-    ],
-    "featured": false,
-    "backImage": "/images/backside/gutter-back.jpg",
-    "backDetails": "Smooth Flow UV-Stabilized UPVC Internal Trough"
-  },
-  {
-    "id": "upvc-rain-gutter",
-    "name": "Upvc Rain Gutter",
-    "tallyName": "UPVC Rain Gutter",
-    "category": "Rainwater Gutters",
-    "subcategory": "UPVC Rain Gutter",
-    "brand": "Aquastar",
-    "description": "Heavy-duty UV stabilized UPVC rainwater gutter profiles in standard 3mt and 5mt spans.",
-    "image": "/images/upvc-gutter-5mt.jpg",
-    "availableSizes": [
-      "6 inch (160mm)",
-      "8 inch (220mm)"
-    ],
-    "specifications": {
-      "material": [
-        "UPVC"
-      ],
-      "size": [
-        "6 inch",
-        "8 inch"
-      ],
-      "length": [
-        "3mt and 5mt length"
-      ],
-      "colors": [
-        "White"
-      ]
-    },
-    "applications": [
-      "Commercial Roof",
-      "Residential Roof",
-      "Industrial Roof"
-    ],
-    "featured": false,
-    "backImage": "/images/backside/gutter-back.jpg",
-    "backDetails": "Discharge Channel Hydrodynamic Smooth Surface"
+    "backDetails": "Reinforced Rafter Mounting Screw Anchor"
   },
   {
     "id": "ms-steel-pipe",
