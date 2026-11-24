@@ -1264,6 +1264,337 @@ export const products = [
     "backDetails": "Textured Wire-Mesh Curing Grid with Visaka Factory IS:14862 Stamp"
   },
   {
+    "id": "3-meter-upvc-gutter",
+    "name": "3 Meter UPVC Rainwater Gutter (3mt)",
+    "tallyName": "3mt UPVC Gutter",
+    "category": "Rainwater Gutters",
+    "subcategory": "3 Meter UPVC Gutter",
+    "brand": "Aquastar",
+    "description": "Premium UV-stabilized 3 Meter (approx 10 ft) UPVC rainwater gutter channel engineered for high water holding capacity and smooth roof water drainage.",
+    "image": "/images/upvc-gutter-3mt.jpg",
+    "availableSizes": [
+      "6 inch (160mm)",
+      "8 inch (220mm)"
+    ],
+    "specifications": {
+      "material": [
+        "UPVC (UV-Stabilized)"
+      ],
+      "size": [
+        "6 inch",
+        "8 inch"
+      ],
+      "length": [
+        "3 Meters (approx 10 ft)"
+      ],
+      "colors": [
+        "White"
+      ]
+    },
+    "applications": [
+      "Residential Roofs",
+      "Commercial Buildings",
+      "Industrial Sheds",
+      "Rainwater Harvesting"
+    ],
+    "featured": true,
+    "backImage": "/images/backside/gutter-back.jpg",
+    "backDetails": "Smooth Flow UV-Stabilized UPVC Internal Trough"
+  },
+  {
+    "id": "5-meter-upvc-gutter",
+    "name": "5 Meter UPVC Rainwater Gutter (5mt)",
+    "tallyName": "5mt UPVC Gutter",
+    "category": "Rainwater Gutters",
+    "subcategory": "5 Meter UPVC Gutter",
+    "brand": "Aquastar",
+    "description": "Heavy-duty 5 Meter (approx 16.5 ft) UPVC rainwater gutter profile designed to reduce joint frequency across long roof eaves for leak-free, high-capacity drainage.",
+    "image": "/images/upvc-gutter-5mt.jpg",
+    "availableSizes": [
+      "6 inch (160mm)",
+      "8 inch (220mm)"
+    ],
+    "specifications": {
+      "material": [
+        "UPVC (UV-Stabilized)"
+      ],
+      "size": [
+        "6 inch",
+        "8 inch"
+      ],
+      "length": [
+        "5 Meters (approx 16.5 ft)"
+      ],
+      "colors": [
+        "White"
+      ]
+    },
+    "applications": [
+      "Commercial Sheds",
+      "Industrial Warehouses",
+      "Villas & Resorts",
+      "Long Span Rooflines"
+    ],
+    "featured": true,
+    "backImage": "/images/backside/gutter-back.jpg",
+    "backDetails": "Discharge Channel Hydrodynamic Smooth Surface"
+  },
+  {
+    "id": "upvc-gutter-runner",
+    "name": "UPVC Gutter Runner (Joiner)",
+    "tallyName": "UPVC Gutter Runner",
+    "category": "Rainwater Gutters",
+    "subcategory": "Gutter Accessories",
+    "brand": "Aquastar",
+    "description": "High-strength inline straight joiner coupling fitting with dual EPDM rubber gasket seals and top snap clips to join two gutter lengths securely.",
+    "image": "/images/upvc-gutter-runner.jpg",
+    "availableSizes": [
+      "6 inch (160mm)",
+      "8 inch (220mm)"
+    ],
+    "specifications": {
+      "material": [
+        "UPVC"
+      ],
+      "size": [
+        "6 inch",
+        "8 inch"
+      ],
+      "type": [
+        "Inline Straight Joiner / Runner"
+      ],
+      "colors": [
+        "White"
+      ]
+    },
+    "applications": [
+      "Gutter Section Jointing",
+      "Continuous Run Assembly"
+    ],
+    "featured": false,
+    "backImage": "/images/backside/gutter-back.jpg",
+    "backDetails": "Rubber Gasket Joint Expansion Seal"
+  },
+  {
+    "id": "upvc-gutter-runner-drop",
+    "name": "UPVC Gutter Runner Drop (Running Outlet)",
+    "tallyName": "UPVC Gutter Runner Drop",
+    "category": "Rainwater Gutters",
+    "subcategory": "Gutter Accessories",
+    "brand": "Aquastar",
+    "description": "Inline running drop outlet fitting with integrated downward discharge nozzle to connect horizontal gutter channels directly to vertical downpipes.",
+    "image": "/images/upvc-gutter-runner-drop.jpg",
+    "availableSizes": [
+      "6 inch (160mm)",
+      "8 inch (220mm)"
+    ],
+    "specifications": {
+      "material": [
+        "UPVC"
+      ],
+      "size": [
+        "6 inch",
+        "8 inch"
+      ],
+      "type": [
+        "Running Drop Outlet"
+      ],
+      "colors": [
+        "White"
+      ]
+    },
+    "applications": [
+      "Mid-span Downpipe Drainage",
+      "Rainwater Harvesting Outlets"
+    ],
+    "featured": false,
+    "backImage": "/images/backside/gutter-back.jpg",
+    "backDetails": "Hydrodynamic Center Drop Transition Spout"
+  },
+  {
+    "id": "upvc-gutter-elbow",
+    "name": "UPVC Gutter Elbow (90° Corner)",
+    "tallyName": "UPVC Gutter Elbow",
+    "category": "Rainwater Gutters",
+    "subcategory": "Gutter Accessories",
+    "brand": "Aquastar",
+    "description": "Precision 90-degree corner elbow fitting with rubber gasket channels for seamless, leak-proof water redirection around building roof corners.",
+    "image": "/images/upvc-gutter-elbow.jpg",
+    "availableSizes": [
+      "6 inch (160mm)",
+      "8 inch (220mm)"
+    ],
+    "specifications": {
+      "material": [
+        "UPVC"
+      ],
+      "size": [
+        "6 inch",
+        "8 inch"
+      ],
+      "angle": [
+        "90 Degree"
+      ],
+      "type": [
+        "Corner Elbow Fitting"
+      ],
+      "colors": [
+        "White"
+      ]
+    },
+    "applications": [
+      "Roof Eaves Corners",
+      "Hip Roof Gutter Perimeter"
+    ],
+    "featured": false,
+    "backImage": "/images/backside/gutter-back.jpg",
+    "backDetails": "Seamless Precision Mitered Gasket Corner"
+  },
+  {
+    "id": "upvc-gutter-elbow-drop",
+    "name": "UPVC Gutter Elbow Drop (Corner Outlet)",
+    "tallyName": "UPVC Gutter Elbow Drop",
+    "category": "Rainwater Gutters",
+    "subcategory": "Gutter Accessories",
+    "brand": "Aquastar",
+    "description": "Specialized 90-degree corner fitting combining a corner turn with an integrated downward drop outlet for corner downpipe drainage.",
+    "image": "/images/upvc-gutter-elbow-drop.jpg",
+    "availableSizes": [
+      "6 inch (160mm)",
+      "8 inch (220mm)"
+    ],
+    "specifications": {
+      "material": [
+        "UPVC"
+      ],
+      "size": [
+        "6 inch",
+        "8 inch"
+      ],
+      "type": [
+        "Corner Elbow with Drop Outlet"
+      ],
+      "colors": [
+        "White"
+      ]
+    },
+    "applications": [
+      "Corner Downpipe Connection",
+      "Eaves Bend Drainage"
+    ],
+    "featured": false,
+    "backImage": "/images/backside/gutter-back.jpg",
+    "backDetails": "Corner Downpipe High-Volume Spout"
+  },
+  {
+    "id": "upvc-gutter-stop-end",
+    "name": "UPVC Gutter Stop End (End Cap)",
+    "tallyName": "UPVC Gutter Stop End",
+    "category": "Rainwater Gutters",
+    "subcategory": "Gutter Accessories",
+    "brand": "Aquastar",
+    "description": "Tight snap-lock terminal end cap with rubber gasket seal to close open gutter ends and prevent water spillover.",
+    "image": "/images/upvc-gutter-stop-end.jpg",
+    "availableSizes": [
+      "6 inch (160mm)",
+      "8 inch (220mm)"
+    ],
+    "specifications": {
+      "material": [
+        "UPVC"
+      ],
+      "size": [
+        "6 inch",
+        "8 inch"
+      ],
+      "type": [
+        "Terminal Stop End Cap"
+      ],
+      "colors": [
+        "White"
+      ]
+    },
+    "applications": [
+      "Gutter Terminal Seal",
+      "End Run Closure"
+    ],
+    "featured": false,
+    "backImage": "/images/backside/gutter-back.jpg",
+    "backDetails": "Tight-Fit Watertight Terminal Wall"
+  },
+  {
+    "id": "upvc-gutter-stop-end-drop",
+    "name": "UPVC Gutter Stop End Drop (End Outlet)",
+    "tallyName": "UPVC Gutter Stop End Drop",
+    "category": "Rainwater Gutters",
+    "subcategory": "Gutter Accessories",
+    "brand": "Aquastar",
+    "description": "Combined terminal end cap with downward discharge drop nozzle to route water directly into downpipes at the end of a gutter run.",
+    "image": "/images/upvc-gutter-stop-end-drop.jpg",
+    "availableSizes": [
+      "6 inch (160mm)",
+      "8 inch (220mm)"
+    ],
+    "specifications": {
+      "material": [
+        "UPVC"
+      ],
+      "size": [
+        "6 inch",
+        "8 inch"
+      ],
+      "type": [
+        "Stop End with Drop Outlet"
+      ],
+      "colors": [
+        "White"
+      ]
+    },
+    "applications": [
+      "Terminal Edge Downpipe Drainage",
+      "Roof Edge Discharge"
+    ],
+    "featured": false,
+    "backImage": "/images/backside/gutter-back.jpg",
+    "backDetails": "Terminal Downpipe Discharge Outlet"
+  },
+  {
+    "id": "upvc-gutter-clamp",
+    "name": "UPVC Gutter Support Clamp (Bracket)",
+    "tallyName": "UPVC Gutter Clamp",
+    "category": "Rainwater Gutters",
+    "subcategory": "Gutter Accessories",
+    "brand": "Aquastar",
+    "description": "Heavy-duty fascia mounting clamp bracket designed with structural ribs and screw anchors to support 6-inch and 8-inch gutter channels firmly.",
+    "image": "/images/upvc-gutter-clamp.jpg",
+    "availableSizes": [
+      "6 inch (160mm)",
+      "8 inch (220mm)"
+    ],
+    "specifications": {
+      "material": [
+        "UPVC (Heavy-Duty)"
+      ],
+      "size": [
+        "6 inch",
+        "8 inch"
+      ],
+      "type": [
+        "Fascia Support Clamp / Bracket"
+      ],
+      "colors": [
+        "White"
+      ]
+    },
+    "applications": [
+      "Fascia Board Mounting",
+      "Rafter & Truss Under-Gutter Support"
+    ],
+    "featured": false,
+    "backImage": "/images/backside/gutter-back.jpg",
+    "backDetails": "Reinforced Fascia Mounting Screw Anchor"
+  },
+  {
     "id": "10-feet-upvc-gutter",
     "name": "10 feet Upvc Gutter",
     "tallyName": "10 feet UPVC Gutter",
@@ -1271,10 +1602,10 @@ export const products = [
     "subcategory": "10 feet UPVC Gutter",
     "brand": "Aquastar",
     "description": "White 10 Feet UPVC Rainwater Gutter for efficient roof water drainage.",
-    "image": "/images/10 feet Upvc Gutter.jpg",
+    "image": "/images/upvc-gutter-3mt.jpg",
     "availableSizes": [
-      "10 ft length (6 inch)",
-      "10 ft length (8 inch)"
+      "6 inch (160mm)",
+      "8 inch (220mm)"
     ],
     "specifications": {
       "material": [
@@ -1285,7 +1616,7 @@ export const products = [
         "8 inches"
       ],
       "length": [
-        "10 ft"
+        "10 ft (approx 3mt)"
       ],
       "colors": [
         "White"
@@ -1296,7 +1627,7 @@ export const products = [
       "Commercial Drainage",
       "Terraces"
     ],
-    "featured": true,
+    "featured": false,
     "backImage": "/images/backside/gutter-back.jpg",
     "backDetails": "Smooth Flow UV-Stabilized UPVC Internal Trough"
   },
@@ -1307,18 +1638,22 @@ export const products = [
     "category": "Rainwater Gutters",
     "subcategory": "UPVC Rain Gutter",
     "brand": "Aquastar",
-    "description": "Heavy-duty UV stabilized half-round UPVC rainwater gutter profiles.",
-    "image": "/images/Upvc Rain Gutter.jpg",
+    "description": "Heavy-duty UV stabilized UPVC rainwater gutter profiles in standard 3mt and 5mt spans.",
+    "image": "/images/upvc-gutter-5mt.jpg",
     "availableSizes": [
-      "10 ft length",
-      "16.5 ft length"
+      "6 inch (160mm)",
+      "8 inch (220mm)"
     ],
     "specifications": {
       "material": [
         "UPVC"
       ],
       "size": [
-        "10 ft and 16.5 ft length"
+        "6 inch",
+        "8 inch"
+      ],
+      "length": [
+        "3mt and 5mt length"
       ],
       "colors": [
         "White"

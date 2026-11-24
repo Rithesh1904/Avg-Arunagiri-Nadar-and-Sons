@@ -40,12 +40,12 @@ export const categories = [
   {
     id: "rainwater-gutters",
     name: "Rainwater Gutters",
-    description: "Durable UPVC rain gutters and gutter systems for efficient water management.",
+    description: "Durable UPVC rain gutters, gutter lengths (3mt & 5mt) and complete modular accessories in 6-inch and 8-inch for efficient water harvesting.",
     image: "/images/rainwatergutter.jpg",
     subcategories: [
-      "10 feet UPVC Gutter",
-      "UPVC Rain Gutter",
-      "UPVC Gutter System"
+      "3 Meter UPVC Gutter (6\" & 8\")",
+      "5 Meter UPVC Gutter (6\" & 8\")",
+      "Gutter Accessories (6\" & 8\")"
     ]
   },
   {
