@@ -19,43 +19,90 @@ export function Home() {
   const videoRef = React.useRef(null);
 
   React.useEffect(() => {
-    // Ensure smooth autoplay in loop mode across mobile and desktop browsers
     const video = videoRef.current;
     if (!video) return;
 
+    // Force strict attributes onto DOM node for iOS WebKit & Safari compatibility
+    video.setAttribute('muted', '');
+    video.setAttribute('playsinline', '');
+    video.setAttribute('webkit-playsinline', 'true');
     video.defaultMuted = true;
     video.muted = true;
 
     const playVideo = () => {
+      if (!video) return;
+      video.defaultMuted = true;
+      video.muted = true;
       const playPromise = video.play();
       if (playPromise !== undefined) {
-        playPromise.catch(() => {});
+        playPromise.catch(() => {
+          // Handled gracefully: interaction listeners will kickstart playback on first touch/scroll
+        });
       }
     };
 
+    // Attempt playback immediately on mount and across media buffer events
+    playVideo();
+    video.addEventListener('loadedmetadata', playVideo);
     video.addEventListener('loadeddata', playVideo);
     video.addEventListener('canplay', playVideo);
-    playVideo();
+    video.addEventListener('canplaythrough', playVideo);
+
+    // Instant kickstart for iOS Low Power Mode (triggers on first user scroll, touch, or click)
+    const kickstartPlayback = () => {
+      if (video && video.paused) {
+        playVideo();
+      }
+    };
+
+    window.addEventListener('touchstart', kickstartPlayback, { capture: true, passive: true });
+    window.addEventListener('touchend', kickstartPlayback, { capture: true, passive: true });
+    window.addEventListener('touchmove', kickstartPlayback, { capture: true, passive: true });
+    window.addEventListener('scroll', kickstartPlayback, { capture: true, passive: true });
+    window.addEventListener('click', kickstartPlayback, { capture: true, passive: true });
+    window.addEventListener('pointerdown', kickstartPlayback, { capture: true, passive: true });
 
     return () => {
+      video.removeEventListener('loadedmetadata', playVideo);
       video.removeEventListener('loadeddata', playVideo);
       video.removeEventListener('canplay', playVideo);
+      video.removeEventListener('canplaythrough', playVideo);
+      window.removeEventListener('touchstart', kickstartPlayback, { capture: true });
+      window.removeEventListener('touchend', kickstartPlayback, { capture: true });
+      window.removeEventListener('touchmove', kickstartPlayback, { capture: true });
+      window.removeEventListener('scroll', kickstartPlayback, { capture: true });
+      window.removeEventListener('click', kickstartPlayback, { capture: true });
+      window.removeEventListener('pointerdown', kickstartPlayback, { capture: true });
     };
   }, []);
+
+  const handleHeroClick = () => {
+    if (videoRef.current && videoRef.current.paused) {
+      videoRef.current.defaultMuted = true;
+      videoRef.current.muted = true;
+      videoRef.current.play().catch(() => {});
+    }
+  };
 
   return (
     <div className="flex flex-col w-full">
       {/* 1. Hero Section - Full-bleed cinematic video with shop nameboard clearly displayed */}
-      <section className="relative w-full aspect-[16/9] sm:aspect-auto sm:h-[52vh] sm:min-h-[400px] md:h-[58vh] md:min-h-[460px] md:max-h-[540px] lg:h-[62vh] lg:min-h-[500px] lg:max-h-[580px] xl:h-[64vh] xl:max-h-[620px] flex items-center justify-center bg-black overflow-hidden">
+      <section 
+        onClick={handleHeroClick}
+        onTouchStart={handleHeroClick}
+        className="relative w-full aspect-[16/9] sm:aspect-auto sm:h-[52vh] sm:min-h-[400px] md:h-[58vh] md:min-h-[460px] md:max-h-[540px] lg:h-[62vh] lg:min-h-[500px] lg:max-h-[580px] xl:h-[64vh] xl:max-h-[620px] flex items-center justify-center bg-black overflow-hidden cursor-pointer"
+      >
         <video
           ref={videoRef}
+          src="/assets/shopbk.mp4"
           autoPlay
           muted
           playsInline
+          webkit-playsinline="true"
           loop
           preload="auto"
           poster="/assets/hero-poster.jpg"
-          className="absolute inset-0 w-full h-full object-cover object-[center_top] pointer-events-none"
+          className="absolute inset-0 w-full h-full object-cover object-[center_top]"
         >
           <source src="/assets/shopbk.mp4" type="video/mp4" />
           <source src="/assets/shop1.mp4" type="video/mp4" />
